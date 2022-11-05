@@ -252,6 +252,27 @@ class _Edit_profileState extends State<Edit_profile> {
                                             ],
                                           ),
                                         ),
+                                        ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                            primary: Colors.deepOrangeAccent,
+                                          ),
+                                          onPressed: () {
+                                            setState(() {
+                                              _image = null;
+                                            });
+                                          },
+                                          // color: Color.fromARGB(255, 255, 115, 0),
+                                          child: Row(
+                                            children: [
+                                              Icon(Icons.camera_alt_outlined,
+                                                  color: Colors.white),
+                                              SizedBox(width: 15),
+                                              Text('clear',
+                                                  style: TextStyle(
+                                                      color: Colors.white)),
+                                            ],
+                                          ),
+                                        ),
                                       ],
                                     ),
                                   ],

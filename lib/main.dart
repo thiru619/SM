@@ -245,9 +245,9 @@ class _bodypartState extends State<bodypart> {
                       );
                     }
 
-                    Get.updateLocale(Locale('en', 'US'));
-                    con.setlancode('en');
-                    con.setlancountry('US');
+                    Get.updateLocale(Locale('vi', 'VN'));
+                    con.setlancode('vi');
+                    con.setlancountry('VN');
 
                     // Navigator.push(
                     //   context,

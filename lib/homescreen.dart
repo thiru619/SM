@@ -672,107 +672,102 @@ class _homescreensState extends State<homescreens>
                                                         MainAxisAlignment
                                                             .spaceEvenly,
                                                     children: [
-                                                      Container(
-                                                        padding:
-                                                            EdgeInsets.all(5),
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: Colors.white,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(10),
-                                                        ),
-                                                        child: Column(
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .start,
-                                                          children: [
-                                                            Text(
-                                                              "Please add you contact"
-                                                                  .tr,
-                                                              style: TextStyle(
-                                                                  fontSize: 12,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold),
-                                                            ),
-                                                            Text(
-                                                              "profile with photos"
-                                                                      .tr +
-                                                                  "        ".tr,
-                                                              style: TextStyle(
-                                                                  fontSize: 12,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold),
-                                                            ),
-                                                            SizedBox(
-                                                              height: 15,
-                                                            ),
-                                                            Column(
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .start,
-                                                              children: [
-                                                                Row(
-                                                                  children: [
-                                                                    SizedBox(
-                                                                      width: 85,
-                                                                      height:
-                                                                          20,
-                                                                      child:
-                                                                          ElevatedButton(
-                                                                        child:
-                                                                            Text(
-                                                                          "Add photo"
-                                                                              .tr,
-                                                                          style:
-                                                                              TextStyle(fontSize: 11),
-                                                                        ),
-                                                                        style:
-                                                                            ButtonStyle(
-                                                                          backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(
-                                                                              255,
-                                                                              255,
-                                                                              111,
-                                                                              0)),
-                                                                          shape:
-                                                                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                                                            RoundedRectangleBorder(
-                                                                              borderRadius: BorderRadius.circular(20),
-                                                                              side: BorderSide(
-                                                                                color: Color.fromARGB(255, 255, 111, 0),
+                                                      firstimage == null
+                                                          ? Container(
+                                                              padding:
+                                                                  EdgeInsets
+                                                                      .all(5),
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: Colors
+                                                                    .white,
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            10),
+                                                              ),
+                                                              child: Column(
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .start,
+                                                                children: [
+                                                                  Text(
+                                                                    "Please add you contact"
+                                                                        .tr,
+                                                                    style: TextStyle(
+                                                                        fontSize:
+                                                                            12,
+                                                                        fontWeight:
+                                                                            FontWeight.bold),
+                                                                  ),
+                                                                  Text(
+                                                                    "profile with photos"
+                                                                            .tr +
+                                                                        "        "
+                                                                            .tr,
+                                                                    style: TextStyle(
+                                                                        fontSize:
+                                                                            12,
+                                                                        fontWeight:
+                                                                            FontWeight.bold),
+                                                                  ),
+                                                                  SizedBox(
+                                                                    height: 15,
+                                                                  ),
+                                                                  Column(
+                                                                    crossAxisAlignment:
+                                                                        CrossAxisAlignment
+                                                                            .start,
+                                                                    children: [
+                                                                      Row(
+                                                                        children: [
+                                                                          SizedBox(
+                                                                            width:
+                                                                                85,
+                                                                            height:
+                                                                                20,
+                                                                            child:
+                                                                                ElevatedButton(
+                                                                              child: Text(
+                                                                                "Add photo".tr,
+                                                                                style: TextStyle(fontSize: 11),
                                                                               ),
+                                                                              style: ButtonStyle(
+                                                                                backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 255, 111, 0)),
+                                                                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                                                                  RoundedRectangleBorder(
+                                                                                    borderRadius: BorderRadius.circular(20),
+                                                                                    side: BorderSide(
+                                                                                      color: Color.fromARGB(255, 255, 111, 0),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                              onPressed: () {},
                                                                             ),
                                                                           ),
-                                                                        ),
-                                                                        onPressed:
-                                                                            () {},
+                                                                          SizedBox(
+                                                                            width:
+                                                                                10,
+                                                                          ),
+                                                                          IconButton(
+                                                                              onPressed: () {},
+                                                                              icon: Image(image: AssetImage("assets/preview.png")))
+                                                                        ],
                                                                       ),
-                                                                    ),
-                                                                    SizedBox(
-                                                                      width: 10,
-                                                                    ),
-                                                                    IconButton(
-                                                                        onPressed:
-                                                                            () {},
-                                                                        icon: Image(
-                                                                            image:
-                                                                                AssetImage("assets/preview.png")))
-                                                                  ],
-                                                                ),
-                                                                Text(
-                                                                  "+25% in profile completeness"
-                                                                      .tr,
-                                                                  style: TextStyle(
-                                                                      fontSize:
-                                                                          10),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ),
+                                                                      Text(
+                                                                        "+25% in profile completeness"
+                                                                            .tr,
+                                                                        style: TextStyle(
+                                                                            fontSize:
+                                                                                10),
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            )
+                                                          : Container(),
                                                       SizedBox(
                                                         width: 30,
                                                       ),

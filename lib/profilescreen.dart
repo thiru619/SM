@@ -18,6 +18,7 @@ import 'package:sujithamatrimony/languagecontroler.dart';
 import 'package:flutter_share/flutter_share.dart';
 import 'package:http/http.dart' as http;
 import 'edit_profiles.dart/edit_profile.dart';
+import 'feedback.dart';
 
 class profilescreen extends StatefulWidget {
   const profilescreen({Key? key}) : super(key: key);
@@ -385,7 +386,11 @@ class _profilescreenState extends State<profilescreen> {
                         children: [
                           GestureDetector(
                             onTap: () {
-                              // print("j");
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Feedback1()),
+                              );
                             },
                             child: Container(
                               padding: const EdgeInsets.all(8),
@@ -515,16 +520,12 @@ class _profilescreenState extends State<profilescreen> {
                         ],
                       ),
                     ),
-                    Container(
-                      child: Row(
-                        children: [
-                          GestureDetector(
-                            onTap: () {
-                              onPressed:
-                              share;
-                              // print("j");
-                            },
-                            child: Container(
+                    GestureDetector(
+                      onTap: () => share(),
+                      child: Container(
+                        child: Row(
+                          children: [
+                            Container(
                               // padding: const EdgeInsets.all(8),
                               child: Row(
                                 children: [
@@ -535,23 +536,16 @@ class _profilescreenState extends State<profilescreen> {
                                   // SizedBox(
                                   //   width: 10,
                                   // ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      onPressed:
-                                      share;
-                                      // print("j");
-                                    },
-                                    child: Text(
-                                      'Share app',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold),
-                                    ),
+                                  Text(
+                                    'Share app',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
                                   ),
                                 ],
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                     SizedBox(

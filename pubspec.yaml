@@ -65,6 +65,7 @@ dependencies:
   cc_avenue: ^1.0.2
   badges: ^2.0.3
   marquee: ^2.2.3
+  flutter_rating_bar: ^4.0.1
   # nternet_popup: ^1.0.8+5
 
   
