@@ -6,6 +6,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
+import 'package:sujithamatrimony/colors.dart';
 import 'package:sujithamatrimony/loginpage.dart';
 import 'package:marquee/marquee.dart';
 // import 'package:percent_indicator/percent_indicator.dart';
@@ -194,7 +195,7 @@ class _view_profileState extends State<view_profile> {
                                         ),
                                         child: Row(
                                           children: [
-                                            Icon(Icons.heart_broken,
+                                            Icon(Icons.favorite,
                                                 color: Colors.white),
                                             SizedBox(
                                               width: 5,
@@ -289,7 +290,7 @@ class _view_profileState extends State<view_profile> {
                                                         });
                                                       },
                                                       child: SizedBox(
-                                                        width: 100,
+                                                        width: 500,
                                                         child: Text(
                                                           onpress6
                                                               ? "Request About"

@@ -140,9 +140,9 @@ class _bottomsheetState extends State<bottomsheet> {
           elevation: 2,
           items: [
             BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.home), label: 'Home'),
+                icon: Icon(CupertinoIcons.home), label: 'Home'.tr),
             BottomNavigationBarItem(
-                icon: Icon(Icons.people_alt_outlined), label: 'Matches'),
+                icon: Icon(Icons.people_alt_outlined), label: 'Matches'.tr),
             // BottomNavigationBarItem(
             //     icon: Icon(Icons.mail_outline), label: 'Mail'),
             BottomNavigationBarItem(
@@ -155,7 +155,7 @@ class _bottomsheetState extends State<bottomsheet> {
                 //position: BadgePosition.center(),
                 child: const Icon(Icons.notifications),
               ),
-              label: 'Notifications',
+              label: 'Notifications'.tr,
             ),
             // icon: Icon(
             //   Icons.notifications,
@@ -163,7 +163,7 @@ class _bottomsheetState extends State<bottomsheet> {
             // label: 'Notification',
             // ),
             BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.search), label: 'Search'),
+                icon: Icon(CupertinoIcons.search), label: 'Search'.tr),
           ],
           onTap: onTap,
           currentIndex: widget.currentIndex ?? 0,

@@ -304,7 +304,7 @@ class _profilescreenState extends State<profilescreen> {
                                     width: 10,
                                   ),
                                   Text(
-                                    'Your Calls',
+                                    'Your Calls'.tr,
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold),
                                   ),
@@ -340,7 +340,7 @@ class _profilescreenState extends State<profilescreen> {
                                     width: 10,
                                   ),
                                   Text(
-                                    'Settings',
+                                    'Settings'.tr,
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold),
                                   ),
@@ -370,7 +370,7 @@ class _profilescreenState extends State<profilescreen> {
                                     width: 15,
                                   ),
                                   Text(
-                                    'Help',
+                                    'Help'.tr,
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold),
                                   ),
@@ -404,7 +404,7 @@ class _profilescreenState extends State<profilescreen> {
                                     width: 10,
                                   ),
                                   Text(
-                                    'Feedback',
+                                    'Feedback'.tr,
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold),
                                   ),
@@ -439,7 +439,43 @@ class _profilescreenState extends State<profilescreen> {
                                     width: 15,
                                   ),
                                   Text(
-                                    'Wedding Services',
+                                    'Wedding Services'.tr,
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    Container(
+                      child: Row(
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              // print("j");
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Privacy_policy()),
+                              );
+                            },
+                            child: Container(
+                              padding: const EdgeInsets.all(8),
+                              child: Row(
+                                children: [
+                                  Image(
+                                    height: 20,
+                                    image: AssetImage('assets/call.png'),
+                                  ),
+                                  SizedBox(
+                                    width: 23,
+                                  ),
+                                  Text(
+                                    'Privacy Policy / Terms & Conditions'.tr,
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold),
                                   ),
@@ -466,15 +502,12 @@ class _profilescreenState extends State<profilescreen> {
                               padding: const EdgeInsets.all(8),
                               child: Row(
                                 children: [
-                                  Image(
-                                    height: 20,
-                                    image: AssetImage('assets/subscribe.png'),
-                                  ),
+                                  Icon(Icons.share),
                                   SizedBox(
                                     width: 20,
                                   ),
                                   Text(
-                                    'Subscribe',
+                                    'Share app'.tr,
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold),
                                   ),
@@ -485,69 +518,34 @@ class _profilescreenState extends State<profilescreen> {
                         ],
                       ),
                     ),
-                    Container(
-                      child: Row(
-                        children: [
-                          GestureDetector(
-                            onTap: () {
-                              // print("j");
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Privacy_policy()),
-                              );
-                            },
-                            child: Container(
-                              padding: const EdgeInsets.all(8),
-                              child: Row(
-                                children: [
-                                  Image(
-                                    height: 20,
-                                    image: AssetImage('assets/call.png'),
-                                  ),
-                                  SizedBox(
-                                    width: 23,
-                                  ),
-                                  Text(
-                                    'Privacy Policy / Terms & Conditions',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () => share(),
-                      child: Container(
-                        child: Row(
-                          children: [
-                            Container(
-                              // padding: const EdgeInsets.all(8),
-                              child: Row(
-                                children: [
-                                  IconButton(
-                                      iconSize: 20,
-                                      onPressed: share,
-                                      icon: Icon(Icons.share)),
-                                  // SizedBox(
-                                  //   width: 10,
-                                  // ),
-                                  Text(
-                                    'Share app',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
+                    // GestureDetector(
+                    //   onTap: () => share(),
+                    //   child: Container(
+                    //     child: Row(
+                    //       children: [
+                    //         Container(
+                    //           // padding: const EdgeInsets.all(8),
+                    //           child: Row(
+                    //             children: [
+                    // IconButton(
+                    //     iconSize: 20,
+                    //     onPressed: share,
+                    //     icon: Icon(Icons.share)),
+                    //               // SizedBox(
+                    //               //   width: 10,
+                    //               // ),
+                    //               Text(
+                    //                 'Share app'.tr,
+                    //                 style:
+                    //                     TextStyle(fontWeight: FontWeight.bold),
+                    //               ),
+                    //             ],
+                    //           ),
+                    //         ),
+                    //       ],
+                    //     ),
+                    //   ),
+                    // ),
                     SizedBox(
                       height: 50,
                     )

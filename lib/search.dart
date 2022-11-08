@@ -66,6 +66,7 @@ class _searchState extends State<search> with SingleTickerProviderStateMixin {
   TextEditingController Country = TextEditingController();
   TextEditingController residingState = TextEditingController();
   TextEditingController residingCity = TextEditingController();
+  TextEditingController matriid = TextEditingController();
 
   List<String> strs24 = [];
   List<String> strs25 = [];
@@ -260,6 +261,7 @@ class _searchState extends State<search> with SingleTickerProviderStateMixin {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextField(
+                  controller: matriid,
                   // controller: Idsearch,
                   inputFormatters: [
                     FilteringTextInputFormatter.allow(RegExp("[a-zA-Z.0-9 ]")),
@@ -604,9 +606,9 @@ class _searchState extends State<search> with SingleTickerProviderStateMixin {
                   //     print('onSubmitted value: $value'.tr),
                   onSubmitted: (value) => {print(value)}),
             ),
-            SizedBox(
-              height: 20,
-            ),
+            // SizedBox(
+            //   height: 20,
+            // ),
             Container(
               padding: EdgeInsets.only(left: 10, top: 10),
               child: Row(
@@ -650,7 +652,7 @@ class _searchState extends State<search> with SingleTickerProviderStateMixin {
               child: Row(
                 children: [
                   Text(
-                    "EDUCATION CATEGORY".tr,
+                    "EDUCATION".tr,
                   )
                 ],
               ),
@@ -980,59 +982,64 @@ class _searchState extends State<search> with SingleTickerProviderStateMixin {
                   ),
                 ),
                 onPressed: () {
-                  if (minage.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'select Min Age');
-                  } else if (maxage.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Max Age');
-                  } else if (minheight.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Min Height');
-                  } else if (maxheight.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Max Height');
-                  } else if (maritialstatus.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Maritial Status');
-                  } else if (mothertongue.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Mother Tongue');
-                  } else if (physicalstatus.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Physicalstatus');
-                  } else if (religion.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Religion');
-                  } else if (caste.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Caste');
-                  } else if (Educationfields.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Educationfields');
-                  } else if (employedin.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Employed In');
-                  } else if (occupation.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Occupation');
-                  } else if (annualincome.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Annual Income');
-                  } else if (Country.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Country');
-                  } else if (residingState.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter State');
-                  } else if (residingCity.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter City');
+                  if (matriid.text.isNotEmpty) {
+                    searchProfile("", '', '', '', '', '', '', '', '', '', '',
+                        '', '', '', '', '', matriid.text);
                   } else {
-                    print(whatareyoulooking);
+                    if (minage.text.isEmpty) {
+                      Fluttertoast.showToast(msg: 'select Min Age');
+                    } else if (maxage.text.isEmpty) {
+                      Fluttertoast.showToast(msg: 'Enter Max Age');
+                    } else if (minheight.text.isEmpty) {
+                      Fluttertoast.showToast(msg: 'Enter Min Height');
+                    } else if (maxheight.text.isEmpty) {
+                      Fluttertoast.showToast(msg: 'Enter Max Height');
+                    } else if (maritialstatus.text.isEmpty) {
+                      Fluttertoast.showToast(msg: 'Enter Maritial Status');
+                    } else if (mothertongue.text.isEmpty) {
+                      Fluttertoast.showToast(msg: 'Enter Mother Tongue');
+                    } else if (physicalstatus.text.isEmpty) {
+                      Fluttertoast.showToast(msg: 'Enter Physicalstatus');
+                    } else if (religion.text.isEmpty) {
+                      Fluttertoast.showToast(msg: 'Enter Religion');
+                    } else if (caste.text.isEmpty) {
+                      Fluttertoast.showToast(msg: 'Enter Caste');
+                    } else if (Educationcategoryfields.text.isEmpty) {
+                      Fluttertoast.showToast(msg: 'Enter Educationfields');
+                    } else if (employedin.text.isEmpty) {
+                      Fluttertoast.showToast(msg: 'Enter Employed In');
+                    } else if (occupationfield1.text.isEmpty) {
+                      Fluttertoast.showToast(msg: 'Enter Occupation');
+                    } else if (annualincome.text.isEmpty) {
+                      Fluttertoast.showToast(msg: 'Enter Annual Income');
+                    } else if (Country.text.isEmpty) {
+                      Fluttertoast.showToast(msg: 'Enter Country');
+                    } else if (residingState.text.isEmpty) {
+                      Fluttertoast.showToast(msg: 'Enter State');
+                    } else if (residingCity.text.isEmpty) {
+                      Fluttertoast.showToast(msg: 'Enter City');
+                    } else {
+                      print(whatareyoulooking);
 
-                    searchProfile(
-                      minage.text,
-                      maxage.text,
-                      minheight.text,
-                      maxheight.text,
-                      maritialstatus.text,
-                      mothertongue.text,
-                      physicalstatus.text,
-                      religion.text,
-                      caste.text,
-                      Educationfields.text,
-                      employedin.text,
-                      occupation.text,
-                      annualincome.text,
-                      Country.text,
-                      residingState.text,
-                      residingCity.text,
-                    );
+                      searchProfile(
+                          minage.text,
+                          maxage.text,
+                          minheight.text,
+                          maxheight.text,
+                          maritialstatus.text,
+                          mothertongue.text,
+                          physicalstatus.text,
+                          religion.text,
+                          caste.text,
+                          Educationcategoryfields.text,
+                          employedin.text,
+                          occupationfield1.text,
+                          annualincome.text,
+                          Country.text,
+                          residingState.text,
+                          residingCity.text,
+                          matriid.text);
+                    }
                   }
                   // Navigator.push(
                   //   context,
@@ -1140,23 +1147,23 @@ class _searchState extends State<search> with SingleTickerProviderStateMixin {
   }
 
   Future<void> searchProfile(
-    min_age,
-    max_age,
-    min_height,
-    max_height,
-    marital_status,
-    mother_tongue,
-    physical_status,
-    religion,
-    caste,
-    education,
-    employed_in,
-    occupation,
-    annual_income,
-    country,
-    state,
-    city,
-  ) async {
+      min_age,
+      max_age,
+      min_height,
+      max_height,
+      marital_status,
+      mother_tongue,
+      physical_status,
+      religion,
+      caste,
+      education,
+      employed_in,
+      occupation,
+      annual_income,
+      country,
+      state,
+      city,
+      login_id) async {
     var url =
         "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/searchProfile";
     // checker(context) async {
@@ -1185,6 +1192,7 @@ class _searchState extends State<search> with SingleTickerProviderStateMixin {
       'city': city,
       'reg_id': regId,
       'language': con.lancode.value == 'en' ? 'en' : 'tu',
+      'login_id': login_id,
     };
     // con.lancode.value == 'en' ? 'en' : 'tu',
     print(body.toString());

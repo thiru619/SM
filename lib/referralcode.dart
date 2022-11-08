@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:flutter_windowmanager/flutter_windowmanager.dart';
 import 'package:get/get.dart';
 import 'package:sujithamatrimony/colors.dart';
 import 'package:sujithamatrimony/languagecontroler.dart';
-
+import 'package:flutter_share/flutter_share.dart';
 import 'language_btn.dart';
 
 // void main(List<String> args) {
@@ -30,6 +31,16 @@ class _referralcodeState extends State<referralcode> {
   void initState() {
     super.initState();
     // secureScreen();
+  }
+
+  TextEditingController copied = TextEditingController();
+
+  Future<void> share() async {
+    await FlutterShare.share(
+        title: 'Example share',
+        text: 'Example share text',
+        linkUrl: 'https://flutter.dev/',
+        chooserTitle: 'Sujitha Matrimony');
   }
 
   int _value = 0;
@@ -104,9 +115,16 @@ class _referralcodeState extends State<referralcode> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
             child: TextField(
+              controller: copied,
               decoration: InputDecoration(
                 suffixIcon: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Clipboard.setData(ClipboardData(text: copied.text))
+                        .then((_) {
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          content: Text("Referal Code copied to clipboard")));
+                    });
+                  },
                   icon: Icon(Icons.copy_rounded),
                   color: Colors.grey,
                 ),
@@ -141,15 +159,14 @@ class _referralcodeState extends State<referralcode> {
                   ),
                 ),
               ),
-              onPressed: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //       builder: (context) => BottamBar(
-                //             currentindex: 0,
-                //           )),
-                // );
-              },
+              onPressed: share,
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //       builder: (context) => BottamBar(
+              //             currentindex: 0,
+              //           )),
+              // );
             ),
           ),
           SizedBox(

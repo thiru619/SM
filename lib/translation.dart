@@ -215,7 +215,20 @@ class ChangeLanguage extends Translations {
           'Your Chats': 'Your Chats',
           'Your Calls': 'Your Calls',
           'Add below details to complete you profile':
-              'Add below details to complete you profile'
+              'Add below details to complete you profile',
+          'Your Calls': 'Your Calls',
+          'Settings': 'Settings',
+          'Help': 'Help',
+          'Feedback': 'Feedback',
+          'Wedding Services': 'Wedding Services',
+          'Subscribe': 'Subscribe',
+          'Privacy Policy / Terms & Conditions':
+              'Privacy Policy / Terms & Conditions',
+          'Share app': 'Share app',
+          'Home': 'Home',
+          'Matches': 'Matches',
+          'Notifications': 'Notifications',
+          'Search': 'Search',
         },
         'vi_VN': {
           'login': 'ప్రవేశించండి',
@@ -415,7 +428,26 @@ class ChangeLanguage extends Translations {
           "EDUCATION CATEGORY": "విద్యా వర్గం",
           'Height': 'ఎత్తు',
           'Add below details to complete you profile':
-              'మీ ప్రొఫైల్‌ను పూర్తి చేయడానికి దిగువ వివరాలను జోడించండి'
+              'మీ ప్రొఫైల్‌ను పూర్తి చేయడానికి దిగువ వివరాలను జోడించండి',
+          "Upgrade membership": "సభ్యత్వాన్ని అప్‌గ్రేడ్ చేయండి",
+          'Edit Profile': 'ప్రొఫైల్‌ని సవరించండి',
+          'Edit Preferences': 'ప్రాధాన్యతలను సవరించండి',
+          'Verify your Profile': 'మీ ప్రొఫైల్‌ను ధృవీకరించండి',
+          'Your Chats': 'మీ చాట్‌లు',
+          'Your Calls': 'మా కాల్స్',
+          'Your Calls': 'మీ కాల్స్',
+          'Settings': 'సెట్టింగ్‌లు',
+          'Help': 'సహాయం',
+          'Feedback': 'అభిప్రాయం',
+          'Wedding Services': 'వివాహ సేవలు',
+          'Subscribe': 'సభ్యత్వం పొందండి',
+          'Privacy Policy / Terms & Conditions':
+              'గోప్యతా విధానం / నిబంధనలు & షరతులు',
+          'Share app': 'యాప్‌ను భాగస్వామ్యం చేయండి',
+          'Home': 'హోమ్',
+          'Matches': 'మ్యాచ్‌లు',
+          'Notifications': 'నోటిఫికేషన్‌లు',
+          'Search': 'వెతకండి',
         },
       };
 }
