@@ -133,14 +133,14 @@ class _idverificationState extends State<idverification>
                     color: Colors.white,
                   ),
                   Text(
-                    'Your Profile is Pending',
+                    'Your Profile is Pending'.tr,
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 18),
                   ),
                   Text(
-                    'Verification',
+                    'Verification'.tr,
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -161,7 +161,7 @@ class _idverificationState extends State<idverification>
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "ID Verification",
+                            "ID Verification".tr,
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 18),
                           ),
@@ -172,21 +172,23 @@ class _idverificationState extends State<idverification>
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "Select one of the below documents to verify" +
+                                  "Select one of the below documents to verify"
+                                          .tr +
                                       "          ",
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 15),
                                 ),
                                 Text(
-                                  "your identity infomation. The documents chosen by you will not be Shown to the  Other",
+                                  "your identity infomation. The documents chosen by you will not be Shown to the  Other"
+                                      .tr,
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 15),
                                 ),
                                 Text(
-                                  "Shown to the Other members" +
-                                      "                                ",
+                                  "Shown to the Other members".tr +
+                                      "                                ".tr,
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 15),
@@ -283,7 +285,7 @@ class _idverificationState extends State<idverification>
                                     controller: upload,
                                     readOnly: true,
                                     decoration: InputDecoration(
-                                      hintText: '  Front Image',
+                                      hintText: '  Front Image'.tr,
                                       contentPadding:
                                           new EdgeInsets.only(top: 18),
                                       border: InputBorder.none,
@@ -343,7 +345,7 @@ class _idverificationState extends State<idverification>
                                     controller: upload2,
                                     readOnly: true,
                                     decoration: InputDecoration(
-                                      hintText: '  Back Image',
+                                      hintText: '  Back Image'.tr,
                                       contentPadding:
                                           new EdgeInsets.only(top: 18),
                                       border: InputBorder.none,

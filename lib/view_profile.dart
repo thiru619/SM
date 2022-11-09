@@ -9,6 +9,7 @@ import 'package:http/http.dart' as http;
 import 'package:sujithamatrimony/colors.dart';
 import 'package:sujithamatrimony/loginpage.dart';
 import 'package:marquee/marquee.dart';
+import 'package:url_launcher/url_launcher.dart';
 // import 'package:percent_indicator/percent_indicator.dart';
 
 // import 'camera_preview.dart';
@@ -65,7 +66,16 @@ class _view_profileState extends State<view_profile> {
             actions: [
               Row(
                 children: [
-                  IconButton(onPressed: () {}, icon: const Icon(Icons.call)),
+                  IconButton(
+                      onPressed: () async {
+                        Uri phoneno = Uri.parse('tel:+97798345348734');
+                        if (await launchUrl(phoneno)) {
+                          //dialer opened
+                        } else {
+                          //dailer is not opened
+                        }
+                      },
+                      icon: const Icon(Icons.call)),
                   IconButton(
                       onPressed: () {},
                       icon: const Icon(Icons.more_vert_sharp)),

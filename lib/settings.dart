@@ -113,7 +113,7 @@ class _settingsState extends State<settings> {
                               width: 10,
                             ),
                             Text(
-                              'Privacy Settings',
+                              'Privacy Settings'.tr,
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                               ),
@@ -151,7 +151,7 @@ class _settingsState extends State<settings> {
                               width: 10,
                             ),
                             Text(
-                              'Change Password',
+                              'Change Password'.tr,
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                           ],
@@ -174,7 +174,7 @@ class _settingsState extends State<settings> {
                                   StatefulBuilder(builder: (context, setState) {
                                     return AlertDialog(
                                       title: Text(
-                                        "Are you sure to Signout ?",
+                                        "Are you sure to Signout ?".tr,
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold),
                                       ),
@@ -221,7 +221,7 @@ class _settingsState extends State<settings> {
                                                               20),
                                                     ),
                                                     child: Text(
-                                                      "No",
+                                                      "No".tr,
                                                       style: TextStyle(
                                                           color: Colors.white,
                                                           fontWeight:
@@ -284,7 +284,7 @@ class _settingsState extends State<settings> {
                                                             20),
                                                   ),
                                                   child: Text(
-                                                    "Yes",
+                                                    "Yes".tr,
                                                     style: TextStyle(
                                                         color: Colors.white,
                                                         fontWeight:
@@ -315,7 +315,7 @@ class _settingsState extends State<settings> {
                                 width: 10,
                               ),
                               Text(
-                                'Sign Out',
+                                'Sign Out'.tr,
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                             ],
@@ -344,7 +344,7 @@ class _settingsState extends State<settings> {
                               width: 10,
                             ),
                             Text(
-                              'Delete Account',
+                              'Delete Account'.tr,
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                           ],
@@ -373,7 +373,7 @@ class _settingsState extends State<settings> {
                               width: 10,
                             ),
                             Text(
-                              'Deactivate Account',
+                              'Deactivate Account'.tr,
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                           ],

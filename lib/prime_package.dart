@@ -154,10 +154,13 @@ class _prime3m_packageState extends State<prime3m_package> {
                                                     ),
                                                     Column(
                                                       children: [
-                                                        Text(
-                                                            'Send unlimited messages.'),
-                                                        Text(
-                                                            'chat and make Video Calls.')
+                                                        SizedBox(
+                                                          width: 170,
+                                                          child: Text(
+                                                              main_banner3[
+                                                                      index]
+                                                                  ['message']),
+                                                        ),
                                                       ],
                                                     ),
                                                   ],
@@ -180,9 +183,13 @@ class _prime3m_packageState extends State<prime3m_package> {
                                                           CrossAxisAlignment
                                                               .start,
                                                       children: [
-                                                        Text(
-                                                            'Access 40 verified mobile'),
-                                                        Text('numbers')
+                                                        SizedBox(
+                                                          width: 170,
+                                                          child: Text(
+                                                              main_banner3[
+                                                                      index]
+                                                                  ['video']),
+                                                        ),
                                                       ],
                                                     ),
                                                   ],
@@ -203,8 +210,13 @@ class _prime3m_packageState extends State<prime3m_package> {
                                                     ),
                                                     Column(
                                                       children: [
-                                                        Text(
-                                                            'Send unlimited messages.'),
+                                                        SizedBox(
+                                                          width: 170,
+                                                          child: Text(
+                                                              main_banner3[
+                                                                      index]
+                                                                  ['content']),
+                                                        ),
                                                       ],
                                                     ),
                                                   ],
@@ -458,10 +470,13 @@ class _prime6m_packageState extends State<prime6m_package> {
                                                     ),
                                                     Column(
                                                       children: [
-                                                        Text(
-                                                            'Send unlimited messages.'),
-                                                        Text(
-                                                            'chat and make Video Calls.')
+                                                        SizedBox(
+                                                          width: 170,
+                                                          child: Text(
+                                                              main_banner6[
+                                                                      index]
+                                                                  ['message']),
+                                                        ),
                                                       ],
                                                     ),
                                                   ],
@@ -484,9 +499,13 @@ class _prime6m_packageState extends State<prime6m_package> {
                                                           CrossAxisAlignment
                                                               .start,
                                                       children: [
-                                                        Text(
-                                                            'Access 40 verified mobile'),
-                                                        Text('numbers')
+                                                        SizedBox(
+                                                          width: 170,
+                                                          child: Text(
+                                                              main_banner6[
+                                                                      index]
+                                                                  ['video']),
+                                                        ),
                                                       ],
                                                     ),
                                                   ],
@@ -507,8 +526,13 @@ class _prime6m_packageState extends State<prime6m_package> {
                                                     ),
                                                     Column(
                                                       children: [
-                                                        Text(
-                                                            'Send unlimited messages.'),
+                                                        SizedBox(
+                                                          width: 170,
+                                                          child: Text(
+                                                              main_banner6[
+                                                                      index]
+                                                                  ['content']),
+                                                        ),
                                                       ],
                                                     ),
                                                   ],
@@ -661,7 +685,7 @@ class _prime12m_packageState extends State<prime12m_package> {
     double _width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SizedBox(
-        height: _height / 2,
+        height: _height / 1,
         child: Center(
           child: ValueListenableBuilder<String>(
             valueListenable: _selectedSegment_04,
@@ -758,10 +782,13 @@ class _prime12m_packageState extends State<prime12m_package> {
                                                     ),
                                                     Column(
                                                       children: [
-                                                        Text(
-                                                            'Send unlimited messages.'),
-                                                        Text(
-                                                            'chat and make Video Calls.')
+                                                        SizedBox(
+                                                          width: 170,
+                                                          child: Text(
+                                                              main_banner12[
+                                                                      index]
+                                                                  ['message']),
+                                                        ),
                                                       ],
                                                     ),
                                                   ],
@@ -784,9 +811,13 @@ class _prime12m_packageState extends State<prime12m_package> {
                                                           CrossAxisAlignment
                                                               .start,
                                                       children: [
-                                                        Text(
-                                                            'Access 40 verified mobile'),
-                                                        Text('numbers')
+                                                        SizedBox(
+                                                          width: 170,
+                                                          child: Text(
+                                                              main_banner12[
+                                                                      index]
+                                                                  ['video']),
+                                                        ),
                                                       ],
                                                     ),
                                                   ],
@@ -807,8 +838,13 @@ class _prime12m_packageState extends State<prime12m_package> {
                                                     ),
                                                     Column(
                                                       children: [
-                                                        Text(
-                                                            'Send unlimited messages.'),
+                                                        SizedBox(
+                                                          width: 170,
+                                                          child: Text(
+                                                              main_banner12[
+                                                                      index]
+                                                                  ['content']),
+                                                        ),
                                                       ],
                                                     ),
                                                   ],

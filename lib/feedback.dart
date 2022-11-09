@@ -85,7 +85,7 @@ class _Feedback1State extends State<Feedback1> {
                                         _currentIndex.toString());
                                     Navigator.pop(context);
                                   },
-                                  child: Text('Sumbit'),
+                                  child: Text('Submit'),
                                 ),
                               ),
                             ],
@@ -285,7 +285,7 @@ class _Feedback1State extends State<Feedback1> {
     var decodeValue = json.decode(res.body);
 
     if (decodeValue['status']) {
-      commentreview.clear();
+      // commentreview.clear();
       _currentIndex = 0;
       getReviewRating();
 

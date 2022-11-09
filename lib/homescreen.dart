@@ -245,7 +245,7 @@ class _homescreensState extends State<homescreens>
                           margin: EdgeInsets.only(
                               top: 10, left: 20, right: 0, bottom: 15),
                           child: Row(
-                            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Container(
                                 child: Row(
@@ -291,9 +291,9 @@ class _homescreensState extends State<homescreens>
                                   ],
                                 ),
                               ),
-                              SizedBox(
-                                width: 100,
-                              ),
+                              // SizedBox(
+                              //   width: 100,
+                              // ),
                               Row(
                                 children: [
                                   Container(

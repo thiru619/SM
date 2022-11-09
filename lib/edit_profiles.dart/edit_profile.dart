@@ -170,7 +170,7 @@ class _Edit_profileState extends State<Edit_profile> {
         ? Scaffold(
             resizeToAvoidBottomInset: false,
             appBar: AppBar(
-              title: Text('EDIT PROFILE'),
+              title: Text('EDIT PROFILE'.tr),
               flexibleSpace: Container(
                 decoration: crl.Decoration(),
               ),
@@ -227,7 +227,7 @@ class _Edit_profileState extends State<Edit_profile> {
                                                 color: Colors.white,
                                               ),
                                               SizedBox(width: 15),
-                                              Text('Gallery',
+                                              Text('Gallery'.tr,
                                                   style: TextStyle(
                                                       color: Colors.white)),
                                             ],
@@ -267,7 +267,7 @@ class _Edit_profileState extends State<Edit_profile> {
                                               Icon(Icons.camera_alt_outlined,
                                                   color: Colors.white),
                                               SizedBox(width: 15),
-                                              Text('clear',
+                                              Text('clear'.tr,
                                                   style: TextStyle(
                                                       color: Colors.white)),
                                             ],
@@ -306,7 +306,7 @@ class _Edit_profileState extends State<Edit_profile> {
                                       Row(
                                         children: [
                                           Text(
-                                            'PROFILE COMPLETENESS',
+                                            'PROFILE COMPLETENESS'.tr,
                                             style: TextStyle(
                                                 fontWeight: FontWeight.bold,
                                                 color: Colors.greenAccent),
@@ -354,7 +354,7 @@ class _Edit_profileState extends State<Edit_profile> {
                           child: Row(
                             children: [
                               Text(
-                                'PERSONAL INFORMATION',
+                                'PERSONAL INFORMATION'.tr,
                                 style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
@@ -374,7 +374,7 @@ class _Edit_profileState extends State<Edit_profile> {
                           child: Row(
                             children: [
                               Text(
-                                'Few words about her',
+                                'Few words about her'.tr,
                                 style: TextStyle(
                                   fontSize: 18,
                                 ),
@@ -387,7 +387,7 @@ class _Edit_profileState extends State<Edit_profile> {
                           child: TextFormField(
                             keyboardType: TextInputType.multiline,
                             maxLines: null, minLines: 5,
-                            initialValue: 'Not Specified',
+                            initialValue: 'Not Specified'.tr,
                             // maxLength: 20,
                             decoration: InputDecoration(
                               focusedBorder: UnderlineInputBorder(
@@ -395,7 +395,7 @@ class _Edit_profileState extends State<Edit_profile> {
                                     color: Color.fromARGB(255, 114, 113, 113)),
                               ),
                               // icon: Icon(Icons.favorite),
-                              labelText: "Comments",
+                              labelText: "Comments".tr,
                               labelStyle:
                                   TextStyle(color: Colors.grey, fontSize: 16),
                             ),
@@ -412,7 +412,7 @@ class _Edit_profileState extends State<Edit_profile> {
                           child: Row(
                             children: [
                               Text(
-                                'Basic Detail',
+                                'Basic Detail'.tr,
                                 style: TextStyle(
                                   fontSize: 18,
                                 ),
@@ -426,23 +426,24 @@ class _Edit_profileState extends State<Edit_profile> {
                         Padding(
                           padding: const EdgeInsets.all(10),
                           child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text('Get more responses by verifying'),
-                                  Text('your name and age'),
+                                  SizedBox(
+                                      width: 180,
+                                      child: Text(
+                                          'Get more responses by verifying'
+                                              .tr)),
+                                  Text('your name and age'.tr),
                                 ],
-                              ),
-                              SizedBox(
-                                width: 10,
                               ),
                               Container(
                                 // width: 150,
                                 // height: 40,
                                 child: ElevatedButton(
                                   child: Text(
-                                    "Verify your profile  >",
+                                    "Verify your profile  >".tr,
                                     // style: TextStyle(fontSize: 20),
                                   ),
                                   style: ButtonStyle(
@@ -460,13 +461,7 @@ class _Edit_profileState extends State<Edit_profile> {
                                       ),
                                     ),
                                   ),
-                                  onPressed: () {
-                                    // Navigator.push(
-                                    //   context,
-                                    //   MaterialPageRoute(
-                                    //       builder: (context) => bottomsheet()),
-                                    // );
-                                  },
+                                  onPressed: () {},
                                 ),
                               ),
                             ],
@@ -513,51 +508,51 @@ class _Edit_profileState extends State<Edit_profile> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Text('Name'),
+                                        Text('Name'.tr),
                                         SizedBox(
                                           height: 10,
                                         ),
-                                        Text('Age'),
+                                        Text('Age'.tr),
                                         SizedBox(
                                           height: 10,
                                         ),
-                                        Text('Height'),
+                                        Text('Height'.tr),
                                         SizedBox(
                                           height: 10,
                                         ),
-                                        Text('Weight'),
+                                        Text('Weight'.tr),
                                         SizedBox(
                                           height: 10,
                                         ),
-                                        Text('Marital Status'),
+                                        Text('Marital Status'.tr),
                                         SizedBox(
                                           height: 10,
                                         ),
-                                        Text('Mother Tongue'),
+                                        Text('Mother Tongue'.tr),
                                         SizedBox(
                                           height: 10,
                                         ),
-                                        Text('Physical Status'),
+                                        Text('Physical Status'.tr),
                                         SizedBox(
                                           height: 10,
                                         ),
-                                        Text('Body Type'),
+                                        Text('Body Type'.tr),
                                         SizedBox(
                                           height: 10,
                                         ),
-                                        Text('Profile Created by'),
+                                        Text('Profile Created by'.tr),
                                         SizedBox(
                                           height: 10,
                                         ),
-                                        Text('Eating Habits'),
+                                        Text('Eating Habits'.tr),
                                         SizedBox(
                                           height: 10,
                                         ),
-                                        Text('Drinking Habits'),
+                                        Text('Drinking Habits'.tr),
                                         SizedBox(
                                           height: 10,
                                         ),
-                                        Text('Smoking Habits'),
+                                        Text('Smoking Habits'.tr),
                                       ],
                                     ),
                                   ),
@@ -778,7 +773,7 @@ class _Edit_profileState extends State<Edit_profile> {
                                     color: Color.fromARGB(255, 30, 191, 219),
                                   )),
                               Text(
-                                'Religious Information',
+                                'Religious Information'.tr,
                                 style: TextStyle(
                                   fontSize: 18,
                                 ),
@@ -818,31 +813,31 @@ class _Edit_profileState extends State<Edit_profile> {
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Text('Religon'),
+                                    Text('Religon'.tr),
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Text('Caste'),
+                                    Text('Caste'.tr),
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Text('Sub Caste'),
+                                    Text('Sub Caste'.tr),
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Text('Zodiac'),
+                                    Text('Zodiac'.tr),
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Text('Star'),
+                                    Text('Star'.tr),
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Text('Rassi'),
+                                    Text('Rassi'.tr),
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Text('Dhosam'),
+                                    Text('Dhosam'.tr),
                                     SizedBox(
                                       height: 10,
                                     ),
@@ -969,7 +964,7 @@ class _Edit_profileState extends State<Edit_profile> {
                                     color: Color.fromARGB(255, 30, 96, 219),
                                   )),
                               Text(
-                                'Professional Information',
+                                'Professional Information'.tr,
                                 style: TextStyle(
                                   fontSize: 18,
                                 ),
@@ -1012,27 +1007,27 @@ class _Edit_profileState extends State<Edit_profile> {
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Text('Education Category'),
+                                    Text('Education Category'.tr),
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Text('College / Institution'),
+                                    Text('College / Institution'.tr),
                                     SizedBox(
                                       height: 18,
                                     ),
-                                    Text('Occupation'),
+                                    Text('Occupation'.tr),
                                     SizedBox(
                                       height: 18,
                                     ),
-                                    Text('Organization'),
+                                    Text('Organization'.tr),
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Text('Employed in'),
+                                    Text('Employed in'.tr),
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Text('Annual Income'),
+                                    Text('Annual Income'.tr),
                                     SizedBox(
                                       height: 10,
                                     ),
@@ -1153,7 +1148,7 @@ class _Edit_profileState extends State<Edit_profile> {
                                     color: Color.fromARGB(255, 223, 144, 243),
                                   )),
                               Text(
-                                'Location',
+                                'Location'.tr,
                                 style: TextStyle(
                                   fontSize: 18,
                                 ),
@@ -1193,23 +1188,23 @@ class _Edit_profileState extends State<Edit_profile> {
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Text('Country'),
+                                    Text('Country'.tr),
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Text('State'),
+                                    Text('State'.tr),
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Text('City'),
+                                    Text('City'.tr),
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Text('Citizenship'),
+                                    Text('Citizenship'.tr),
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Text('Ancestral Orgin'),
+                                    Text('Ancestral Orgin'.tr),
                                   ])),
                               SizedBox(
                                 width: 130,
@@ -1307,7 +1302,7 @@ class _Edit_profileState extends State<Edit_profile> {
                                     color: Color.fromARGB(255, 145, 164, 199),
                                   )),
                               Text(
-                                'Family Details',
+                                'Family Details'.tr,
                                 style: TextStyle(
                                   fontSize: 18,
                                 ),
@@ -1346,45 +1341,48 @@ class _Edit_profileState extends State<Edit_profile> {
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Text("Family Values"),
+                                    Text("Family Values".tr),
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Text("Family Type"),
+                                    Text("Family Type".tr),
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Text("Family Status"),
+                                    Text("Family Status".tr),
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Text("Father's Occupation"),
+                                    Text("Father's Occupation".tr),
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Text("Mother's Occupation"),
+                                    Text("Mother's Occupation".tr),
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Text('Brother(s)'),
+                                    Text('Brother(s)'.tr),
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Text('Brother(s) Married'),
+                                    Text(
+                                      'Brother(s) Married'.tr,
+                                      style: TextStyle(fontSize: 13),
+                                    ),
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Text('Sister(s)'),
+                                    Text('Sister(s)'.tr),
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Text('Sister(s) Married'),
+                                    Text('Sister(s) Married'.tr),
                                     SizedBox(
                                       height: 10,
                                     ),
                                   ])),
                               SizedBox(
-                                width: 100,
+                                width: 70,
                               ),
                               Container(
                                   child: Column(
@@ -1537,7 +1535,7 @@ class _Edit_profileState extends State<Edit_profile> {
                                     color: Color.fromARGB(255, 184, 74, 23),
                                   )),
                               Text(
-                                'About Family',
+                                'About Family'.tr,
                                 style: TextStyle(
                                   fontSize: 18,
                                 ),
@@ -1563,7 +1561,7 @@ class _Edit_profileState extends State<Edit_profile> {
                                     color: Color.fromARGB(255, 114, 113, 113)),
                               ),
                               // icon: Icon(Icons.favorite),
-                              labelText: "Comments",
+                              labelText: "Comments".tr,
                               labelStyle:
                                   TextStyle(color: Colors.grey, fontSize: 16),
                             ),
@@ -1583,7 +1581,7 @@ class _Edit_profileState extends State<Edit_profile> {
                                     color: Color.fromARGB(255, 184, 74, 23),
                                   )),
                               Text(
-                                'In My Own Words',
+                                'In My Own Words'.tr,
                                 style: TextStyle(
                                   fontSize: 18,
                                 ),
@@ -1596,7 +1594,7 @@ class _Edit_profileState extends State<Edit_profile> {
                           child: TextFormField(
                             keyboardType: TextInputType.multiline,
 
-                            initialValue: 'Not Specified',
+                            initialValue: 'Not Specified'.tr,
                             // maxLength: 20,
                             decoration: InputDecoration(
                               contentPadding: EdgeInsets.only(bottom: 40),

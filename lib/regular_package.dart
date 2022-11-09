@@ -149,10 +149,15 @@ class _regular3m_packageState extends State<regular3m_package> {
                                                     ),
                                                     Column(
                                                       children: [
-                                                        Text(
-                                                            'Send unlimited messages.'),
-                                                        Text(
-                                                            'chat and make Video Calls.')
+                                                        SizedBox(
+                                                          width: 170,
+                                                          child: Text(
+                                                              main_banner3[
+                                                                      index]
+                                                                  ['message']),
+                                                        ),
+                                                        // Text(
+                                                        //     'chat and make Video Calls.')
                                                       ],
                                                     ),
                                                   ],
@@ -175,9 +180,14 @@ class _regular3m_packageState extends State<regular3m_package> {
                                                           CrossAxisAlignment
                                                               .start,
                                                       children: [
-                                                        Text(
-                                                            'Access 40 verified mobile'),
-                                                        Text('numbers')
+                                                        SizedBox(
+                                                          width: 170,
+                                                          child: Text(
+                                                              main_banner3[
+                                                                      index]
+                                                                  ['video']),
+                                                        ),
+                                                        // Text('numbers')
                                                       ],
                                                     ),
                                                   ],
@@ -198,8 +208,13 @@ class _regular3m_packageState extends State<regular3m_package> {
                                                     ),
                                                     Column(
                                                       children: [
-                                                        Text(
-                                                            'Send unlimited messages.'),
+                                                        SizedBox(
+                                                          width: 170,
+                                                          child: Text(
+                                                              main_banner3[
+                                                                      index]
+                                                                  ['content']),
+                                                        ),
                                                       ],
                                                     ),
                                                   ],
@@ -272,41 +287,6 @@ class _regular3m_packageState extends State<regular3m_package> {
       print(main_banner3.toString());
     });
   }
-
-  // Future<void> payintegration(payamount, subid) async {
-  //   var url =
-  //       "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/get_razorpayorderid";
-  //   // checker(context) async {
-  //   var pref = await SharedPreferences.getInstance();
-  //   var regid = pref.getString('regsId');
-  //   //  pref.setString('customer_id', data['data']['customer_id'].toString())
-  //   // final MyController con = Get.find();
-
-  //   //  print(id);
-  //   var finalurl = Uri.parse(url);
-  //   var res = await http.post(finalurl, headers: <String, String>{
-  //     'X-API-KEY': '50f58d4facbdfe506d51ad6b079deaae'
-  //   }, body: {
-  //     'pay_amount': payamount,
-  //     'register_id': regid,
-  //     'subscription_id': subid,
-  //   });
-
-  //   print('hi' + res.body);
-  //   // var decodeValue = json.decode(res.body);
-  //   var decodeValue = json.decode(res.body);
-  //   setState(() {});
-  //   if (decodeValue['status'] == true) {
-  //     openCheckout(decodeValue['data']);
-  //     // SharedPreferences pref = await SharedPreferences.getInstance();
-  //     // pref.setString('temp_id', decodeValue['data']['user_temp_id'].toString());
-  //     // Get.to(() => registration());
-
-  //     // Fluttertoast.showToast(msg: decodeValue['message']);
-  //   } else {
-  //     Fluttertoast.showToast(msg: decodeValue['message']);
-  //   }
-  // }
 }
 
 // 6 months
@@ -446,10 +426,13 @@ class _regular6m_packageState extends State<regular6m_package> {
                                                     ),
                                                     Column(
                                                       children: [
-                                                        Text(
-                                                            'Send unlimited messages.'),
-                                                        Text(
-                                                            'chat and make Video Calls.')
+                                                        SizedBox(
+                                                          width: 170,
+                                                          child: Text(
+                                                              main_banner6[
+                                                                      index]
+                                                                  ['message']),
+                                                        ),
                                                       ],
                                                     ),
                                                   ],
@@ -472,9 +455,13 @@ class _regular6m_packageState extends State<regular6m_package> {
                                                           CrossAxisAlignment
                                                               .start,
                                                       children: [
-                                                        Text(
-                                                            'Access 40 verified mobile'),
-                                                        Text('numbers')
+                                                        SizedBox(
+                                                          width: 170,
+                                                          child: Text(
+                                                              main_banner6[
+                                                                      index]
+                                                                  ['video']),
+                                                        ),
                                                       ],
                                                     ),
                                                   ],
@@ -495,8 +482,13 @@ class _regular6m_packageState extends State<regular6m_package> {
                                                     ),
                                                     Column(
                                                       children: [
-                                                        Text(
-                                                            'Send unlimited messages.'),
+                                                        SizedBox(
+                                                          width: 170,
+                                                          child: Text(
+                                                              main_banner6[
+                                                                      index]
+                                                                  ['content']),
+                                                        ),
                                                       ],
                                                     ),
                                                   ],
@@ -569,43 +561,6 @@ class _regular6m_packageState extends State<regular6m_package> {
       print(main_banner6.toString());
     });
   }
-
-  // ray
-
-  // Future<void> payintegration(payamount, subid) async {
-  //   var url =
-  //       "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/get_razorpayorderid";
-  //   // checker(context) async {
-  //   var pref = await SharedPreferences.getInstance();
-  //   var regid = pref.getString('regsId');
-  //   //  pref.setString('customer_id', data['data']['customer_id'].toString())
-  //   // final MyController con = Get.find();
-
-  //   //  print(id);
-  //   var finalurl = Uri.parse(url);
-  //   var res = await http.post(finalurl, headers: <String, String>{
-  //     'X-API-KEY': '50f58d4facbdfe506d51ad6b079deaae'
-  //   }, body: {
-  //     'pay_amount': payamount,
-  //     'register_id': regid,
-  //     'subscription_id': subid,
-  //   });
-
-  //   print('hi' + res.body);
-  //   // var decodeValue = json.decode(res.body);
-  //   var decodeValue = json.decode(res.body);
-  //   setState(() {});
-  //   if (decodeValue['status'] == true) {
-  //     openCheckout(decodeValue['data']);
-  //     // SharedPreferences pref = await SharedPreferences.getInstance();
-  //     // pref.setString('temp_id', decodeValue['data']['user_temp_id'].toString());
-  //     // Get.to(() => registration());
-
-  //     // Fluttertoast.showToast(msg: decodeValue['message']);
-  //   } else {
-  //     Fluttertoast.showToast(msg: decodeValue['message']);
-  //   }
-  // }
 }
 
 // 12 months
@@ -652,7 +607,7 @@ class _regular12m_packageState extends State<regular12m_package> {
     double _width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SizedBox(
-        height: _height / 2,
+        height: _height / 1,
         child: Center(
           child: ValueListenableBuilder<String>(
             valueListenable: _selectedSegment_04,
@@ -746,10 +701,13 @@ class _regular12m_packageState extends State<regular12m_package> {
                                                     ),
                                                     Column(
                                                       children: [
-                                                        Text(
-                                                            'Send unlimited messages.'),
-                                                        Text(
-                                                            'chat and make Video Calls.')
+                                                        SizedBox(
+                                                          width: 170,
+                                                          child: Text(
+                                                              main_banner12[
+                                                                      index]
+                                                                  ['message']),
+                                                        ),
                                                       ],
                                                     ),
                                                   ],
@@ -772,9 +730,13 @@ class _regular12m_packageState extends State<regular12m_package> {
                                                           CrossAxisAlignment
                                                               .start,
                                                       children: [
-                                                        Text(
-                                                            'Access 40 verified mobile'),
-                                                        Text('numbers')
+                                                        SizedBox(
+                                                          width: 170,
+                                                          child: Text(
+                                                              main_banner12[
+                                                                      index]
+                                                                  ['video']),
+                                                        ),
                                                       ],
                                                     ),
                                                   ],
@@ -795,8 +757,13 @@ class _regular12m_packageState extends State<regular12m_package> {
                                                     ),
                                                     Column(
                                                       children: [
-                                                        Text(
-                                                            'Send unlimited messages.'),
+                                                        SizedBox(
+                                                          width: 170,
+                                                          child: Text(
+                                                              main_banner12[
+                                                                      index]
+                                                                  ['content']),
+                                                        ),
                                                       ],
                                                     ),
                                                   ],
@@ -869,40 +836,4 @@ class _regular12m_packageState extends State<regular12m_package> {
       print(main_banner12.toString());
     });
   }
-  // ray
-
-  // Future<void> payintegration(payamount, subid) async {
-  //   var url =
-  //       "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/get_razorpayorderid";
-  //   // checker(context) async {
-  //   var pref = await SharedPreferences.getInstance();
-  //   var regid = pref.getString('regsId');
-  //   //  pref.setString('customer_id', data['data']['customer_id'].toString())
-  //   // final MyController con = Get.find();
-
-  //   //  print(id);
-  //   var finalurl = Uri.parse(url);
-  //   var res = await http.post(finalurl, headers: <String, String>{
-  //     'X-API-KEY': '50f58d4facbdfe506d51ad6b079deaae'
-  //   }, body: {
-  //     'pay_amount': payamount,
-  //     'register_id': regid,
-  //     'subscription_id': subid,
-  //   });
-
-  //   print('hi' + res.body);
-  //   // var decodeValue = json.decode(res.body);
-  //   var decodeValue = json.decode(res.body);
-  //   setState(() {});
-  //   if (decodeValue['status'] == true) {
-  //     openCheckout(decodeValue['data']);
-  //     // SharedPreferences pref = await SharedPreferences.getInstance();
-  //     // pref.setString('temp_id', decodeValue['data']['user_temp_id'].toString());
-  //     // Get.to(() => registration());
-
-  //     // Fluttertoast.showToast(msg: decodeValue['message']);
-  //   } else {
-  //     Fluttertoast.showToast(msg: decodeValue['message']);
-  //   }
-  // }
 }

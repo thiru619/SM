@@ -1,12 +1,17 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:flutter_windowmanager/flutter_windowmanager.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sujithamatrimony/colors.dart';
 import 'package:sujithamatrimony/languagecontroler.dart';
 import 'package:flutter_share/flutter_share.dart';
 import 'language_btn.dart';
+import 'package:http/http.dart' as http;
 
 // void main(List<String> args) {
 //   runApp(MaterialApp(
@@ -29,16 +34,19 @@ class _referralcodeState extends State<referralcode> {
 
   @override
   void initState() {
+    referal_code();
     super.initState();
+
     // secureScreen();
   }
 
   TextEditingController copied = TextEditingController();
+  var referal = [];
 
   Future<void> share() async {
     await FlutterShare.share(
         title: 'Example share',
-        text: 'Example share text',
+        text: 'Sujitha Matrimony Referal Code is =>  ' + copied.text,
         linkUrl: 'https://flutter.dev/',
         chooserTitle: 'Sujitha Matrimony');
   }
@@ -57,7 +65,7 @@ class _referralcodeState extends State<referralcode> {
           "Referral code",
           // style: TextStyle(color: Colors.orange),
         ),
-        automaticallyImplyLeading: false,
+        // automaticallyImplyLeading: false,
         actions: [
           Container(
             padding: EdgeInsets.all(12),
@@ -114,9 +122,11 @@ class _referralcodeState extends State<referralcode> {
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
-            child: TextField(
+            child: TextFormField(
+              readOnly: true,
               controller: copied,
               decoration: InputDecoration(
+                // hintText: '${referal[0]['referal_code'].toString()}',
                 suffixIcon: IconButton(
                   onPressed: () {
                     Clipboard.setData(ClipboardData(text: copied.text))
@@ -132,7 +142,6 @@ class _referralcodeState extends State<referralcode> {
                   borderSide: BorderSide(color: Colors.grey),
                   borderRadius: BorderRadius.circular(20),
                 ),
-                hintText: 'Enter a search term',
               ),
             ),
           ),
@@ -213,5 +222,43 @@ class _referralcodeState extends State<referralcode> {
         ]),
       ),
     );
+  }
+
+  Future<void> referal_code() async {
+    var url =
+        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/referal_code";
+    // checker(context) async {
+    // var pref=await SharedPreferences.getInstance();
+    final MyController con = Get.find();
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    var regId = pref.getString('regsId');
+    //  print(id);
+    var finalurl = Uri.parse(url);
+    var body = {
+      'reg_id': regId,
+      // 'language': con.lancode.value == 'en' ? 'en' : 'tu',
+    };
+    print(body.toString());
+    var res = await http.post(finalurl,
+        headers: <String, String>{
+          'X-API-KEY': '50f58d4facbdfe506d51ad6b079deaae'
+        },
+        body: body);
+
+    print('hi' + res.body);
+    // var decodeValue = json.decode(res.body);
+    var decodeValue = json.decode(res.body);
+
+    if (this.mounted) {
+      setState(() {});
+    }
+
+    if (decodeValue['status'] == true) {
+      referal = decodeValue['data'];
+      print(referal);
+      copied.text = referal[0]['referal_code'].toString();
+    } else {
+      Fluttertoast.showToast(msg: decodeValue['message']);
+    }
   }
 }

@@ -120,7 +120,7 @@ class _PackagesState extends State<Packages> {
                       ),
                     ),
                     SizedBox(
-                      height: 10,
+                      height: 30,
                     ),
                     Center(
                       child: AdvancedSegment(
@@ -135,7 +135,7 @@ class _PackagesState extends State<Packages> {
                       ),
                     ),
                     SizedBox(
-                      height: _height / 2,
+                      height: _height / 1.6,
                       child: Center(
                         child: ValueListenableBuilder<String>(
                           valueListenable: _selectedSegment_04,
@@ -156,7 +156,7 @@ class _PackagesState extends State<Packages> {
                     ),
                     Text('* Terms & Conditions apply'),
                     SizedBox(
-                      height: 10,
+                      height: 30,
                     ),
                     // prime_package(),
                     Container(
@@ -200,7 +200,7 @@ class _PackagesState extends State<Packages> {
                       },
                     ),
                     SizedBox(
-                      height: _height / 2,
+                      height: _height / 1.6,
                       child: Center(
                         child: ValueListenableBuilder<String>(
                           valueListenable: _selectedSegment_04,
@@ -221,7 +221,7 @@ class _PackagesState extends State<Packages> {
                     ),
                     Text('* Terms & Conditions apply'),
                     SizedBox(
-                      height: 10,
+                      height: 30,
                     ),
                     Container(
                       height: 200,

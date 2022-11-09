@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -10,6 +13,7 @@ import 'package:flutter_windowmanager/flutter_windowmanager.dart';
 import 'package:sizer/sizer.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'register.dart';
+import 'package:http/http.dart' as http;
 // import 'package:internet_popup/internet_popup.dart';
 
 // import 'package:custom_splash/custom_splash.dart';
@@ -111,6 +115,7 @@ class bodypart extends StatefulWidget {
 }
 
 class _bodypartState extends State<bodypart> {
+  @override
   TextEditingController namefield = TextEditingController();
   TextEditingController passwordfield = TextEditingController();
   @override
@@ -294,6 +299,103 @@ class _bodypartState extends State<bodypart> {
                       context,
                       MaterialPageRoute(builder: (context) => register()),
                     );
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        TextEditingController Referalcode =
+                            TextEditingController();
+                        return Column(
+                          children: [
+                            AlertDialog(
+                              title: Text('REFERAL CODE'),
+                              content: Column(
+                                children: [
+                                  TextField(
+                                    onChanged: (value) {},
+                                    controller: Referalcode,
+                                    decoration: InputDecoration(
+                                        border: OutlineInputBorder(),
+                                        hintText: "Referal code"),
+                                  ),
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Container(
+                                      child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      ElevatedButton(
+                                          child: Text(
+                                            "Back".tr,
+                                            style: TextStyle(fontSize: 20),
+                                          ),
+                                          style: ButtonStyle(
+                                            backgroundColor:
+                                                MaterialStateProperty
+                                                    .all<Color>(Color.fromARGB(
+                                                        255, 255, 111, 0)),
+                                            shape: MaterialStateProperty.all<
+                                                RoundedRectangleBorder>(
+                                              RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                                side: BorderSide(
+                                                  color: Color.fromARGB(
+                                                      255, 255, 111, 0),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          }),
+                                      ElevatedButton(
+                                          child: Text(
+                                            "Submit".tr,
+                                            style: TextStyle(fontSize: 20),
+                                          ),
+                                          style: ButtonStyle(
+                                            backgroundColor:
+                                                MaterialStateProperty
+                                                    .all<Color>(Color.fromARGB(
+                                                        255, 255, 111, 0)),
+                                            shape: MaterialStateProperty.all<
+                                                RoundedRectangleBorder>(
+                                              RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                                side: BorderSide(
+                                                  color: Color.fromARGB(
+                                                      255, 255, 111, 0),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          onPressed: () {
+                                            if (Referalcode.text.isNotEmpty) {
+                                              postbasicdetail(
+                                                  context,
+                                                  '',
+                                                  '',
+                                                  '',
+                                                  '',
+                                                  '',
+                                                  '',
+                                                  '',
+                                                  '',
+                                                  Referalcode.text);
+                                            } else {}
+                                          }),
+                                    ],
+                                  ))
+                                ],
+                              ),
+                            ),
+                          ],
+                        );
+                      },
+                    );
                   },
                   // shape: new RoundedRectangleBorder(
                   //   borderRadius: new BorderRadius.circular(32.0),
@@ -308,5 +410,51 @@ class _bodypartState extends State<bodypart> {
         ),
       ),
     );
+  }
+
+  Future<void> postbasicdetail(context, profile_created_for, name, gender, dob,
+      mother_tongue, mobile_no, email_id, password, referal_code) async {
+    print('hi');
+    var url =
+        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/basicDetails";
+    // checker(context) async {
+    // var pref=await SharedPreferences.getInstance();
+    final MyController con = Get.find();
+
+    //  print(id);
+    var finalurl = Uri.parse(url);
+    var res = await http.post(finalurl, headers: <String, String>{
+      'X-API-KEY': '50f58d4facbdfe506d51ad6b079deaae'
+    }, body: {
+      'language': con.lancode.value == 'en' ? 'en' : 'tu',
+      'profile_created_for': profile_created_for,
+      'name': name,
+      'gender': gender,
+      'dob': dob,
+      'mother_tongue': mother_tongue,
+      'mobile_no': mobile_no,
+      'email_id': email_id,
+      'password': password,
+      'referal_code': referal_code
+    });
+
+    print('hi' + res.body);
+    // var decodeValue = json.decode(res.body);
+    var decodeValue = json.decode(res.body);
+    // print('hid' + decodeValue);
+    if (this.mounted) {
+      setState(() {});
+      if (decodeValue['status'] == true) {
+        SharedPreferences pref = await SharedPreferences.getInstance();
+        pref.setString(
+            'temp_id', decodeValue['data']['user_temp_id'].toString());
+        print('out' + pref.getString('temp_id').toString());
+
+        Navigator.pop(context);
+        Fluttertoast.showToast(msg: decodeValue['message']);
+      } else {
+        Fluttertoast.showToast(msg: decodeValue['message']);
+      }
+    }
   }
 }
