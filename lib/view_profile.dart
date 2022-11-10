@@ -1516,10 +1516,12 @@ class _view_profileState extends State<view_profile> {
 
     //  print(id);
     var finalurl = Uri.parse(url);
+    var regIds = pref.getString('regsId');
     var res = await http.post(finalurl, headers: <String, String>{
       'X-API-KEY': '50f58d4facbdfe506d51ad6b079deaae'
     }, body: {
       'reg_id': regid,
+      'my_reg_id': regIds,
     });
 
     print('hi' + res.body);
