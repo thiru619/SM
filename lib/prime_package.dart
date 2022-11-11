@@ -58,7 +58,7 @@ class _prime3m_packageState extends State<prime3m_package> {
     double _width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SizedBox(
-        height: _height / 2,
+        // height: _height / 2,
         child: Center(
           child: ValueListenableBuilder<String>(
             valueListenable: _selectedSegment_04,
@@ -69,197 +69,151 @@ class _prime3m_packageState extends State<prime3m_package> {
                         scrollDirection: Axis.horizontal,
                         itemCount: main_banner3.length,
                         itemBuilder: (BuildContext context, int index) {
-                          return Container(
-                            margin: EdgeInsets.only(right: 15),
-                            width: _width / 1.6,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                GestureDetector(
-                                  onTap: () {
-                                    // Navigator.of(context).push(MaterialPageRoute(
-                                    //     builder: (context) => newreleases()));
-                                  },
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        boxShadow: [
-                                          new BoxShadow(
-                                            color: Colors.black,
-                                            blurRadius: 3.0,
-                                          ),
-                                        ]),
-                                    // height: _height / 4.66,
-                                    width: _width / 1.6,
-                                    // child: Image.network(
-                                    //   new_profile[index]
-                                    //           ['profile_image']
-                                    //       .toString(),
-                                    //   fit: BoxFit.fill,
-                                    // )
-                                    // Image.asset("images/new_image.jpg",fit: BoxFit.fill,)
-                                    child: Column(
+                          return Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  boxShadow: [
+                                    new BoxShadow(
+                                      color: Colors.black,
+                                      blurRadius: 3.0,
+                                    ),
+                                  ]),
+                              child: Column(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(15),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Center(
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              SizedBox(
-                                                height: 20,
-                                              ),
-                                              Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceEvenly,
-                                                children: [
-                                                  Text(
-                                                    main_banner3[index]['name'],
-                                                    style: TextStyle(
-                                                        fontSize: 18,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  ),
-                                                  SizedBox(
-                                                    width: 50,
-                                                  ),
-                                                  Text(
-                                                    main_banner3[index]
-                                                        ['price'],
-                                                    style: TextStyle(
-                                                        fontSize: 18,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  )
-                                                ],
-                                              ),
-                                              SizedBox(
-                                                height: 30,
-                                              ),
-                                              Padding(
-                                                padding:
-                                                    const EdgeInsets.all(8.0),
-                                                child: Row(
-                                                  children: [
-                                                    SizedBox(
-                                                      width: 10,
-                                                    ),
-                                                    Icon(
-                                                        Icons.message_outlined),
-                                                    SizedBox(
-                                                      width: 20,
-                                                    ),
-                                                    Column(
-                                                      children: [
-                                                        SizedBox(
-                                                          width: 170,
-                                                          child: Text(
-                                                              main_banner3[
-                                                                      index]
-                                                                  ['message']),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding:
-                                                    const EdgeInsets.all(8.0),
-                                                child: Row(
-                                                  children: [
-                                                    SizedBox(
-                                                      width: 10,
-                                                    ),
-                                                    Icon(Icons.mobile_friendly),
-                                                    SizedBox(
-                                                      width: 20,
-                                                    ),
-                                                    Column(
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      children: [
-                                                        SizedBox(
-                                                          width: 170,
-                                                          child: Text(
-                                                              main_banner3[
-                                                                      index]
-                                                                  ['video']),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding:
-                                                    const EdgeInsets.all(8.0),
-                                                child: Row(
-                                                  children: [
-                                                    SizedBox(
-                                                      width: 10,
-                                                    ),
-                                                    Icon(Icons
-                                                        .workspace_premium_outlined),
-                                                    SizedBox(
-                                                      width: 20,
-                                                    ),
-                                                    Column(
-                                                      children: [
-                                                        SizedBox(
-                                                          width: 170,
-                                                          child: Text(
-                                                              main_banner3[
-                                                                      index]
-                                                                  ['content']),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ],
-                                          ),
+                                        Text(
+                                          main_banner3[index]['name'],
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold),
                                         ),
                                         SizedBox(
-                                          height: 20,
+                                          width: _width / 3.5,
                                         ),
-                                        Container(
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              ElevatedButton(
-                                                style: ElevatedButton.styleFrom(
-                                                    primary: Colors.orange,
-                                                    textStyle: const TextStyle(
-                                                        fontSize: 15,
-                                                        fontWeight:
-                                                            FontWeight.bold)),
-                                                onPressed: (() {
-                                                  initPlatformState();
-                                                }),
-                                                // onPressed: () => payintegration(
-                                                //     main_banner3[index]
-                                                //         ['price'],
-                                                //     main_banner3[index]['id']),
-                                                child: const Text('Pay Now'),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          height: 30,
+                                        Text(
+                                          main_banner3[index]['price'],
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold),
                                         )
                                       ],
                                     ),
                                   ),
-                                ),
-                              ],
+                                  SizedBox(
+                                    height: 30,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Row(
+                                      children: [
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Icon(Icons.message_outlined),
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Column(
+                                          children: [
+                                            SizedBox(
+                                              width: 200,
+                                              child: Text(main_banner3[index]
+                                                  ['message']),
+                                            ),
+                                            // Text(
+                                            //     'chat and make Video Calls.')
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Row(
+                                      children: [
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Icon(Icons.mobile_friendly),
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            SizedBox(
+                                              width: 200,
+                                              child: Text(
+                                                  main_banner3[index]['video']),
+                                            ),
+                                            // Text('numbers')
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Row(
+                                      children: [
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Icon(Icons.workspace_premium_outlined),
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Column(
+                                          children: [
+                                            SizedBox(
+                                              width: 200,
+                                              child: Text(main_banner3[index]
+                                                  ['content']),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Container(
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                              primary: Colors.orange,
+                                              textStyle: const TextStyle(
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.bold)),
+                                          onPressed: () {
+                                            initPlatformState();
+                                          },
+                                          // onPressed: () => payintegration(
+                                          //     main_banner3[index]
+                                          //         ['price'],
+                                          //     main_banner3[index]['id']),
+                                          child: const Text('Pay Now'),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 30,
+                                  )
+                                ],
+                              ),
                             ),
                           );
                         })
@@ -289,46 +243,6 @@ class _prime3m_packageState extends State<prime3m_package> {
       print(main_banner3.toString());
     });
   }
-
-  // ray
-
-  // Future<void> payintegration(payamount, subid) async {
-  //   var url =
-  //       "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/get_razorpayorderid";
-  //   // checker(context) async {
-  //   var pref = await SharedPreferences.getInstance();
-  //   var regid = pref.getString('regsId');
-  //   //  pref.setString('customer_id', data['data']['customer_id'].toString())
-  //   // final MyController con = Get.find();
-
-  //   //  print(id);
-  //   var finalurl = Uri.parse(url);
-  //   var res = await http.post(finalurl, headers: <String, String>{
-  //     'X-API-KEY': '50f58d4facbdfe506d51ad6b079deaae'
-  //   }, body: {
-  //     'pay_amount': payamount,
-  //     'register_id': regid,
-  //     'subscription_id': subid,
-  //   });
-
-  //   print('hi' + res.body);
-  //   // var decodeValue = json.decode(res.body);
-  //   var decodeValue = json.decode(res.body);
-  //   setState(() {});
-  //   if (decodeValue['status'] == true) {
-  //     openCheckout(decodeValue['data']);
-  //     // SharedPreferences pref = await SharedPreferences.getInstance();
-  //     // pref.setString('temp_id', decodeValue['data']['user_temp_id'].toString());
-  //     // Get.to(() => registration());
-
-  //     // Fluttertoast.showToast(msg: decodeValue['message']);
-  //   } else {
-  //     Fluttertoast.showToast(msg: decodeValue['message']);
-  //   }
-  // }
-
-  //cc avenue
-
 }
 
 // 6 months
@@ -374,7 +288,7 @@ class _prime6m_packageState extends State<prime6m_package> {
     double _width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SizedBox(
-        height: _height / 2,
+        // height: _height / 2,
         child: Center(
           child: ValueListenableBuilder<String>(
             valueListenable: _selectedSegment_04,
@@ -385,197 +299,151 @@ class _prime6m_packageState extends State<prime6m_package> {
                         scrollDirection: Axis.horizontal,
                         itemCount: main_banner6.length,
                         itemBuilder: (BuildContext context, int index) {
-                          return Container(
-                            margin: EdgeInsets.only(right: 15),
-                            width: _width / 1.6,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                GestureDetector(
-                                  onTap: () {
-                                    // Navigator.of(context).push(MaterialPageRoute(
-                                    //     builder: (context) => newreleases()));
-                                  },
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        boxShadow: [
-                                          new BoxShadow(
-                                            color: Colors.black,
-                                            blurRadius: 3.0,
-                                          ),
-                                        ]),
-                                    // height: _height / 4.66,
-                                    width: _width / 1.6,
-                                    // child: Image.network(
-                                    //   new_profile[index]
-                                    //           ['profile_image']
-                                    //       .toString(),
-                                    //   fit: BoxFit.fill,
-                                    // )
-                                    // Image.asset("images/new_image.jpg",fit: BoxFit.fill,)
-                                    child: Column(
+                          return Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  boxShadow: [
+                                    new BoxShadow(
+                                      color: Colors.black,
+                                      blurRadius: 3.0,
+                                    ),
+                                  ]),
+                              child: Column(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(15),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Center(
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              SizedBox(
-                                                height: 20,
-                                              ),
-                                              Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceEvenly,
-                                                children: [
-                                                  Text(
-                                                    main_banner6[index]['name'],
-                                                    style: TextStyle(
-                                                        fontSize: 18,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  ),
-                                                  SizedBox(
-                                                    width: 50,
-                                                  ),
-                                                  Text(
-                                                    main_banner6[index]
-                                                        ['price'],
-                                                    style: TextStyle(
-                                                        fontSize: 18,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  )
-                                                ],
-                                              ),
-                                              SizedBox(
-                                                height: 30,
-                                              ),
-                                              Padding(
-                                                padding:
-                                                    const EdgeInsets.all(8.0),
-                                                child: Row(
-                                                  children: [
-                                                    SizedBox(
-                                                      width: 10,
-                                                    ),
-                                                    Icon(
-                                                        Icons.message_outlined),
-                                                    SizedBox(
-                                                      width: 20,
-                                                    ),
-                                                    Column(
-                                                      children: [
-                                                        SizedBox(
-                                                          width: 170,
-                                                          child: Text(
-                                                              main_banner6[
-                                                                      index]
-                                                                  ['message']),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding:
-                                                    const EdgeInsets.all(8.0),
-                                                child: Row(
-                                                  children: [
-                                                    SizedBox(
-                                                      width: 10,
-                                                    ),
-                                                    Icon(Icons.mobile_friendly),
-                                                    SizedBox(
-                                                      width: 20,
-                                                    ),
-                                                    Column(
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      children: [
-                                                        SizedBox(
-                                                          width: 170,
-                                                          child: Text(
-                                                              main_banner6[
-                                                                      index]
-                                                                  ['video']),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding:
-                                                    const EdgeInsets.all(8.0),
-                                                child: Row(
-                                                  children: [
-                                                    SizedBox(
-                                                      width: 10,
-                                                    ),
-                                                    Icon(Icons
-                                                        .workspace_premium_outlined),
-                                                    SizedBox(
-                                                      width: 20,
-                                                    ),
-                                                    Column(
-                                                      children: [
-                                                        SizedBox(
-                                                          width: 170,
-                                                          child: Text(
-                                                              main_banner6[
-                                                                      index]
-                                                                  ['content']),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ],
-                                          ),
+                                        Text(
+                                          main_banner6[index]['name'],
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold),
                                         ),
                                         SizedBox(
-                                          height: 20,
+                                          width: _width / 3.5,
                                         ),
-                                        Container(
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              ElevatedButton(
-                                                style: ElevatedButton.styleFrom(
-                                                    primary: Colors.orange,
-                                                    textStyle: const TextStyle(
-                                                        fontSize: 15,
-                                                        fontWeight:
-                                                            FontWeight.bold)),
-                                                onPressed: () {
-                                                  initPlatformState();
-                                                },
-                                                // onPressed: () => payintegration(
-                                                //     main_banner6[index]
-                                                //         ['price'],
-                                                //     main_banner6[index]['id']),
-                                                child: const Text('Pay Now'),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          height: 30,
+                                        Text(
+                                          main_banner6[index]['price'],
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold),
                                         )
                                       ],
                                     ),
                                   ),
-                                ),
-                              ],
+                                  SizedBox(
+                                    height: 30,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Row(
+                                      children: [
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Icon(Icons.message_outlined),
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Column(
+                                          children: [
+                                            SizedBox(
+                                              width: 200,
+                                              child: Text(main_banner6[index]
+                                                  ['message']),
+                                            ),
+                                            // Text(
+                                            //     'chat and make Video Calls.')
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Row(
+                                      children: [
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Icon(Icons.mobile_friendly),
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            SizedBox(
+                                              width: 200,
+                                              child: Text(
+                                                  main_banner6[index]['video']),
+                                            ),
+                                            // Text('numbers')
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Row(
+                                      children: [
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Icon(Icons.workspace_premium_outlined),
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Column(
+                                          children: [
+                                            SizedBox(
+                                              width: 200,
+                                              child: Text(main_banner6[index]
+                                                  ['content']),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Container(
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                              primary: Colors.orange,
+                                              textStyle: const TextStyle(
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.bold)),
+                                          onPressed: () {
+                                            initPlatformState();
+                                          },
+                                          // onPressed: () => payintegration(
+                                          //     main_banner3[index]
+                                          //         ['price'],
+                                          //     main_banner3[index]['id']),
+                                          child: const Text('Pay Now'),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 30,
+                                  )
+                                ],
+                              ),
                             ),
                           );
                         })
@@ -696,198 +564,151 @@ class _prime12m_packageState extends State<prime12m_package> {
                         scrollDirection: Axis.horizontal,
                         itemCount: main_banner12.length,
                         itemBuilder: (BuildContext context, int index) {
-                          return Container(
-                            margin: EdgeInsets.only(right: 15),
-                            width: _width / 1.6,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                GestureDetector(
-                                  onTap: () {
-                                    // Navigator.of(context).push(MaterialPageRoute(
-                                    //     builder: (context) => newreleases()));
-                                  },
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        boxShadow: [
-                                          new BoxShadow(
-                                            color: Colors.black,
-                                            blurRadius: 3.0,
-                                          ),
-                                        ]),
-                                    // height: _height / 4.66,
-                                    width: _width / 1.6,
-                                    // child: Image.network(
-                                    //   new_profile[index]
-                                    //           ['profile_image']
-                                    //       .toString(),
-                                    //   fit: BoxFit.fill,
-                                    // )
-                                    // Image.asset("images/new_image.jpg",fit: BoxFit.fill,)
-                                    child: Column(
+                          return Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  boxShadow: [
+                                    new BoxShadow(
+                                      color: Colors.black,
+                                      blurRadius: 3.0,
+                                    ),
+                                  ]),
+                              child: Column(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(15),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Center(
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              SizedBox(
-                                                height: 20,
-                                              ),
-                                              Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceEvenly,
-                                                children: [
-                                                  Text(
-                                                    main_banner12[index]
-                                                        ['name'],
-                                                    style: TextStyle(
-                                                        fontSize: 18,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  ),
-                                                  SizedBox(
-                                                    width: 50,
-                                                  ),
-                                                  Text(
-                                                    main_banner12[index]
-                                                        ['price'],
-                                                    style: TextStyle(
-                                                        fontSize: 18,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  )
-                                                ],
-                                              ),
-                                              SizedBox(
-                                                height: 30,
-                                              ),
-                                              Padding(
-                                                padding:
-                                                    const EdgeInsets.all(8.0),
-                                                child: Row(
-                                                  children: [
-                                                    SizedBox(
-                                                      width: 10,
-                                                    ),
-                                                    Icon(
-                                                        Icons.message_outlined),
-                                                    SizedBox(
-                                                      width: 20,
-                                                    ),
-                                                    Column(
-                                                      children: [
-                                                        SizedBox(
-                                                          width: 170,
-                                                          child: Text(
-                                                              main_banner12[
-                                                                      index]
-                                                                  ['message']),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding:
-                                                    const EdgeInsets.all(8.0),
-                                                child: Row(
-                                                  children: [
-                                                    SizedBox(
-                                                      width: 10,
-                                                    ),
-                                                    Icon(Icons.mobile_friendly),
-                                                    SizedBox(
-                                                      width: 20,
-                                                    ),
-                                                    Column(
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      children: [
-                                                        SizedBox(
-                                                          width: 170,
-                                                          child: Text(
-                                                              main_banner12[
-                                                                      index]
-                                                                  ['video']),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding:
-                                                    const EdgeInsets.all(8.0),
-                                                child: Row(
-                                                  children: [
-                                                    SizedBox(
-                                                      width: 10,
-                                                    ),
-                                                    Icon(Icons
-                                                        .workspace_premium_outlined),
-                                                    SizedBox(
-                                                      width: 20,
-                                                    ),
-                                                    Column(
-                                                      children: [
-                                                        SizedBox(
-                                                          width: 170,
-                                                          child: Text(
-                                                              main_banner12[
-                                                                      index]
-                                                                  ['content']),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ],
-                                          ),
+                                        Text(
+                                          main_banner12[index]['name'],
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold),
                                         ),
                                         SizedBox(
-                                          height: 20,
+                                          width: _width / 3.5,
                                         ),
-                                        Container(
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              ElevatedButton(
-                                                style: ElevatedButton.styleFrom(
-                                                    primary: Colors.orange,
-                                                    textStyle: const TextStyle(
-                                                        fontSize: 15,
-                                                        fontWeight:
-                                                            FontWeight.bold)),
-                                                onPressed: () {
-                                                  initPlatformState();
-                                                },
-                                                // onPressed: () => payintegration(
-                                                //     main_banner12[index]
-                                                //         ['price'],
-                                                //     main_banner12[index]['id']),
-                                                child: const Text('Pay Now'),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          height: 30,
+                                        Text(
+                                          main_banner12[index]['price'],
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold),
                                         )
                                       ],
                                     ),
                                   ),
-                                ),
-                              ],
+                                  SizedBox(
+                                    height: 30,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Row(
+                                      children: [
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Icon(Icons.message_outlined),
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Column(
+                                          children: [
+                                            SizedBox(
+                                              width: 200,
+                                              child: Text(main_banner12[index]
+                                                  ['message']),
+                                            ),
+                                            // Text(
+                                            //     'chat and make Video Calls.')
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Row(
+                                      children: [
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Icon(Icons.mobile_friendly),
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            SizedBox(
+                                              width: 200,
+                                              child: Text(main_banner12[index]
+                                                  ['video']),
+                                            ),
+                                            // Text('numbers')
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Row(
+                                      children: [
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Icon(Icons.workspace_premium_outlined),
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Column(
+                                          children: [
+                                            SizedBox(
+                                              width: 200,
+                                              child: Text(main_banner12[index]
+                                                  ['content']),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Container(
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                              primary: Colors.orange,
+                                              textStyle: const TextStyle(
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.bold)),
+                                          onPressed: () {
+                                            initPlatformState();
+                                          },
+                                          // onPressed: () => payintegration(
+                                          //     main_banner3[index]
+                                          //         ['price'],
+                                          //     main_banner3[index]['id']),
+                                          child: const Text('Pay Now'),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 30,
+                                  )
+                                ],
+                              ),
                             ),
                           );
                         })

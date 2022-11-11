@@ -82,7 +82,7 @@ class _PackagesState extends State<Packages> {
                     Center(
                       child: Container(
                         padding: EdgeInsets.all(10),
-                        height: 150,
+                        // height: 150,
                         // width: 200.0,
                         decoration: BoxDecoration(
                             color: Colors.green,
@@ -105,6 +105,12 @@ class _PackagesState extends State<Packages> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
+                            Image(
+                                width: 100,
+                                image: AssetImage('assets/primelogo.png')),
+                            SizedBox(
+                              height: 10,
+                            ),
                             Center(
                               child: Text(
                                 'Choose PRIME packages to connect with 100% ID-verified profiles. Plus, you get all the benefits to regular premium packages',

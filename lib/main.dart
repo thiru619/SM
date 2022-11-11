@@ -15,6 +15,7 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'register.dart';
 import 'package:http/http.dart' as http;
 import 'package:google_fonts/google_fonts.dart';
+// import 'package:flutter_offline/flutter_offline.dart';
 // import 'package:internet_popup/internet_popup.dart';
 
 // import 'package:custom_splash/custom_splash.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Sizer',
           theme: ThemeData(
+            fontFamily: 'google_sans',
             textTheme: GoogleFonts.latoTextTheme(
               Theme.of(context).textTheme,
             ),
@@ -106,6 +108,7 @@ class firstscreen extends StatelessWidget {
       locale: Locale(con.lancode.value, con.lancountry.value),
       translations: ChangeLanguage(),
       theme: ThemeData(
+        fontFamily: 'google_sans',
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(body: bodypart()),
