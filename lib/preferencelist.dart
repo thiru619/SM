@@ -262,7 +262,7 @@ class _preferencelistState extends State<preferencelist>
                     CircularProgressIndicator(color: Colors.orange),
                 controller: minage,
                 decoration: InputDecoration(
-                    hintText: 'Min age',
+                    hintText: 'Min age'.tr,
                     suffixIcon: Icon(Icons.arrow_drop_down)),
                 asyncSuggestions: ((searchValue) async {
                   return strs24;
@@ -294,7 +294,7 @@ class _preferencelistState extends State<preferencelist>
                     CircularProgressIndicator(color: Colors.orange),
                 controller: maxage,
                 decoration: InputDecoration(
-                    hintText: 'Max age',
+                    hintText: 'Max age'.tr,
                     suffixIcon: Icon(Icons.arrow_drop_down)),
                 asyncSuggestions: ((searchValue) async {
                   return strs24;
@@ -330,7 +330,7 @@ class _preferencelistState extends State<preferencelist>
                     CircularProgressIndicator(color: Colors.orange),
                 controller: minheight,
                 decoration: InputDecoration(
-                    hintText: 'Min Height',
+                    hintText: 'Min Height'.tr,
                     suffixIcon: Icon(Icons.arrow_drop_down)),
                 asyncSuggestions: ((searchValue) async {
                   return strs25;
@@ -362,7 +362,7 @@ class _preferencelistState extends State<preferencelist>
                     CircularProgressIndicator(color: Colors.orange),
                 controller: maxheight,
                 decoration: InputDecoration(
-                    hintText: 'Max Height',
+                    hintText: 'Max Height'.tr,
                     suffixIcon: Icon(Icons.arrow_drop_down)),
                 asyncSuggestions: ((searchValue) async {
                   return strs25;
@@ -398,7 +398,7 @@ class _preferencelistState extends State<preferencelist>
                     CircularProgressIndicator(color: Colors.orange),
                 controller: maritialstatus,
                 decoration: InputDecoration(
-                    hintText: 'Maritial Status',
+                    hintText: 'Maritial Status'.tr,
                     suffixIcon: Icon(Icons.arrow_drop_down)),
                 asyncSuggestions: ((searchValue) async {
                   return strs26;
@@ -432,7 +432,7 @@ class _preferencelistState extends State<preferencelist>
                     CircularProgressIndicator(color: Colors.orange),
                 controller: mothertongue,
                 decoration: InputDecoration(
-                    hintText: 'Mother Tongue',
+                    hintText: 'Mother Tongue'.tr,
                     suffixIcon: Icon(Icons.arrow_drop_down)),
                 asyncSuggestions: ((searchValue) async {
                   return strs27;
@@ -466,7 +466,7 @@ class _preferencelistState extends State<preferencelist>
                     CircularProgressIndicator(color: Colors.orange),
                 controller: physicalstatus,
                 decoration: InputDecoration(
-                    hintText: 'Physical Status',
+                    hintText: 'Physical Status'.tr,
                     suffixIcon: Icon(Icons.arrow_drop_down)),
                 asyncSuggestions: ((searchValue) async {
                   return strs28;
@@ -534,7 +534,7 @@ class _preferencelistState extends State<preferencelist>
                     CircularProgressIndicator(color: Colors.orange),
                 controller: drinkinghabits,
                 decoration: InputDecoration(
-                    hintText: 'Drinking Habits',
+                    hintText: 'Drinking Habits'.tr,
                     suffixIcon: Icon(Icons.arrow_drop_down)),
                 asyncSuggestions: ((searchValue) async {
                   return strs30;
@@ -568,7 +568,7 @@ class _preferencelistState extends State<preferencelist>
                     CircularProgressIndicator(color: Colors.orange),
                 controller: smokinghabit,
                 decoration: InputDecoration(
-                    hintText: 'Smoking Habit',
+                    hintText: 'Smoking Habit'.tr,
                     suffixIcon: Icon(Icons.arrow_drop_down)),
                 asyncSuggestions: ((searchValue) async {
                   return strs31;
@@ -615,7 +615,7 @@ class _preferencelistState extends State<preferencelist>
                       CircularProgressIndicator(color: Colors.orange),
                   controller: religion,
                   decoration: InputDecoration(
-                      hintText: 'Religion',
+                      hintText: 'Religion'.tr,
                       suffixIcon: Icon(Icons.arrow_drop_down)),
                   asyncSuggestions: ((searchValue) async {
                     return strs32;
@@ -653,7 +653,7 @@ class _preferencelistState extends State<preferencelist>
                       CircularProgressIndicator(color: Colors.orange),
                   controller: caste,
                   decoration: InputDecoration(
-                      hintText: 'Caste',
+                      hintText: 'Caste'.tr,
                       suffixIcon: Icon(Icons.arrow_drop_down)),
                   asyncSuggestions: ((searchValue) async {
                     return strs41;
@@ -713,7 +713,8 @@ class _preferencelistState extends State<preferencelist>
                     CircularProgressIndicator(color: Colors.orange),
                 controller: starcontrol,
                 decoration: InputDecoration(
-                    hintText: 'Star', suffixIcon: Icon(Icons.arrow_drop_down)),
+                    hintText: 'Star'.tr,
+                    suffixIcon: Icon(Icons.arrow_drop_down)),
                 asyncSuggestions: ((searchValue) async {
                   return strs37;
                 }),
@@ -746,7 +747,7 @@ class _preferencelistState extends State<preferencelist>
                     CircularProgressIndicator(color: Colors.orange),
                 controller: Dosham,
                 decoration: InputDecoration(
-                    hintText: 'Dosham',
+                    hintText: 'Dosham'.tr,
                     suffixIcon: Icon(Icons.arrow_drop_down)),
                 asyncSuggestions: ((searchValue) async {
                   return strs36;
@@ -861,7 +862,7 @@ class _preferencelistState extends State<preferencelist>
                     CircularProgressIndicator(color: Colors.orange),
                 controller: employedin,
                 decoration: InputDecoration(
-                    hintText: 'Employed in',
+                    hintText: 'Employed in'.tr,
                     suffixIcon: Icon(Icons.arrow_drop_down)),
                 asyncSuggestions: ((searchValue) async {
                   return strs33;
@@ -966,7 +967,7 @@ class _preferencelistState extends State<preferencelist>
                     CircularProgressIndicator(color: Colors.orange),
                 controller: annualincome,
                 decoration: InputDecoration(
-                    hintText: 'Annual Income',
+                    hintText: 'Annual Income'.tr,
                     suffixIcon: Icon(Icons.arrow_drop_down)),
                 asyncSuggestions: ((searchValue) async {
                   return strs35;
@@ -1017,7 +1018,7 @@ class _preferencelistState extends State<preferencelist>
                       CircularProgressIndicator(color: Colors.orange),
                   controller: Country,
                   decoration: InputDecoration(
-                      hintText: 'Country',
+                      hintText: 'Country'.tr,
                       suffixIcon: Icon(Icons.arrow_drop_down)),
                   asyncSuggestions: ((searchValue) async {
                     return strs38;
@@ -1056,7 +1057,7 @@ class _preferencelistState extends State<preferencelist>
                       CircularProgressIndicator(color: Colors.orange),
                   controller: residingState,
                   decoration: InputDecoration(
-                      hintText: 'Residing State',
+                      hintText: 'Residing State'.tr,
                       suffixIcon: Icon(Icons.arrow_drop_down)),
                   asyncSuggestions: ((searchValue) async {
                     return strs39;
@@ -1094,7 +1095,7 @@ class _preferencelistState extends State<preferencelist>
                     CircularProgressIndicator(color: Colors.orange),
                 controller: residingCity,
                 decoration: InputDecoration(
-                    hintText: 'Residing City',
+                    hintText: 'Residing City'.tr,
                     suffixIcon: Icon(Icons.arrow_drop_down)),
                 asyncSuggestions: ((searchValue) async {
                   return strs40;

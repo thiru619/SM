@@ -67,6 +67,7 @@ dependencies:
   marquee: ^2.2.3
   flutter_rating_bar: ^4.0.1
   url_launcher: ^6.1.6
+  google_fonts: ^3.0.1
   # nternet_popup: ^1.0.8+5
 
   
@@ -152,16 +153,16 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   # fonts:
-  #   - family: Schyler
+  #   - family: KolkerBrush
   #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
+  #       - asset: assets/font/KolkerBrush-Regular.ttf
+        # - asset: assets/font/FragmentMono-Italic.ttf
+        #   style: italic
+    # - family: Trajan Pro
+    #   fonts:
+    #     - asset: fonts/TrajanPro.ttf
+    #     - asset: fonts/TrajanPro_Bold.ttf
+    #       weight: 700
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

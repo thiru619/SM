@@ -10,6 +10,8 @@ import 'package:sujithamatrimony/colors.dart';
 import 'package:sujithamatrimony/loginpage.dart';
 import 'package:marquee/marquee.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import 'packages.dart';
 // import 'package:percent_indicator/percent_indicator.dart';
 
 // import 'camera_preview.dart';
@@ -68,11 +70,20 @@ class _view_profileState extends State<view_profile> {
                 children: [
                   IconButton(
                       onPressed: () async {
-                        Uri phoneno = Uri.parse('tel:+97798345348734');
-                        if (await launchUrl(phoneno)) {
-                          //dialer opened
+                        if (viewprofiles['basics_details']['mobile_no']
+                                ['bphone'] ==
+                            true) {
+                          final Uri launchUri = Uri(
+                            scheme: 'tel',
+                            path:
+                                '${viewprofiles['basics_details']['mobile_no']['phone'].toString()}',
+                          );
+                          await launchUrl(launchUri);
                         } else {
-                          //dailer is not opened
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Packages()),
+                          );
                         }
                       },
                       icon: const Icon(Icons.call)),
@@ -863,7 +874,7 @@ class _view_profileState extends State<view_profile> {
                                                 ''
                                             ? Text(
                                                 viewprofiles['basics_details']
-                                                        ['mobile_no']
+                                                        ['mobile_no']['phone']
                                                     .toString())
                                             : Text(
                                                 'Request Mobile',
@@ -1530,6 +1541,7 @@ class _view_profileState extends State<view_profile> {
     setState(() {});
     if (decodeValue['status'] == true) {
       viewprofiles = decodeValue['data'];
+
       _hasBeenPressed = viewprofiles['basics_details']['shortlisted'];
       // _hasBeenPressed
       print(viewprofiles);

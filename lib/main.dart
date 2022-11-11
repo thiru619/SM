@@ -14,10 +14,13 @@ import 'package:sizer/sizer.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'register.dart';
 import 'package:http/http.dart' as http;
+import 'package:google_fonts/google_fonts.dart';
 // import 'package:internet_popup/internet_popup.dart';
 
 // import 'package:custom_splash/custom_splash.dart';
 // @dart=2.9
+
+TextEditingController Referalcode = TextEditingController();
 
 void main() async {
   GetStorage.init();
@@ -32,7 +35,12 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Sizer',
-          theme: ThemeData.light(),
+          theme: ThemeData(
+            textTheme: GoogleFonts.latoTextTheme(
+              Theme.of(context).textTheme,
+            ),
+          ),
+          // theme: ThemeData.light(),
           home: MyApps(),
         );
       },
@@ -302,8 +310,6 @@ class _bodypartState extends State<bodypart> {
                     showDialog(
                       context: context,
                       builder: (context) {
-                        TextEditingController Referalcode =
-                            TextEditingController();
                         return Column(
                           children: [
                             AlertDialog(
@@ -451,9 +457,9 @@ class _bodypartState extends State<bodypart> {
         print('out' + pref.getString('temp_id').toString());
 
         Navigator.pop(context);
-        Fluttertoast.showToast(msg: decodeValue['message']);
+        // Fluttertoast.showToast(msg: decodeValue['message']);
       } else {
-        Fluttertoast.showToast(msg: decodeValue['message']);
+        // Fluttertoast.showToast(msg: decodeValue['message']);
       }
     }
   }

@@ -10,6 +10,7 @@ import 'package:rolling_switch/rolling_switch.dart';
 import 'package:flutter_dropdown/flutter_dropdown.dart';
 import 'package:sujithamatrimony/registration2.dart';
 import 'language_btn.dart';
+import 'main.dart';
 import 'profilefor.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter_windowmanager/flutter_windowmanager.dart';
@@ -789,6 +790,7 @@ class _registerlistState extends State<registerlist> {
 
     //  print(id);
     var finalurl = Uri.parse(url);
+
     var res = await http.post(finalurl, headers: <String, String>{
       'X-API-KEY': '50f58d4facbdfe506d51ad6b079deaae'
     }, body: {
@@ -801,6 +803,7 @@ class _registerlistState extends State<registerlist> {
       'mobile_no': mobile_no,
       'email_id': email_id,
       'password': password,
+      'referal_code': Referalcode.text,
     });
 
     print('hi' + res.body);

@@ -985,61 +985,42 @@ class _searchState extends State<search> with SingleTickerProviderStateMixin {
                   if (matriid.text.isNotEmpty) {
                     searchProfile("", '', '', '', '', '', '', '', '', '', '',
                         '', '', '', '', '', matriid.text);
-                  } else {
-                    if (minage.text.isEmpty) {
-                      Fluttertoast.showToast(msg: 'select Min Age');
-                    } else if (maxage.text.isEmpty) {
-                      Fluttertoast.showToast(msg: 'Enter Max Age');
-                    } else if (minheight.text.isEmpty) {
-                      Fluttertoast.showToast(msg: 'Enter Min Height');
-                    } else if (maxheight.text.isEmpty) {
-                      Fluttertoast.showToast(msg: 'Enter Max Height');
-                    } else if (maritialstatus.text.isEmpty) {
-                      Fluttertoast.showToast(msg: 'Enter Maritial Status');
-                    } else if (mothertongue.text.isEmpty) {
-                      Fluttertoast.showToast(msg: 'Enter Mother Tongue');
-                    } else if (physicalstatus.text.isEmpty) {
-                      Fluttertoast.showToast(msg: 'Enter Physicalstatus');
-                    } else if (religion.text.isEmpty) {
-                      Fluttertoast.showToast(msg: 'Enter Religion');
-                    } else if (caste.text.isEmpty) {
-                      Fluttertoast.showToast(msg: 'Enter Caste');
-                    } else if (Educationcategoryfields.text.isEmpty) {
-                      Fluttertoast.showToast(msg: 'Enter Educationfields');
-                    } else if (employedin.text.isEmpty) {
-                      Fluttertoast.showToast(msg: 'Enter Employed In');
-                    } else if (occupationfield1.text.isEmpty) {
-                      Fluttertoast.showToast(msg: 'Enter Occupation');
-                    } else if (annualincome.text.isEmpty) {
-                      Fluttertoast.showToast(msg: 'Enter Annual Income');
-                    } else if (Country.text.isEmpty) {
-                      Fluttertoast.showToast(msg: 'Enter Country');
-                    } else if (residingState.text.isEmpty) {
-                      Fluttertoast.showToast(msg: 'Enter State');
-                    } else if (residingCity.text.isEmpty) {
-                      Fluttertoast.showToast(msg: 'Enter City');
-                    } else {
-                      print(whatareyoulooking);
-
-                      searchProfile(
-                          minage.text,
-                          maxage.text,
-                          minheight.text,
-                          maxheight.text,
-                          maritialstatus.text,
-                          mothertongue.text,
-                          physicalstatus.text,
-                          religion.text,
-                          caste.text,
-                          Educationcategoryfields.text,
-                          employedin.text,
-                          occupationfield1.text,
-                          annualincome.text,
-                          Country.text,
-                          residingState.text,
-                          residingCity.text,
-                          matriid.text);
-                    }
+                  } else if (matriid.text.isEmpty &&
+                      (minage.text.isNotEmpty ||
+                          maxage.text.isNotEmpty ||
+                          minheight.text.isNotEmpty ||
+                          maxheight.text.isNotEmpty ||
+                          maritialstatus.text.isNotEmpty ||
+                          mothertongue.text.isNotEmpty ||
+                          physicalstatus.text.isNotEmpty ||
+                          religion.text.isNotEmpty ||
+                          caste.text.isNotEmpty ||
+                          Educationcategoryfields.text.isNotEmpty ||
+                          employedin.text.isNotEmpty ||
+                          occupationfield1.text.isNotEmpty ||
+                          annualincome.text.isNotEmpty ||
+                          Country.text.isNotEmpty ||
+                          residingState.text.isNotEmpty ||
+                          residingCity.text.isNotEmpty ||
+                          matriid.text.isNotEmpty)) {
+                    searchProfile(
+                        minage.text,
+                        maxage.text,
+                        minheight.text,
+                        maxheight.text,
+                        maritialstatus.text,
+                        mothertongue.text,
+                        physicalstatus.text,
+                        religion.text,
+                        caste.text,
+                        Educationcategoryfields.text,
+                        employedin.text,
+                        occupationfield1.text,
+                        annualincome.text,
+                        Country.text,
+                        residingState.text,
+                        residingCity.text,
+                        matriid.text);
                   }
                   // Navigator.push(
                   //   context,

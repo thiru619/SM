@@ -176,6 +176,7 @@ class ChangeLanguage extends Translations {
           'Matches': 'Matches',
           'Viewed': 'Viewed',
           'By You': 'By You',
+          'By you': 'By you',
           "Nearby": "Nearby",
           "Horoscope": 'Horoscope',
           'Matches': 'Matches',
@@ -302,7 +303,8 @@ class ChangeLanguage extends Translations {
           "Are you sure to Signout ?": "Are you sure to Signout ?",
           'Change Password': 'Change Password',
           'Privacy Settings': 'Privacy Settings',
-          "Settings": "Settings"
+          "Settings": "Settings",
+          '  Choose Document': '  Choose Document',
         },
         'vi_VN': {
           'login': 'ప్రవేశించండి',
@@ -599,6 +601,8 @@ class ChangeLanguage extends Translations {
           'Change Password': 'పాస్‌వర్డ్ మార్చండి',
           'Privacy Settings': 'గోప్యతా సెట్టింగ్‌లు',
           "Settings": "సెట్టింగ్‌లు",
+          'By you': 'మీ చేత',
+          '  Choose Document': '  పత్రాన్ని ఎంచుకోండి',
         },
       };
 }

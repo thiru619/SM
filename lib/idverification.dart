@@ -83,6 +83,7 @@ class _idverificationState extends State<idverification>
                 decoration: crl.Decoration(),
                 child: Column(children: [
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
                         margin: EdgeInsets.all(10),
@@ -104,24 +105,18 @@ class _idverificationState extends State<idverification>
                                   fontSize: 15,
                                   fontWeight: FontWeight.bold),
                             ),
-                            SizedBox(
-                              width: 250,
-                            ),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                IconButton(
-                                    onPressed: () {
-                                      Navigator.pop(context);
-                                    },
-                                    icon: Icon(
-                                      Icons.close,
-                                      color: Colors.white,
-                                    )),
-                              ],
-                            )
                           ],
                         ),
+                      ),
+                      Container(
+                        child: IconButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            icon: Icon(
+                              Icons.close,
+                              color: Colors.white,
+                            )),
                       ),
                     ],
                   ),
