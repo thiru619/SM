@@ -683,11 +683,11 @@ class _registerlistState extends State<registerlist> {
                     ),
                     TextButton(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => registration()),
-                        );
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //       builder: (context) => registration()),
+                        // );
                       },
                       child: RichText(
                         text: TextSpan(

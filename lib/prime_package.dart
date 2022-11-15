@@ -738,39 +738,4 @@ class _prime12m_packageState extends State<prime12m_package> {
       print(main_banner12.toString());
     });
   }
-
-  // Future<void> payintegration(payamount, subid) async {
-  //   var url =
-  //       "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/get_razorpayorderid";
-  //   // checker(context) async {
-  //   var pref = await SharedPreferences.getInstance();
-  //   var regid = pref.getString('regsId');
-  //   //  pref.setString('customer_id', data['data']['customer_id'].toString())
-  //   // final MyController con = Get.find();
-
-  //   //  print(id);
-  //   var finalurl = Uri.parse(url);
-  //   var res = await http.post(finalurl, headers: <String, String>{
-  //     'X-API-KEY': '50f58d4facbdfe506d51ad6b079deaae'
-  //   }, body: {
-  //     'pay_amount': payamount,
-  //     'register_id': regid,
-  //     'subscription_id': subid,
-  //   });
-
-  //   print('hi' + res.body);
-  //   // var decodeValue = json.decode(res.body);
-  //   var decodeValue = json.decode(res.body);
-  //   setState(() {});
-  //   if (decodeValue['status'] == true) {
-  //     openCheckout(decodeValue['data']);
-  //     // SharedPreferences pref = await SharedPreferences.getInstance();
-  //     // pref.setString('temp_id', decodeValue['data']['user_temp_id'].toString());
-  //     // Get.to(() => registration());
-
-  //     // Fluttertoast.showToast(msg: decodeValue['message']);
-  //   } else {
-  //     Fluttertoast.showToast(msg: decodeValue['message']);
-  //   }
-  // }
 }

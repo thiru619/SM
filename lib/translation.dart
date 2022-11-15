@@ -294,7 +294,7 @@ class ChangeLanguage extends Translations {
           "your identity infomation. The documents chosen by you will not be Shown to the  Other":
               "your identity infomation. The documents chosen by you will not be Shown to the  Other",
           "Shown to the Other members": "Shown to the Other members",
-          '  Choose Document': '  Choose Document',
+          // '  Choose Document': '  Choose Document',
           '  Front Image': '  Front Image',
           '  Back Image': '  Back Image',
           'Deactivate Account': 'Deactivate Account',
@@ -602,7 +602,7 @@ class ChangeLanguage extends Translations {
           'Privacy Settings': 'గోప్యతా సెట్టింగ్‌లు',
           "Settings": "సెట్టింగ్‌లు",
           'By you': 'మీ చేత',
-          '  Choose Document': '  పత్రాన్ని ఎంచుకోండి',
+          // '  Choose Document': '  పత్రాన్ని ఎంచుకోండి',
         },
       };
 }

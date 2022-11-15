@@ -218,13 +218,13 @@ class _idverificationState extends State<idverification>
                                     child: DropdownButton2(
                                       isExpanded: true,
                                       hint: Row(
-                                        children: const [
+                                        children: [
                                           SizedBox(
                                             width: 4,
                                           ),
                                           Expanded(
                                             child: Text(
-                                              '  Choose Document',
+                                              '  Choose Document'.tr,
                                               overflow: TextOverflow.ellipsis,
                                             ),
                                           ),
