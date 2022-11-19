@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_switch/flutter_switch.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 // import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sujithamatrimony/bottomsheet.dart';
@@ -28,6 +29,8 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:ui';
 import 'package:image_cropper/image_cropper.dart';
+
+var viewdetails;
 
 class homescreens extends StatefulWidget {
   const homescreens({Key? key}) : super(key: key);
@@ -98,7 +101,7 @@ class _homescreensState extends State<homescreens>
   var viewed_profile = [];
   // var name;
   var profilephoto;
-
+  // bool loading = false;
   TextEditingController namefield = TextEditingController();
   TextEditingController passwordfield = TextEditingController();
   final MyController con = Get.find();
@@ -106,7 +109,7 @@ class _homescreensState extends State<homescreens>
   void initState() {
     gethomes();
     // secureScreen();
-
+    viewprofile();
     getHomeProfilePic();
     super.initState();
   }
@@ -403,58 +406,58 @@ class _homescreensState extends State<homescreens>
                                   SizedBox(
                                     height: 20,
                                   ),
-                                  Container(
-                                    width: 300,
-                                    constraints: BoxConstraints(
-                                        maxHeight: double.infinity,
-                                        maxWidth: double.infinity),
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                        border: Border.all(
-                                            width: 1, color: Colors.grey)),
-                                    child: Column(
-                                      children: [
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
-                                          children: [
-                                            IconButton(
-                                              onPressed: () {
-                                                print("object");
-                                              },
-                                              icon: Image(
-                                                image: AssetImage(
-                                                    "assets/mic.png"),
-                                              ),
-                                            ),
-                                            // SizedBox(
-                                            //   width: 10,
-                                            // ),
-                                            Column(
-                                              children: [
-                                                Text(
-                                                  "Sujitha Matrimony is the most"
-                                                      .tr,
-                                                  softWrap: true,
-                                                ),
-                                                Text(
-                                                  "Trusted and Largest".tr,
-                                                  softWrap: true,
-                                                ),
-                                                Text(
-                                                  "Matrimony Services".tr,
-                                                  softWrap: true,
-                                                )
-                                              ],
-                                            ),
-                                            IconButton(
-                                                onPressed: () {},
-                                                icon: Icon(Icons.arrow_right))
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  ),
+                                  // Container(
+                                  //   width: 300,
+                                  //   constraints: BoxConstraints(
+                                  //       maxHeight: double.infinity,
+                                  //       maxWidth: double.infinity),
+                                  //   decoration: BoxDecoration(
+                                  //       borderRadius: BorderRadius.circular(10),
+                                  //       border: Border.all(
+                                  //           width: 1, color: Colors.grey)),
+                                  //   child: Column(
+                                  //     children: [
+                                  //       Row(
+                                  //         mainAxisAlignment:
+                                  //             MainAxisAlignment.spaceEvenly,
+                                  //         children: [
+                                  //           IconButton(
+                                  //             onPressed: () {
+                                  //               print("object");
+                                  //             },
+                                  //             icon: Image(
+                                  //               image: AssetImage(
+                                  //                   "assets/mic.png"),
+                                  //             ),
+                                  //           ),
+                                  //           // SizedBox(
+                                  //           //   width: 10,
+                                  //           // ),
+                                  //           Column(
+                                  //             children: [
+                                  //               Text(
+                                  //                 "Sujitha Matrimony is the most"
+                                  //                     .tr,
+                                  //                 softWrap: true,
+                                  //               ),
+                                  //               Text(
+                                  //                 "Trusted and Largest".tr,
+                                  //                 softWrap: true,
+                                  //               ),
+                                  //               Text(
+                                  //                 "Matrimony Services".tr,
+                                  //                 softWrap: true,
+                                  //               )
+                                  //             ],
+                                  //           ),
+                                  //           IconButton(
+                                  //               onPressed: () {},
+                                  //               icon: Icon(Icons.arrow_right))
+                                  //         ],
+                                  //       ),
+                                  //     ],
+                                  //   ),
+                                  // ),
                                   SizedBox(
                                     height: 20,
                                   ),
@@ -645,15 +648,20 @@ class _homescreensState extends State<homescreens>
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                            Text(
-                                              "  Your Profile is only 30% Complete"
-                                                      .tr +
-                                                  "           ".tr,
-                                              style: TextStyle(
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.bold,
+                                            if (viewdetails != null)
+                                              Text(
+                                                "  Your Profile is only " +
+                                                    viewdetails['basic_details']
+                                                            [
+                                                            'profile_percentage']
+                                                        .toString() +
+                                                    " Complete".tr +
+                                                    "           ".tr,
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
                                               ),
-                                            ),
                                             Text(
                                               '  ' +
                                                   "Add below details to complete you profile"
@@ -1668,5 +1676,46 @@ class _homescreensState extends State<homescreens>
         print(matching_profile.toString());
       });
     }
+  }
+
+  Future<void> viewprofile() async {
+    setState(() {
+      // loading = true;
+    });
+    var url =
+        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/get_view_profile";
+    // checker(context) async {
+    var pref = await SharedPreferences.getInstance();
+    var regid = pref.getString('regsId');
+
+    //  pref.setString('customer_id', data['data']['customer_id'].toString())
+    // final MyController con = Get.find();
+
+    //  print(id);
+    var finalurl = Uri.parse(url);
+    var res = await http.post(finalurl, headers: <String, String>{
+      'X-API-KEY': '50f58d4facbdfe506d51ad6b079deaae'
+    }, body: {
+      'reg_id': regid,
+    });
+
+    print('hi' + res.body);
+    // var decodeValue = json.decode(res.body);
+    var decodeValue = json.decode(res.body);
+    setState(() {});
+    if (decodeValue['status'] == true) {
+      viewdetails = decodeValue['data'];
+      print(viewdetails);
+      // SharedPreferences pref = await SharedPreferences.getInstance();
+      // pref.setString('temp_id', decodeValue['data']['user_temp_id'].toString());
+      // Get.to(() => registration());
+
+      // Fluttertoast.showToast(msg: decodeValue['message']);
+    } else {
+      Fluttertoast.showToast(msg: decodeValue['message']);
+    }
+    setState(() {
+      // loading = false;
+    });
   }
 }

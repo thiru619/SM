@@ -40,7 +40,7 @@ class _photo_uploadState extends State<photo_upload> {
   Future getImage(ImageSource source) async {
     final image = await ImagePicker().pickImage(
       source: source,
-      imageQuality: 100,
+      imageQuality: 200,
     );
     if (image == null) return;
     // final imageTemporary = File(image.path);

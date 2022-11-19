@@ -11,6 +11,7 @@ import 'bottomsheet.dart';
 import 'forgetpass.dart';
 import 'language_btn.dart';
 import 'main.dart';
+import 'otplogin.dart';
 import 'register.dart';
 import 'package:flutter_windowmanager/flutter_windowmanager.dart';
 
@@ -204,10 +205,10 @@ class _textState extends State<text> {
                             TextStyle(color: Color.fromARGB(255, 255, 111, 0)),
                       ),
                       onPressed: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(builder: (context) => forgetpass()),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Otplogin()),
+                        );
                       },
                     ),
                     SizedBox(

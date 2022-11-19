@@ -18,6 +18,7 @@ import 'package:sujithamatrimony/loginpage.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:easy_autocomplete/easy_autocomplete.dart';
 import 'package:http/http.dart' as http;
+import '../homescreen.dart';
 import '../languagecontroler.dart';
 import 'Professionalinfo_detail.dart';
 import 'basic_detail.dart';
@@ -28,8 +29,10 @@ var firstimage;
 var baseurl =
     'http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/';
 
-var adddetials = '';
+var initialvalue = '';
 final TextEditingController _namefields = TextEditingController();
+// final comments = TextEditingController(text: "'Not Specified'.tr");
+final TextEditingController comments = TextEditingController();
 
 class Edit_profile extends StatefulWidget {
   const Edit_profile({Key? key}) : super(key: key);
@@ -43,7 +46,7 @@ class _Edit_profileState extends State<Edit_profile> {
 
   int id = 1;
   var selectedValue15 = [];
-  var viewdetails;
+
   bool loading = false;
 
   var height = [];
@@ -108,23 +111,30 @@ class _Edit_profileState extends State<Edit_profile> {
   void initState() {
     // getData();
     // getData1();
-    viewprofile();
-    profile_pic();
+
     super.initState();
   }
 
   CroppedFile? _croppedFile;
 
   File? _image;
-  Future getImage(ImageSource source) async {
-    final image = await ImagePicker().pickImage(
-      source: source,
-      imageQuality: 100,
-    );
-    if (image == null) return;
-    // final imageTemporary = File(image.path);
-    if (image.path != null) {
-      await _cropImage(image.path);
+  // Future getImage(ImageSource source) async {
+  //   final image = await ImagePicker().pickImage(
+  //     source: source,
+  //     imageQuality: 100,
+  //   );
+  //   if (image == null) return;
+  //   // final imageTemporary = File(image.path);
+  //   if (image.path != null) {
+  //     await _cropImage(image.path);
+  //   }
+  // }
+
+  final ImagePicker picker = ImagePicker();
+  void imageSelected(ImageSource source) async {
+    final XFile? selectedImage = await picker.pickImage(source: source);
+    if (selectedImage != null) {
+      await _cropImage(selectedImage.path);
     }
   }
 
@@ -141,7 +151,7 @@ class _Edit_profileState extends State<Edit_profile> {
       uiSettings: [
         AndroidUiSettings(
             toolbarTitle: 'Cropper',
-            toolbarColor: Colors.deepOrange,
+            toolbarColor: Colors.green,
             toolbarWidgetColor: Colors.white,
             initAspectRatio: CropAspectRatioPreset.original,
             lockAspectRatio: false),
@@ -154,15 +164,19 @@ class _Edit_profileState extends State<Edit_profile> {
       ],
     );
     setState(() {
-      Get.back();
+      // Get.back();
       _image = File(croppedFile!.path);
       // ImagePickerController.text = croppedFile.path;
       print(_image!.path);
     });
     if (_image != null) {
+      imageList.add(_image);
+
       profile_pic();
     }
   }
+
+  var imageList = [].obs;
 
   @override
   Widget build(BuildContext context) {
@@ -217,8 +231,8 @@ class _Edit_profileState extends State<Edit_profile> {
                                           style: ElevatedButton.styleFrom(
                                             primary: Colors.deepOrangeAccent,
                                           ),
-                                          onPressed: () =>
-                                              getImage(ImageSource.gallery),
+                                          onPressed: () => imageSelected(
+                                              ImageSource.gallery),
                                           // color: Color.fromARGB(255, 255, 115, 0),
                                           child: Row(
                                             children: [
@@ -239,7 +253,7 @@ class _Edit_profileState extends State<Edit_profile> {
                                             primary: Colors.deepOrangeAccent,
                                           ),
                                           onPressed: () =>
-                                              getImage(ImageSource.camera),
+                                              imageSelected(ImageSource.camera),
                                           // color: Color.fromARGB(255, 255, 115, 0),
                                           child: Row(
                                             children: [
@@ -274,6 +288,34 @@ class _Edit_profileState extends State<Edit_profile> {
                                           ),
                                         ),
                                       ],
+                                    ),
+                                    Obx(
+                                      () => Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          for (File ii in imageList)
+                                            Container(
+                                              height: 50,
+                                              width: 50,
+                                              decoration: BoxDecoration(
+                                                  image: ii.path
+                                                          .contains("http")
+                                                      ? DecorationImage(
+                                                          fit: BoxFit.fill,
+                                                          image: NetworkImage(
+                                                              viewdetails['basic_details']
+                                                                      [
+                                                                      'profile_image']
+                                                                  .toString()))
+                                                      : DecorationImage(
+                                                          fit: BoxFit.fill,
+                                                          image: FileImage(ii))
+                                                  // color: Colors.grey,
+                                                  ),
+                                            ),
+                                        ],
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -385,17 +427,26 @@ class _Edit_profileState extends State<Edit_profile> {
                         Padding(
                           padding: const EdgeInsets.only(right: 30, left: 30),
                           child: TextFormField(
+                            // autofocus: false,
+                            controller: comments,
+                            // onChanged: (newValue) {
+                            //   initialvalue == ''
+                            //       ? 'Not Specified'.tr
+                            //       : comments.text;
+                            //   // setState(() {});
+                            // },
                             keyboardType: TextInputType.multiline,
                             maxLines: null, minLines: 5,
-                            initialValue: 'Not Specified'.tr,
+                            // initialValue: 'Not Specified'.tr,
                             // maxLength: 20,
                             decoration: InputDecoration(
+                              // labelText: 'jo',
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                     color: Color.fromARGB(255, 114, 113, 113)),
                               ),
                               // icon: Icon(Icons.favorite),
-                              labelText: "Comments".tr,
+                              // labelText: "Comments".tr,
                               labelStyle:
                                   TextStyle(color: Colors.grey, fontSize: 16),
                             ),
@@ -1635,47 +1686,6 @@ class _Edit_profileState extends State<Edit_profile> {
               child: CircularProgressIndicator(),
             ),
           );
-  }
-
-  Future<void> viewprofile() async {
-    setState(() {
-      loading = true;
-    });
-    var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/get_view_profile";
-    // checker(context) async {
-    var pref = await SharedPreferences.getInstance();
-    var regid = pref.getString('regsId');
-
-    //  pref.setString('customer_id', data['data']['customer_id'].toString())
-    // final MyController con = Get.find();
-
-    //  print(id);
-    var finalurl = Uri.parse(url);
-    var res = await http.post(finalurl, headers: <String, String>{
-      'X-API-KEY': '50f58d4facbdfe506d51ad6b079deaae'
-    }, body: {
-      'reg_id': regid,
-    });
-
-    print('hi' + res.body);
-    // var decodeValue = json.decode(res.body);
-    var decodeValue = json.decode(res.body);
-    setState(() {});
-    if (decodeValue['status'] == true) {
-      viewdetails = decodeValue['data'];
-      print(viewdetails);
-      // SharedPreferences pref = await SharedPreferences.getInstance();
-      // pref.setString('temp_id', decodeValue['data']['user_temp_id'].toString());
-      // Get.to(() => registration());
-
-      // Fluttertoast.showToast(msg: decodeValue['message']);
-    } else {
-      Fluttertoast.showToast(msg: decodeValue['message']);
-    }
-    setState(() {
-      loading = false;
-    });
   }
 
   Future<void> profile_pic() async {

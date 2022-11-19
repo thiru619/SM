@@ -581,43 +581,44 @@ class _basic_detailState extends State<basic_detail>
                   ),
                 ),
                 onPressed: () {
-                  if (profile_created_by.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'select Profile Created for');
-                  } else if (name.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Name');
-                  } else if (age.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Age');
-                  } else if (height.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Height');
-                  } else if (weight.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Weight');
-                  } else if (marital.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter MaritalStatus');
-                  } else if (body_type.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Body Type');
-                  } else if (mothertongue.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Mother Tongue');
-                  } else if (eatinghabit.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Eating Habit');
-                  } else if (drinkinghabits.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Drinking habit');
-                  } else if (smokinghabit.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Smoking Habit');
-                  } else {
-                    saveBasicDetails(
-                      profile_created_by.text,
-                      name.text,
-                      age.text,
-                      height.text,
-                      weight.text,
-                      marital.text,
-                      body_type.text,
-                      mothertongue.text,
-                      eatinghabit.text,
-                      drinkinghabits.text,
-                      smokinghabit.text,
-                    );
-                  }
+                  // if (profile_created_by.text.isEmpty) {
+                  //   Fluttertoast.showToast(msg: 'select Profile Created for');
+                  // } else if (name.text.isEmpty) {
+                  //   Fluttertoast.showToast(msg: 'Enter Name');
+                  // } else if (age.text.isEmpty) {
+                  //   Fluttertoast.showToast(msg: 'Enter Age');
+                  // } else if (height.text.isEmpty) {
+                  //   Fluttertoast.showToast(msg: 'Enter Height');
+                  // } else if (weight.text.isEmpty) {
+                  //   Fluttertoast.showToast(msg: 'Enter Weight');
+                  // } else if (marital.text.isEmpty) {
+                  //   Fluttertoast.showToast(msg: 'Enter MaritalStatus');
+                  // } else if (body_type.text.isEmpty) {
+                  //   Fluttertoast.showToast(msg: 'Enter Body Type');
+                  // } else if (mothertongue.text.isEmpty) {
+                  //   Fluttertoast.showToast(msg: 'Enter Mother Tongue');
+                  // } else if (eatinghabit.text.isEmpty) {
+                  //   Fluttertoast.showToast(msg: 'Enter Eating Habit');
+                  // } else if (drinkinghabits.text.isEmpty) {
+                  //   Fluttertoast.showToast(msg: 'Enter Drinking habit');
+                  // } else if (smokinghabit.text.isEmpty) {
+                  //   Fluttertoast.showToast(msg: 'Enter Smoking Habit');
+                  // } else {
+
+                  saveBasicDetails(
+                    profile_created_by.text,
+                    name.text,
+                    age.text,
+                    height.text,
+                    weight.text,
+                    marital.text,
+                    body_type.text,
+                    mothertongue.text,
+                    eatinghabit.text,
+                    drinkinghabits.text,
+                    smokinghabit.text,
+                  );
+                  // }
                 },
               ),
             ),
@@ -775,12 +776,7 @@ class _basic_detailState extends State<basic_detail>
     var decodeValue = json.decode(res.body);
     // setState(() {});
     if (decodeValue['status']) {
-      Navigator.pop(context);
-      Navigator.pop(context);
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => Edit_profile()),
-      );
+      Get.offAll(bottomsheet());
       //   }
       // confirmragistration();
       // pref.setString('regId', decodeValue['data']['register_id'].toString());

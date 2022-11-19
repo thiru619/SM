@@ -64,6 +64,7 @@ class _registrationState extends State<registration> {
   // bool status = false;
   String radioButtonItem = 'ONE';
   int id = 1;
+  // bool countDownComplete = false;
 
   var cityList1 = [];
   var cityList = [];
@@ -188,9 +189,10 @@ class _registrationState extends State<registration> {
                   controller: maritialstuts,
                   decoration:
                       InputDecoration(suffixIcon: Icon(Icons.arrow_drop_down)),
-                  asyncSuggestions: ((searchValue) async {
-                    return strs3;
-                  }),
+                  // asyncSuggestions: ((searchValue) async {
+                  //   return strs3;
+                  // }),
+                  suggestions: strs3,
                   // onChanged: (value) => print('onChanged value: $value'.tr),
                   onSubmitted: (value) => print('onSubmitted value: $value'.tr),
                 ),
@@ -265,9 +267,10 @@ class _registrationState extends State<registration> {
                         controller: castefield,
                         decoration: InputDecoration(
                             suffixIcon: Icon(Icons.arrow_drop_down)),
-                        asyncSuggestions: ((searchValue) async {
-                          return strs15;
-                        }),
+                        // asyncSuggestions: ((searchValue) async {
+                        //   return strs15;
+                        // }),
+                        suggestions: strs15,
                         // onChanged: (value) =>
                         //     print('onChanged value: $value'.tr),
                         onSubmitted: (value) => {print(value)}),
@@ -321,9 +324,10 @@ class _registrationState extends State<registration> {
                             controller: zodiacfield,
                             decoration: InputDecoration(
                                 suffixIcon: Icon(Icons.arrow_drop_down)),
-                            asyncSuggestions: ((searchValue) async {
-                              return strs7;
-                            }),
+                            // asyncSuggestions: ((searchValue) async {
+                            //   return strs7;
+                            // }),
+                            suggestions: strs7,
                             // onChanged: (value) =>
                             //     print('onChanged value: $value'),
                             onSubmitted: (value) {
@@ -361,9 +365,10 @@ class _registrationState extends State<registration> {
                             controller: starfield,
                             decoration: InputDecoration(
                                 suffixIcon: Icon(Icons.arrow_drop_down)),
-                            asyncSuggestions: ((searchValue) async {
-                              return strs6;
-                            }),
+                            // asyncSuggestions: ((searchValue) async {
+                            //   return strs6;
+                            // }),
+                            suggestions: strs6,
                             // onChanged: (value) =>
                             //     print('onChanged value: $value'),
                             onSubmitted: (value) {
@@ -400,9 +405,10 @@ class _registrationState extends State<registration> {
                             controller: raasifield,
                             decoration: InputDecoration(
                                 suffixIcon: Icon(Icons.arrow_drop_down)),
-                            asyncSuggestions: ((searchValue) async {
-                              return strs4;
-                            }),
+                            // asyncSuggestions: ((searchValue) async {
+                            //   return strs4;
+                            // }),
+                            suggestions: strs4,
                             // onChanged: (value) =>
                             //     print('onChanged value: $value'),
                             onSubmitted: (value) {
@@ -436,9 +442,10 @@ class _registrationState extends State<registration> {
                         controller: countryfield,
                         decoration: InputDecoration(
                             suffixIcon: Icon(Icons.arrow_drop_down)),
-                        asyncSuggestions: ((searchValue) async {
-                          return strs21;
-                        }),
+                        // asyncSuggestions: ((searchValue) async {
+                        //   return strs21;
+                        suggestions: strs21,
+                        // }),
                         // onChanged: (value) => print('onChanged value: $value'),
                         onSubmitted: (value) {
                           print('onSubmitted value: $value');
@@ -470,9 +477,10 @@ class _registrationState extends State<registration> {
                         controller: statefield,
                         decoration: InputDecoration(
                             suffixIcon: Icon(Icons.arrow_drop_down)),
-                        asyncSuggestions: ((searchValue) async {
-                          return strs22;
-                        }),
+                        // asyncSuggestions: ((searchValue) async {
+                        //   return strs22;
+                        // }),
+                        suggestions: strs22,
                         // onChanged: (value) => print('onChanged value: $value'),
                         onSubmitted: (value) {
                           print('onSubmitted value: $value');
@@ -504,9 +512,10 @@ class _registrationState extends State<registration> {
                       controller: cityfield,
                       decoration: InputDecoration(
                           suffixIcon: Icon(Icons.arrow_drop_down)),
-                      asyncSuggestions: ((searchValue) async {
-                        return strs23;
-                      }),
+                      // asyncSuggestions: ((searchValue) async {
+                      //   return strs23;
+                      // }),
+                      suggestions: strs23,
                       // onChanged: (value) => print('onChanged value: $value'.tr),
                       onSubmitted: (value) =>
                           print('onSubmitted value: $value'.tr),
@@ -537,9 +546,10 @@ class _registrationState extends State<registration> {
                           controller: Doshamfield,
                           decoration: InputDecoration(
                               suffixIcon: Icon(Icons.arrow_drop_down)),
-                          asyncSuggestions: ((searchValue) async {
-                            return strs5;
-                          }),
+                          // asyncSuggestions: ((searchValue) async {
+                          //   return strs5;
+                          // }),
+                          suggestions: strs5,
                           // onChanged: (value) =>
                           //     print('onChanged value: $value'.tr),
                           onSubmitted: (value) =>
@@ -628,6 +638,9 @@ class _registrationState extends State<registration> {
                       print(
                         maritialstuts.text,
                       );
+
+                      //execute code
+
                       print(religionfor.text);
                       print(castefield.text);
                       print(subcastefield.text);
@@ -682,7 +695,6 @@ class _registrationState extends State<registration> {
                       //   MaterialPageRoute(
                       //       builder: (context) => registration2()),
                       // );
-                      // }
                     }),
               ),
               SizedBox(

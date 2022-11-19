@@ -5,6 +5,7 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:sujithamatrimony/colors.dart';
 import 'package:sujithamatrimony/languagecontroler.dart';
 import 'package:sujithamatrimony/loginpage.dart';
 import 'package:sujithamatrimony/prime.dart';
@@ -1132,9 +1133,12 @@ class _preferencelistState extends State<preferencelist>
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text(whatareyoulooking == ''
-                          ? "What we are looking for"
-                          : whatareyoulooking),
+                      child: SizedBox(
+                        width: 300,
+                        child: Text(whatareyoulooking == ''
+                            ? "What we are looking for"
+                            : whatareyoulooking),
+                      ),
                     ),
                   ],
                 ),

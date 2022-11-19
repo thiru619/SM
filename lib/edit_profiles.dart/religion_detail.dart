@@ -570,20 +570,8 @@ class _religion_detailState extends State<religion_detail>
     var decodeValue = json.decode(res.body);
     // setState(() {});
     if (decodeValue['status']) {
-      Navigator.pop(context);
-      Navigator.pop(context);
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => Edit_profile()),
-      );
-      //   }
-      // confirmragistration();
-      // pref.setString('regId', decodeValue['data']['register_id'].toString());
-
+      Get.off(bottomsheet());
     }
-    // if (decodeValue['status']) {
-    //   SharedPreferences pref = await SharedPreferences.getInstance();
-    //   pref.setString('temp_id', decodeValue['data']['user_temp_id'].toString());
   }
 
 // confirm registration

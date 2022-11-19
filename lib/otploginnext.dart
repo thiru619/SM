@@ -22,6 +22,7 @@ import 'package:sujithamatrimony/photo_upload.dart';
 
 import 'forgetpass.dart';
 import 'language_btn.dart';
+import 'otplogin.dart';
 
 var startTimer;
 var btnEnabled = false;
@@ -46,17 +47,18 @@ BoxDecoration get _pinPutDecoration {
   // borderRadius: BorderRadius.circular(10.0),
 }
 
-class otp_forgot extends StatefulWidget {
+class Otploginnext extends StatefulWidget {
   final String otp;
   final String mobile_no;
 
-  otp_forgot({Key? key, this.otp = '', this.mobile_no = ''}) : super(key: key);
+  Otploginnext({Key? key, this.otp = '', this.mobile_no = ''})
+      : super(key: key);
 
   @override
-  State<otp_forgot> createState() => _otp_forgotState();
+  State<Otploginnext> createState() => _OtploginnextState();
 }
 
-class _otp_forgotState extends State<otp_forgot> {
+class _OtploginnextState extends State<Otploginnext> {
   bool status = false;
   bool isSwitchOn = false;
 
@@ -139,7 +141,7 @@ class _otp_forgotState extends State<otp_forgot> {
                     "OTP via SMS on   ".tr,
                   ),
                   Text(
-                    '${mobilenumber.text}'.tr,
+                    '${mobilenumber1.text}'.tr,
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ],
@@ -292,37 +294,37 @@ class _otp_forgotState extends State<otp_forgot> {
     );
   }
 
-  Future<void> update_password(mobile_no, password) async {
-    var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/update_password";
-    // checker(context) async {
-    // var pref=await SharedPreferences.getInstance();
-    final MyController con = Get.find();
-    SharedPreferences pref = await SharedPreferences.getInstance();
-    var regIds = pref.getString('temp_id');
-    //  print(id);
-    var finalurl = Uri.parse(url);
-    var body = {
-      'mobile_no': mobile_no,
-      'password': password,
-    };
-    print(body.toString());
-    var res = await http.post(finalurl,
-        headers: <String, String>{
-          'X-API-KEY': '50f58d4facbdfe506d51ad6b079deaae',
-        },
-        body: body);
+  // Future<void> update_password(mobile_no, password) async {
+  //   var url =
+  //       "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/update_password";
+  //   // checker(context) async {
+  //   // var pref=await SharedPreferences.getInstance();
+  //   final MyController con = Get.find();
+  //   SharedPreferences pref = await SharedPreferences.getInstance();
+  //   var regIds = pref.getString('temp_id');
+  //   //  print(id);
+  //   var finalurl = Uri.parse(url);
+  //   var body = {
+  //     'mobile_no': mobile_no,
+  //     'password': password,
+  //   };
+  //   print(body.toString());
+  //   var res = await http.post(finalurl,
+  //       headers: <String, String>{
+  //         'X-API-KEY': '50f58d4facbdfe506d51ad6b079deaae',
+  //       },
+  //       body: body);
 
-    log('hi' + res.body);
-    // var decodeValue = json.decode(res.body);
-    var decodeValue = json.decode(res.body);
-    setState(() {});
-    Fluttertoast.showToast(
-      msg: decodeValue['message'].toString(),
-    );
-    // if (decodeValue['status']) {
-    //   SharedPreferences pref = await SharedPreferences.getInstance();
-    //   pref.setString('temp_id', decodeValue['data']['user_temp_id'].toString());
-    Get.offAll(() => changepass());
-  }
+  //   log('hi' + res.body);
+  //   // var decodeValue = json.decode(res.body);
+  //   var decodeValue = json.decode(res.body);
+  //   setState(() {});
+  //   Fluttertoast.showToast(
+  //     msg: decodeValue['message'].toString(),
+  //   );
+  //   // if (decodeValue['status']) {
+  //   //   SharedPreferences pref = await SharedPreferences.getInstance();
+  //   //   pref.setString('temp_id', decodeValue['data']['user_temp_id'].toString());
+  //   Get.offAll(() => changepass());
+  // }
 }

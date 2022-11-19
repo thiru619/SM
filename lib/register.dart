@@ -215,6 +215,7 @@ class _registerlistState extends State<registerlist> {
                               border: Border.all(width: 1, color: Colors.grey),
                             ),
                             child: EasyAutocomplete(
+                                autofocus: true,
                                 progressIndicatorBuilder:
                                     CircularProgressIndicator(
                                         color: Colors.orange),
@@ -222,11 +223,12 @@ class _registerlistState extends State<registerlist> {
                                 controller: profilefor,
                                 decoration: InputDecoration(
                                     suffixIcon: Icon(Icons.arrow_drop_down)),
-                                asyncSuggestions: ((searchValue) async {
-                                  return strs;
-                                }),
-                                // onChanged: (value) =>
-                                //     print('onChanged value: $value'.tr),
+                                // asyncSuggestions: ((searchValue) async {
+                                //   return strs;
+                                // }),
+                                suggestions: strs,
+                                onChanged: (value) =>
+                                    print('onChanged value: $value'.tr),
                                 onSubmitted: (value) =>
                                     print('onSubmitted value: $value'.tr))),
                       ],
@@ -458,11 +460,12 @@ class _registerlistState extends State<registerlist> {
                           controller: mothertong,
                           decoration: InputDecoration(
                               suffixIcon: Icon(Icons.arrow_drop_down)),
-                          asyncSuggestions: ((searchValue) async {
-                            return strs2;
-                          }),
-                          // onChanged: (value) =>
-                          //     print('onChanged value: $value'.tr),
+                          // asyncSuggestions: ((searchValue) async {
+                          //   return strs2;
+                          // }),
+                          suggestions: strs2,
+                          onChanged: (value) =>
+                              print('onChanged value: $value'.tr),
                           onSubmitted: (value) =>
                               print('onSubmitted value: $value'.tr))),
                 ]),
@@ -492,6 +495,9 @@ class _registerlistState extends State<registerlist> {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextField(
+                      inputFormatters: [
+                        LengthLimitingTextInputFormatter(10),
+                      ],
                       keyboardType: TextInputType.number,
                       controller: mobilenumberfield,
                       decoration: InputDecoration(

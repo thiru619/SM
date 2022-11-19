@@ -88,6 +88,8 @@ class _registration2State extends State<registration2> {
   String radioButtonItem = 'ONE';
   int id = 1;
 
+  var _clicked = false;
+
   var familyvaluelist = [];
   var familyvalue = [];
   var employedin = [];
@@ -208,9 +210,10 @@ class _registration2State extends State<registration2> {
                   controller: Heightfield,
                   decoration:
                       InputDecoration(suffixIcon: Icon(Icons.arrow_drop_down)),
-                  asyncSuggestions: ((searchValue) async {
-                    return strs6;
-                  }),
+                  // asyncSuggestions: ((searchValue) async {
+                  //   return strs6;
+                  // }),
+                  suggestions: strs6,
                   // onChanged: (value) => print('onChanged value: $value'.tr),
                   onSubmitted: (value) => print('onSubmitted value: $value'.tr),
                 ),
@@ -243,9 +246,10 @@ class _registration2State extends State<registration2> {
                         controller: Physicalstatusfield,
                         decoration: InputDecoration(
                             suffixIcon: Icon(Icons.arrow_drop_down)),
-                        asyncSuggestions: ((searchValue) async {
-                          return strs7;
-                        }),
+                        // asyncSuggestions: ((searchValue) async {
+                        //   return strs7;
+                        // }),
+                        suggestions: strs7,
                         // onChanged: (value) =>
                         //     print('onChanged value: $value'.tr),
                         onSubmitted: (value) =>
@@ -277,9 +281,10 @@ class _registration2State extends State<registration2> {
                           controller: Educationfield,
                           decoration: InputDecoration(
                               suffixIcon: Icon(Icons.arrow_drop_down)),
-                          asyncSuggestions: ((searchValue) async {
-                            return strs8;
-                          }),
+                          // asyncSuggestions: ((searchValue) async {
+                          //   return strs8;
+                          // }),
+                          suggestions: strs8,
                           // onChanged: (value) =>
                           //     print('onChanged value: $value'.tr),
                           onSubmitted: (value) {
@@ -312,9 +317,10 @@ class _registration2State extends State<registration2> {
                         controller: Educationcategoryfield,
                         decoration: InputDecoration(
                             suffixIcon: Icon(Icons.arrow_drop_down)),
-                        asyncSuggestions: ((searchValue) async {
-                          return strs15;
-                        }),
+                        // asyncSuggestions: ((searchValue) async {
+                        //   return strs15;
+                        // }),
+                        suggestions: strs15,
                         // onChanged: (value) =>
                         //     print('onChanged value: $value'.tr),
                         onSubmitted: (value) =>
@@ -346,9 +352,10 @@ class _registration2State extends State<registration2> {
                         controller: employedfield,
                         decoration: InputDecoration(
                             suffixIcon: Icon(Icons.arrow_drop_down)),
-                        asyncSuggestions: ((searchValue) async {
-                          return strs13;
-                        }),
+                        // asyncSuggestions: ((searchValue) async {
+                        //   return strs13;
+                        // }),
+                        suggestions: strs13,
                         // onChanged: (value) =>
                         //     print('onChanged value: $value'.tr),
                         onSubmitted: (value) =>
@@ -380,9 +387,10 @@ class _registration2State extends State<registration2> {
                           controller: occupationcategoryfield,
                           decoration: InputDecoration(
                               suffixIcon: Icon(Icons.arrow_drop_down)),
-                          asyncSuggestions: ((searchValue) async {
-                            return strs16;
-                          }),
+                          // asyncSuggestions: ((searchValue) async {
+                          //   return strs16;
+                          // }),
+                          suggestions: strs16,
                           // onChanged: (value) =>
                           //     print('onChanged value: $value'.tr),
                           onSubmitted: (value) {
@@ -415,9 +423,10 @@ class _registration2State extends State<registration2> {
                         controller: occupationfield,
                         decoration: InputDecoration(
                             suffixIcon: Icon(Icons.arrow_drop_down)),
-                        asyncSuggestions: ((searchValue) async {
-                          return strs17;
-                        }),
+                        // asyncSuggestions: ((searchValue) async {
+                        //   return strs17;
+                        // }),
+                        suggestions: strs17,
                         // onChanged: (value) =>
                         //     print('onChanged value: $value'.tr),
                         onSubmitted: (value) =>
@@ -454,9 +463,10 @@ class _registration2State extends State<registration2> {
                         controller: Annualincomefield,
                         decoration: InputDecoration(
                             suffixIcon: Icon(Icons.arrow_drop_down)),
-                        asyncSuggestions: ((searchValue) async {
-                          return strs11;
-                        }),
+                        // asyncSuggestions: ((searchValue) async {
+                        //   return strs11;
+                        // }),
+                        suggestions: strs11,
                         // onChanged: (value) =>
                         //     print('onChanged value: $value'.tr),
                         onSubmitted: (value) =>
@@ -494,9 +504,10 @@ class _registration2State extends State<registration2> {
                   controller: familystatusfield,
                   decoration:
                       InputDecoration(suffixIcon: Icon(Icons.arrow_drop_down)),
-                  asyncSuggestions: ((searchValue) async {
-                    return strs12;
-                  }),
+                  // asyncSuggestions: ((searchValue) async {
+                  //   return strs12;
+                  // }),
+                  suggestions: strs12,
                   // onChanged: (value) => print('onChanged value: $value'.tr),
                   onSubmitted: (value) => print('onSubmitted value: $value'.tr),
                 ),
@@ -613,9 +624,10 @@ class _registration2State extends State<registration2> {
                   controller: Familyvaluesfield,
                   decoration:
                       InputDecoration(suffixIcon: Icon(Icons.arrow_drop_down)),
-                  asyncSuggestions: ((searchValue) async {
-                    return strs14;
-                  }),
+                  // asyncSuggestions: ((searchValue) async {
+                  //   return strs14;
+                  // }),
+                  suggestions: strs14,
                   // onChanged: (value) => print('onChanged value: $value'.tr),
                   onSubmitted: (value) => print('onSubmitted value: $value'.tr),
                 ),
@@ -672,80 +684,95 @@ class _registration2State extends State<registration2> {
                 width: 250,
                 height: 40,
                 child: ElevatedButton(
-                    child: Text(
-                      "Complete Registration".tr,
-                      style: TextStyle(fontSize: 20),
-                    ),
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(
-                          Color.fromARGB(255, 255, 111, 0)),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                          side: BorderSide(
-                            color: Color.fromARGB(255, 255, 111, 0),
-                          ),
+                  child: Text(
+                    "Complete Registration".tr,
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        Color.fromARGB(255, 255, 111, 0)),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        side: BorderSide(
+                          color: Color.fromARGB(255, 255, 111, 0),
                         ),
                       ),
                     ),
-                    onPressed: () {
-                      print(Heightfield.text);
-                      print(Physicalstatusfield.text);
-                      print(Educationfield.text);
-                      print(occupationfield.text);
-                      print(employedfield.text);
+                  ),
+                  onPressed: _clicked
+                      ? null
+                      : () {
+                          setState(() => Timer(Duration(seconds: 2), () {
+                                setState(() {
+                                  _clicked = true;
+                                });
+                              }));
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(
+                          //       builder: (context) => const otppage()),
+                          // );
+                          print(Heightfield.text);
+                          print(Physicalstatusfield.text);
+                          print(Educationfield.text);
+                          print(occupationfield.text);
+                          print(employedfield.text);
 
-                      print(Annualincomefield.text);
-                      print(familystatusfield.text);
+                          print(Annualincomefield.text);
+                          print(familystatusfield.text);
 
-                      print(id == 1 ? 'Nuclear' : 'joint');
+                          print(id == 1 ? 'Nuclear' : 'joint');
 
-                      print(Familyvaluesfield.text);
-                      print(ancestralcontroller.text);
-                      print(aboutmyselfcontroller.text);
-                      if (Heightfield.text.isEmpty) {
-                        Fluttertoast.showToast(msg: 'select Height');
-                      } else if (Physicalstatusfield.text.isEmpty) {
-                        Fluttertoast.showToast(msg: 'Enter Physical Status');
-                      } else if (Educationfield.text.isEmpty) {
-                        Fluttertoast.showToast(msg: 'select Education');
-                      } else if (occupationfield.text.isEmpty) {
-                        Fluttertoast.showToast(msg: 'select occupation');
-                      } else if (employedfield.text.isEmpty) {
-                        Fluttertoast.showToast(msg: 'select Employed IN');
-                      } else if (Annualincomefield.text.isEmpty) {
-                        Fluttertoast.showToast(msg: 'select Annual Income');
-                      } else if (familystatusfield.text.isEmpty) {
-                        Fluttertoast.showToast(msg: 'select Family Status');
-                      } else if (Familyvaluesfield.text.isEmpty) {
-                        Fluttertoast.showToast(msg: 'family Value');
-                      } else if (ancestralcontroller.text.isEmpty) {
-                        Fluttertoast.showToast(
-                            msg: 'select enter Ancestral Orgin');
-                      } else if (aboutmyselfcontroller.toString() == 'null') {
-                        Fluttertoast.showToast(msg: 'select About my Self');
-                      } else {
-                        Future.delayed(Duration(seconds: 2), () {
-                          saveEducationDetails(
-                              Heightfield.text,
-                              Physicalstatusfield.text,
-                              Educationfield.text,
-                              occupationfield.text,
-                              employedfield.text,
-                              Annualincomefield.text,
-                              familystatusfield.text,
-                              id == 1 ? 'Nuclear' : 'joint',
-                              Familyvaluesfield.text,
-                              ancestralcontroller.text,
-                              aboutmyselfcontroller.text);
-                        });
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //       builder: (context) => const otppage()),
-                        // );
-                      }
-                    }),
+                          print(Familyvaluesfield.text);
+                          print(ancestralcontroller.text);
+                          print(aboutmyselfcontroller.text);
+
+                          if (Heightfield.text.isEmpty) {
+                            Fluttertoast.showToast(msg: 'select Height');
+                          } else if (Physicalstatusfield.text.isEmpty) {
+                            Fluttertoast.showToast(
+                                msg: 'Enter Physical Status');
+                          } else if (Educationfield.text.isEmpty) {
+                            Fluttertoast.showToast(msg: 'select Education');
+                          } else if (occupationfield.text.isEmpty) {
+                            Fluttertoast.showToast(msg: 'select occupation');
+                          } else if (employedfield.text.isEmpty) {
+                            Fluttertoast.showToast(msg: 'select Employed IN');
+                          } else if (Annualincomefield.text.isEmpty) {
+                            Fluttertoast.showToast(msg: 'select Annual Income');
+                          } else if (familystatusfield.text.isEmpty) {
+                            Fluttertoast.showToast(msg: 'select Family Status');
+                          } else if (Familyvaluesfield.text.isEmpty) {
+                            Fluttertoast.showToast(msg: 'family Value');
+                          } else if (ancestralcontroller.text.isEmpty) {
+                            Fluttertoast.showToast(
+                                msg: 'select enter Ancestral Orgin');
+                          } else if (aboutmyselfcontroller.toString() ==
+                              'null') {
+                            Fluttertoast.showToast(msg: 'select About my Self');
+                          } else {
+                            saveEducationDetails(
+                                Heightfield.text,
+                                Physicalstatusfield.text,
+                                Educationfield.text,
+                                occupationfield.text,
+                                employedfield.text,
+                                Annualincomefield.text,
+                                familystatusfield.text,
+                                id == 1 ? 'Nuclear' : 'joint',
+                                Familyvaluesfield.text,
+                                ancestralcontroller.text,
+                                aboutmyselfcontroller.text);
+                          }
+                          // };
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(builder: (context) => otppage()),
+                          // );
+                          // Future.delayed(const Duration(seconds: 15));
+                        },
+                ),
               ),
               TextButton(
                   onPressed: () {

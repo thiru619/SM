@@ -1,34 +1,19 @@
-// import 'dart:ffi';
-
-import 'dart:convert';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
-import 'package:sujithamatrimony/changepass.dart';
 
-import 'languagecontroler.dart';
-import 'otp_forgot.dart';
+import 'otploginnext.dart';
 
+TextEditingController mobilenumber1 = TextEditingController();
 
-
-
-
- TextEditingController mobilenumber = TextEditingController();
-
-
-
-class forgetpass extends StatefulWidget {
-  const forgetpass({Key? key}) : super(key: key);
+class Otplogin extends StatefulWidget {
+  const Otplogin({Key? key}) : super(key: key);
 
   @override
-  State<forgetpass> createState() => _forgetpassState();
+  State<Otplogin> createState() => _OtploginState();
 }
 
-class _forgetpassState extends State<forgetpass> {
- 
-
+class _OtploginState extends State<Otplogin> {
   @override
   void initState() {
     super.initState();
@@ -42,7 +27,7 @@ class _forgetpassState extends State<forgetpass> {
         centerTitle: true,
         backgroundColor: Colors.white,
         title: Text(
-          "Forgot Password",
+          "Login",
           style: TextStyle(color: Colors.black),
           // textAlign: TextAlign.left,
         ),
@@ -55,11 +40,12 @@ class _forgetpassState extends State<forgetpass> {
               padding: const EdgeInsets.all(2),
               child: Container(
                 child: TextField(
-                  controller: mobilenumber,
+                  controller: mobilenumber1,
                   decoration: InputDecoration(
+                      border: InputBorder.none,
                       fillColor: Colors.white,
                       filled: true,
-                      hintText: "Mobile number",
+                      hintText: 'matrimonyid'.tr,
                       contentPadding:
                           EdgeInsets.fromLTRB(10.0, 10.0, 20.0, 10.0),
                       enabledBorder: OutlineInputBorder(
@@ -103,18 +89,18 @@ class _forgetpassState extends State<forgetpass> {
                   ),
                 ),
                 onPressed: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => changepass()),
-                  // );
-                  if (mobilenumber.text.isEmpty ||
-                      mobilenumber.text.length != 10) {
-                    Fluttertoast.showToast(msg: 'select Mobile Number');
-                  } else {
-                    forgot_password(
-                      mobilenumber.text,
-                    );
-                  }
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Otploginnext()),
+                  );
+                  // if (mobilenumber.text.isEmpty ||
+                  //     mobilenumber.text.length != 10) {
+                  //   Fluttertoast.showToast(msg: 'select Mobile Number');
+                  // } else {
+                  //   forgot_password(
+                  //     mobilenumber.text,
+                  //   );
+                  // }
                 },
               ),
             ),
@@ -122,40 +108,5 @@ class _forgetpassState extends State<forgetpass> {
         ),
       ),
     );
-  }
-
-  Future<void> forgot_password(mobile_no) async {
-    var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/forgot_password";
-    // checker(context) async {
-    // var pref=await SharedPreferences.getInstance();
-    final MyController con = Get.find();
-    SharedPreferences pref = await SharedPreferences.getInstance();
-    var regId = pref.getString('temp_id');
-    //  print(id);
-    var finalurl = Uri.parse(url);
-    var body = {
-      'mobile_no': mobile_no,
-      // 'language': con.lancode.value == 'en' ? 'en' : 'tu',
-    };
-    print(body.toString());
-    var res = await http.post(finalurl,
-        headers: <String, String>{
-          'X-API-KEY': '50f58d4facbdfe506d51ad6b079deaae'
-        },
-        body: body);
-
-    print('hi' + res.body);
-    // var decodeValue = json.decode(res.body);
-    var decodeValue = json.decode(res.body);
-    setState(() {});
-    Fluttertoast.showToast(
-      msg: decodeValue['data']['OTP'].toString(),
-    );
-    // if (decodeValue['status']) {
-    //   SharedPreferences pref = await SharedPreferences.getInstance();
-    //   pref.setString('temp_id', decodeValue['data']['user_temp_id'].toString());
-    Get.to(() => otp_forgot(
-        otp: decodeValue['data']['OTP'].toString(), mobile_no: mobile_no));
   }
 }
