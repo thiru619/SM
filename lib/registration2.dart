@@ -774,21 +774,21 @@ class _registration2State extends State<registration2> {
                         },
                 ),
               ),
-              TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => photo_upload()),
-                    );
-                  },
-                  child: Column(children: [
-                    Text(
-                      "Skip".tr,
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 255, 111, 0),
-                          fontSize: 20),
-                    )
-                  ])),
+              // TextButton(
+              //     onPressed: () {
+              //       Navigator.push(
+              //         context,
+              //         MaterialPageRoute(builder: (context) => photo_upload()),
+              //       );
+              //     },
+              //     child: Column(children: [
+              //       Text(
+              //         "Skip".tr,
+              //         style: TextStyle(
+              //             color: Color.fromARGB(255, 255, 111, 0),
+              //             fontSize: 20),
+              //       )
+              //     ])),
             ],
           ),
         ),
