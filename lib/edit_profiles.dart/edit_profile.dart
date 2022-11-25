@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
@@ -23,6 +24,7 @@ import '../languagecontroler.dart';
 import 'Professionalinfo_detail.dart';
 import 'basic_detail.dart';
 import 'package:image_cropper/image_cropper.dart';
+import 'package:banner_carousel/banner_carousel.dart';
 
 var firstimage;
 
@@ -178,6 +180,7 @@ class _Edit_profileState extends State<Edit_profile> {
 
   var imageList = [].obs;
 
+  GlobalKey<CarouselSliderState> _sliderKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return viewdetails != null
@@ -1721,4 +1724,14 @@ class _Edit_profileState extends State<Edit_profile> {
     var data = json.decode(respStr);
     setState(() {});
   }
+
+  final List<Color> kMixedColors = [
+    Color(0xff71A5D7),
+    Color(0xff72CCD4),
+    Color(0xffFBAB57),
+    Color(0xffF8B993),
+    Color(0xff962D17),
+    Color(0xffc657fb),
+    Color(0xfffb8457),
+  ];
 }

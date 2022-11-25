@@ -70,7 +70,9 @@ dependencies:
   google_fonts: ^3.0.1
   timer_button: ^2.0.0
   flutter_carousel_slider: ^1.0.9
-  # flutter_offline: "^2.1.0"
+  banner_carousel: ^1.2.1
+  # internet_popup: ^1.0.3
+  connectivity: ^3.0.6
 
   
   

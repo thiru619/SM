@@ -1,5 +1,7 @@
+import 'dart:async';
 import 'dart:convert';
 
+import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
@@ -15,6 +17,8 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'register.dart';
 import 'package:http/http.dart' as http;
 import 'package:google_fonts/google_fonts.dart';
+import 'package:internet_popup/internet_popup.dart';
+
 // import 'package:flutter_offline/flutter_offline.dart';
 // import 'package:internet_popup/internet_popup.dart';
 
@@ -73,8 +77,19 @@ class MyApps extends StatelessWidget {
   }
 }
 
-class secondscreen extends StatelessWidget {
+class secondscreen extends StatefulWidget {
   const secondscreen({Key? key}) : super(key: key);
+
+  @override
+  State<secondscreen> createState() => _secondscreenState();
+}
+
+class _secondscreenState extends State<secondscreen> {
+  @override
+  void initState() {
+    super.initState();
+    InternetPopup().initialize(context: context);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -464,6 +479,49 @@ class _bodypartState extends State<bodypart> {
       } else {
         // Fluttertoast.showToast(msg: decodeValue['message']);
       }
+    }
+  }
+}
+
+class ThemeController extends GetxController {
+  var isminimize = false.obs;
+  var isDarkMode = false.obs;
+  var isplaying = false.obs;
+  // var selectedItems = false.obs;
+  var name = '';
+
+  //connectivity
+
+  var connetstatus = 0.obs;
+  final Connectivity _connectivity = Connectivity();
+  late StreamSubscription<ConnectivityResult> _connectivitySubscription;
+  @override
+  void onInit() {
+    _connectivitySubscription =
+        _connectivity.onConnectivityChanged.listen(updateConnectionStatus);
+    super.onInit();
+  }
+
+  Future<void> updateConnectionStatus(ConnectivityResult result) async {
+    switch (result) {
+      case ConnectivityResult.wifi:
+        connetstatus.value = 5;
+        break;
+      case ConnectivityResult.mobile:
+        connetstatus.value = 1;
+        break;
+      case ConnectivityResult.none:
+        connetstatus.value = 3;
+        // Fluttertoast.showToast(msg: "You Are Offline");
+
+        Get.defaultDialog(
+            // actions: [Lottie.asset("images/lost.json")],
+            title: "You Are Offline",
+            middleText: 'Turn On Network Connection');
+        break;
+      default:
+        connetstatus.value = 3;
+        break;
     }
   }
 }

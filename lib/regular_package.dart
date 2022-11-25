@@ -198,7 +198,7 @@ class _regular3m_packageState extends State<regular3m_package> {
                                           //     main_banner3[index]
                                           //         ['price'],
                                           //     main_banner3[index]['id']),
-                                          child: const Text('Pay Now'),
+                                          child: const Text('Activate'),
                                         ),
                                       ],
                                     ),
@@ -226,10 +226,16 @@ class _regular3m_packageState extends State<regular3m_package> {
 
     var finalurl = Uri.parse(url);
 
-    var res = await http.get(finalurl, headers: <String, String>{
+    var res = await http.post(finalurl, headers: <String, String>{
       'X-API-KEY': '50f58d4facbdfe506d51ad6b079deaae'
     });
     print(res.body);
+    //  var decodeValue = json.decode(res.body);
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    var regId = pref.getString('regsId');
+    var body = {
+      'reg_id': regId,
+    };
     var decodeValue = json.decode(res.body);
     setState(() {
       print(decodeValue['status']);
@@ -429,7 +435,7 @@ class _regular6m_packageState extends State<regular6m_package> {
                                           //     main_banner3[index]
                                           //         ['price'],
                                           //     main_banner3[index]['id']),
-                                          child: const Text('Pay Now'),
+                                          child: const Text('Activate'),
                                         ),
                                       ],
                                     ),
@@ -457,9 +463,15 @@ class _regular6m_packageState extends State<regular6m_package> {
 
     var finalurl = Uri.parse(url);
 
-    var res = await http.get(finalurl, headers: <String, String>{
+    var res = await http.post(finalurl, headers: <String, String>{
       'X-API-KEY': '50f58d4facbdfe506d51ad6b079deaae'
     });
+    //  var decodeValue = json.decode(res.body);
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    var regId = pref.getString('regsId');
+    var body = {
+      'reg_id': regId,
+    };
     print(res.body);
     var decodeValue = json.decode(res.body);
     setState(() {
@@ -688,10 +700,16 @@ class _regular12m_packageState extends State<regular12m_package> {
 
     var finalurl = Uri.parse(url);
 
-    var res = await http.get(finalurl, headers: <String, String>{
+    var res = await http.post(finalurl, headers: <String, String>{
       'X-API-KEY': '50f58d4facbdfe506d51ad6b079deaae'
     });
     print(res.body);
+    //  var decodeValue = json.decode(res.body);
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    var regId = pref.getString('regsId');
+    var body = {
+      'reg_id': regId,
+    };
     var decodeValue = json.decode(res.body);
     setState(() {
       print(decodeValue['status']);

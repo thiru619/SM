@@ -20,6 +20,8 @@ import 'package:http/http.dart' as http;
 //   ));
 // }
 
+TextEditingController copied = TextEditingController();
+
 class referralcode extends StatefulWidget {
   const referralcode({Key? key}) : super(key: key);
 
@@ -40,7 +42,6 @@ class _referralcodeState extends State<referralcode> {
     // secureScreen();
   }
 
-  TextEditingController copied = TextEditingController();
   var referal = [];
 
   Future<void> share() async {

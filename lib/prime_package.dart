@@ -232,11 +232,17 @@ class _prime3m_packageState extends State<prime3m_package> {
 
     var finalurl = Uri.parse(url);
 
-    var res = await http.get(finalurl, headers: <String, String>{
+    var res = await http.post(finalurl, headers: <String, String>{
       'X-API-KEY': '50f58d4facbdfe506d51ad6b079deaae'
     });
     print(res.body);
+
     var decodeValue = json.decode(res.body);
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    var regId = pref.getString('regsId');
+    var body = {
+      'reg_id': regId,
+    };
     setState(() {
       print(decodeValue['status']);
       main_banner3 = decodeValue['data']['premium']["3"];
@@ -462,9 +468,15 @@ class _prime6m_packageState extends State<prime6m_package> {
 
     var finalurl = Uri.parse(url);
 
-    var res = await http.get(finalurl, headers: <String, String>{
+    var res = await http.post(finalurl, headers: <String, String>{
       'X-API-KEY': '50f58d4facbdfe506d51ad6b079deaae'
     });
+    //  var decodeValue = json.decode(res.body);
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    var regId = pref.getString('regsId');
+    var body = {
+      'reg_id': regId,
+    };
     print(res.body);
     var decodeValue = json.decode(res.body);
     setState(() {
@@ -727,10 +739,16 @@ class _prime12m_packageState extends State<prime12m_package> {
 
     var finalurl = Uri.parse(url);
 
-    var res = await http.get(finalurl, headers: <String, String>{
+    var res = await http.post(finalurl, headers: <String, String>{
       'X-API-KEY': '50f58d4facbdfe506d51ad6b079deaae'
     });
     print(res.body);
+    //  var decodeValue = json.decode(res.body);
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    var regId = pref.getString('regsId');
+    var body = {
+      'reg_id': regId,
+    };
     var decodeValue = json.decode(res.body);
     setState(() {
       print(decodeValue['status']);

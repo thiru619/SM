@@ -56,7 +56,6 @@ class _registrationState extends State<registration> {
   TextEditingController cityfield = TextEditingController();
   TextEditingController starfield = TextEditingController();
   TextEditingController zodiacfield = TextEditingController();
-  TextEditingController raasifield = TextEditingController();
 
   TextEditingController Doshamfield = TextEditingController();
 
@@ -71,14 +70,12 @@ class _registrationState extends State<registration> {
   var stateList = [];
   var countryList = [];
   var country = [];
-
   var maritialstatus = [];
   var Dosham = [];
   var caste = [];
   var religions = [];
   var zodiac = [];
   var star = [];
-  var raasi = [];
 
   var maritialstatusList = [];
   var casteList = [];
@@ -95,7 +92,7 @@ class _registrationState extends State<registration> {
   List<String> strs6 = [];
   List<String> strs7 = [];
   List<String> strs15 = [];
-  List<String> strs20 = [];
+  // List<String> strs20 = [];
   List<String> strs21 = [];
   List<String> strs22 = [];
   List<String> strs23 = [];
@@ -302,46 +299,6 @@ class _registrationState extends State<registration> {
                       Row(
                         children: [
                           Text(
-                            "    Zodiac".tr,
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        height: 7,
-                      ),
-                      Container(
-                        padding: EdgeInsets.only(left: 8),
-                        // height: 40,
-                        margin: EdgeInsets.only(right: 15, left: 15),
-                        decoration: BoxDecoration(
-                          // borderRadius: BorderRadius.circular(12),
-                          border: Border.all(width: 1, color: Colors.grey),
-                        ),
-                        child: EasyAutocomplete(
-                            progressIndicatorBuilder:
-                                CircularProgressIndicator(color: Colors.orange),
-                            debounceDuration: Duration(microseconds: 1),
-                            controller: zodiacfield,
-                            decoration: InputDecoration(
-                                suffixIcon: Icon(Icons.arrow_drop_down)),
-                            // asyncSuggestions: ((searchValue) async {
-                            //   return strs7;
-                            // }),
-                            suggestions: strs7,
-                            // onChanged: (value) =>
-                            //     print('onChanged value: $value'),
-                            onSubmitted: (value) {
-                              print('onSubmitted value: $value');
-                            }),
-                      )
-                    ]),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(top: 10),
-                    child: Column(children: [
-                      Row(
-                        children: [
-                          Text(
                             "    Star".tr,
                           )
                         ],
@@ -383,7 +340,7 @@ class _registrationState extends State<registration> {
                       Row(
                         children: [
                           Text(
-                            "    Raasi".tr,
+                            "    Zodiac".tr,
                           )
                         ],
                       ),
@@ -402,13 +359,13 @@ class _registrationState extends State<registration> {
                             progressIndicatorBuilder:
                                 CircularProgressIndicator(color: Colors.orange),
                             debounceDuration: Duration(microseconds: 1),
-                            controller: raasifield,
+                            controller: zodiacfield,
                             decoration: InputDecoration(
                                 suffixIcon: Icon(Icons.arrow_drop_down)),
                             // asyncSuggestions: ((searchValue) async {
                             //   return strs4;
                             // }),
-                            suggestions: strs4,
+                            suggestions: strs7,
                             // onChanged: (value) =>
                             //     print('onChanged value: $value'),
                             onSubmitted: (value) {
@@ -661,8 +618,6 @@ class _registrationState extends State<registration> {
                         Fluttertoast.showToast(msg: 'Enter Zodiac');
                       } else if (starfield.text.isEmpty) {
                         Fluttertoast.showToast(msg: 'Enter Star');
-                      } else if (raasifield.text.isEmpty) {
-                        Fluttertoast.showToast(msg: 'Enter Raasi');
                       } else if (countryfield.text.isEmpty) {
                         Fluttertoast.showToast(msg: 'Enter Country');
                       } else if (statefield.text.isEmpty) {
@@ -688,7 +643,7 @@ class _registrationState extends State<registration> {
                             cityfield.text,
                             zodiacfield.text,
                             starfield.text,
-                            raasifield.text);
+                            '');
                       }
                       // Navigator.push(
                       //   context,
@@ -799,9 +754,9 @@ class _registrationState extends State<registration> {
     setState(() {
       maritialstatus = decodeValue['data']['marital_status'];
       religions = decodeValue['data']['religions'];
-      zodiac = decodeValue['data']['zodiac'];
+
       star = decodeValue['data']['star'];
-      raasi = decodeValue['data']['raasi'];
+      zodiac = decodeValue['data']['zodiac'];
       // caste = decodeValue['data'];
       Dosham = decodeValue['data']['dosham'];
       country = decodeValue['data']['country'];
@@ -825,18 +780,14 @@ class _registrationState extends State<registration> {
         // religionslist.add(religions[i]['name']);
 
       }
-      for (var i = 0; i < zodiac.length; i++) {
-        zodiacList.add(zodiac[i]['name']);
-        // religionslist.add(religions[i]['name']);
 
-      }
       for (var i = 0; i < star.length; i++) {
         starList.add(star[i]['name']);
         // religionslist.add(religions[i]['name']);
 
       }
-      for (var i = 0; i < raasi.length; i++) {
-        raasiList.add(raasi[i]['name']);
+      for (var i = 0; i < zodiac.length; i++) {
+        zodiacList.add(zodiac[i]['name']);
         // religionslist.add(religions[i]['name']);
 
       }
@@ -846,9 +797,9 @@ class _registrationState extends State<registration> {
       strs3 = maritialstatusList.map((e) => e.toString()).toList();
 
       strs5 = DoshamList.map((e) => e.toString()).toList();
-      strs20 = DoshamList.map((e) => e.toString()).toList();
+      // strs20 = DoshamList.map((e) => e.toString()).toList();
       strs21 = countryList.map((e) => e.toString()).toList();
-      strs4 = raasiList.map((e) => e.toString()).toList();
+      // strs4 = raasiList.map((e) => e.toString()).toList();
       strs6 = starList.map((e) => e.toString()).toList();
       strs7 = zodiacList.map((e) => e.toString()).toList();
       print(strs3.runtimeType);
