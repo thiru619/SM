@@ -16,7 +16,7 @@ import 'bottomsheet.dart';
 import 'language_btn.dart';
 import 'otppage.dart';
 import 'registration2.dart';
-import 'package:flutter_windowmanager/flutter_windowmanager.dart';
+
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:easy_autocomplete/easy_autocomplete.dart';

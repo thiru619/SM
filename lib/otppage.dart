@@ -5,7 +5,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:pinput/pin_put/pin_put.dart';
 
 import 'package:flutter_switch/flutter_switch.dart';
-import 'package:flutter_windowmanager/flutter_windowmanager.dart';
+
 import 'package:get/get.dart';
 import 'package:sujithamatrimony/bottomsheet.dart';
 import 'package:sujithamatrimony/colors.dart';

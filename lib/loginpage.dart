@@ -13,7 +13,7 @@ import 'language_btn.dart';
 import 'main.dart';
 import 'otplogin.dart';
 import 'register.dart';
-import 'package:flutter_windowmanager/flutter_windowmanager.dart';
+
 // import 'package:flutter_offline/flutter_offline.dart';
 
 class loginpage extends StatefulWidget {
@@ -390,7 +390,7 @@ class _textState extends State<text> {
       print(decodeValue['data']['reg_id'].toString());
       Get.to(() => bottomsheet());
 
-      Fluttertoast.showToast(msg: decodeValue['message']);
+      // Fluttertoast.showToast(msg: decodeValue['message']);
     } else {
       Fluttertoast.showToast(msg: decodeValue['message']);
     }

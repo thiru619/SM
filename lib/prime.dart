@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:sujithamatrimony/bottomsheet.dart';
-import 'package:flutter_windowmanager/flutter_windowmanager.dart';
+
 import 'package:get/get.dart';
 import 'package:sujithamatrimony/languagecontroler.dart';
 

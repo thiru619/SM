@@ -14,7 +14,7 @@ import 'package:sujithamatrimony/homescreen.dart';
 import 'language_btn.dart';
 import 'otppage.dart';
 import 'registration2.dart';
-import 'package:flutter_windowmanager/flutter_windowmanager.dart';
+
 import 'package:get/get.dart';
 import 'package:sujithamatrimony/languagecontroler.dart';
 import 'package:http/http.dart' as http;

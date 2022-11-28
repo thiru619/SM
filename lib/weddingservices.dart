@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
-import 'package:flutter_windowmanager/flutter_windowmanager.dart';
+
 import 'package:sujithamatrimony/colors.dart';
 
 import 'language_btn.dart';

@@ -7,7 +7,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:sujithamatrimony/colors.dart';
 import 'package:sujithamatrimony/languagecontroler.dart';
-import 'package:flutter_windowmanager/flutter_windowmanager.dart';
+
 import 'package:sujithamatrimony/preferencelist.dart';
 import 'package:sujithamatrimony/profilefor.dart';
 import 'bottomsheet.dart';

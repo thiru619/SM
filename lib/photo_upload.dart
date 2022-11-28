@@ -13,7 +13,7 @@ import 'package:sujithamatrimony/preferencelist.dart';
 import 'package:sujithamatrimony/referralcode.dart';
 import 'package:sujithamatrimony/settings.dart';
 import 'package:sujithamatrimony/weddingservices.dart';
-import 'package:flutter_windowmanager/flutter_windowmanager.dart';
+//
 import 'package:get/get.dart';
 import 'package:sujithamatrimony/languagecontroler.dart';
 import 'package:sujithamatrimony/preferencelist.dart';

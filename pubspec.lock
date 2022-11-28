@@ -239,13 +239,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.6.0"
-  eventify:
-    dependency: transitive
-    description:
-      name: eventify
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.1"
   fading_edge_scrollview:
     dependency: transitive
     description:
@@ -352,13 +345,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_windowmanager:
-    dependency: "direct main"
-    description:
-      name: flutter_windowmanager
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.2.0"
   fluttertoast:
     dependency: "direct main"
     description:
@@ -667,13 +653,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.2.4"
-  razorpay_flutter:
-    dependency: "direct main"
-    description:
-      name: razorpay_flutter
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.2.7"
   rflutter_alert:
     dependency: "direct main"
     description:
@@ -695,13 +674,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.27.5"
-  scaffold_gradient_background:
-    dependency: "direct main"
-    description:
-      name: scaffold_gradient_background
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.3+1"
   searchfield:
     dependency: "direct main"
     description:

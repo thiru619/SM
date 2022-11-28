@@ -11,7 +11,7 @@ import 'package:sujithamatrimony/bottomsheet.dart';
 import 'package:sujithamatrimony/translation.dart';
 import 'languagecontroler.dart';
 import 'loginpage.dart';
-import 'package:flutter_windowmanager/flutter_windowmanager.dart';
+
 import 'package:sizer/sizer.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'register.dart';

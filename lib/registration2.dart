@@ -700,78 +700,72 @@ class _registration2State extends State<registration2> {
                       ),
                     ),
                   ),
-                  onPressed: _clicked
-                      ? null
-                      : () {
-                          setState(() => Timer(Duration(seconds: 2), () {
-                                setState(() {
-                                  _clicked = true;
-                                });
-                              }));
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //       builder: (context) => const otppage()),
-                          // );
-                          print(Heightfield.text);
-                          print(Physicalstatusfield.text);
-                          print(Educationfield.text);
-                          print(occupationfield.text);
-                          print(employedfield.text);
+                  onPressed: () {
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //       builder: (context) => const otppage()),
+                    // );
+                    print(Heightfield.text);
+                    print(Physicalstatusfield.text);
+                    print(Educationfield.text);
+                    print(occupationfield.text);
+                    print(employedfield.text);
 
-                          print(Annualincomefield.text);
-                          print(familystatusfield.text);
+                    print(Annualincomefield.text);
+                    print(familystatusfield.text);
 
-                          print(id == 1 ? 'Nuclear' : 'joint');
+                    print(id == 1 ? 'Nuclear' : 'joint');
 
-                          print(Familyvaluesfield.text);
-                          print(ancestralcontroller.text);
-                          print(aboutmyselfcontroller.text);
+                    print(Familyvaluesfield.text);
+                    print(ancestralcontroller.text);
+                    print(aboutmyselfcontroller.text);
 
-                          if (Heightfield.text.isEmpty) {
-                            Fluttertoast.showToast(msg: 'select Height');
-                          } else if (Physicalstatusfield.text.isEmpty) {
-                            Fluttertoast.showToast(
-                                msg: 'Enter Physical Status');
-                          } else if (Educationfield.text.isEmpty) {
-                            Fluttertoast.showToast(msg: 'select Education');
-                          } else if (occupationfield.text.isEmpty) {
-                            Fluttertoast.showToast(msg: 'select occupation');
-                          } else if (employedfield.text.isEmpty) {
-                            Fluttertoast.showToast(msg: 'select Employed IN');
-                          } else if (Annualincomefield.text.isEmpty) {
-                            Fluttertoast.showToast(msg: 'select Annual Income');
-                          } else if (familystatusfield.text.isEmpty) {
-                            Fluttertoast.showToast(msg: 'select Family Status');
-                          } else if (Familyvaluesfield.text.isEmpty) {
-                            Fluttertoast.showToast(msg: 'family Value');
-                          } else if (ancestralcontroller.text.isEmpty) {
-                            Fluttertoast.showToast(
-                                msg: 'select enter Ancestral Orgin');
-                          } else if (aboutmyselfcontroller.toString() ==
-                              'null') {
-                            Fluttertoast.showToast(msg: 'select About my Self');
-                          } else {
-                            saveEducationDetails(
-                                Heightfield.text,
-                                Physicalstatusfield.text,
-                                Educationfield.text,
-                                occupationfield.text,
-                                employedfield.text,
-                                Annualincomefield.text,
-                                familystatusfield.text,
-                                id == 1 ? 'Nuclear' : 'joint',
-                                Familyvaluesfield.text,
-                                ancestralcontroller.text,
-                                aboutmyselfcontroller.text);
-                          }
-                          // };
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(builder: (context) => otppage()),
-                          // );
-                          // Future.delayed(const Duration(seconds: 15));
-                        },
+                    if (Heightfield.text.isEmpty) {
+                      Fluttertoast.showToast(msg: 'select Height');
+                    } else if (Physicalstatusfield.text.isEmpty) {
+                      Fluttertoast.showToast(msg: 'Enter Physical Status');
+                    } else if (Educationfield.text.isEmpty) {
+                      Fluttertoast.showToast(msg: 'select Education');
+                    } else if (occupationfield.text.isEmpty) {
+                      Fluttertoast.showToast(msg: 'select occupation');
+                    } else if (employedfield.text.isEmpty) {
+                      Fluttertoast.showToast(msg: 'select Employed IN');
+                    } else if (Annualincomefield.text.isEmpty) {
+                      Fluttertoast.showToast(msg: 'select Annual Income');
+                    } else if (familystatusfield.text.isEmpty) {
+                      Fluttertoast.showToast(msg: 'select Family Status');
+                    } else if (Familyvaluesfield.text.isEmpty) {
+                      Fluttertoast.showToast(msg: 'family Value');
+                    } else if (ancestralcontroller.text.isEmpty) {
+                      Fluttertoast.showToast(
+                          msg: 'select enter Ancestral Orgin');
+                    } else if (aboutmyselfcontroller.toString() == 'null') {
+                      Fluttertoast.showToast(msg: 'select About my Self');
+                    } else {
+                      if (_clicked == false) {
+                        _clicked = true;
+                        saveEducationDetails(
+                            Heightfield.text,
+                            Physicalstatusfield.text,
+                            Educationfield.text,
+                            occupationfield.text,
+                            employedfield.text,
+                            Annualincomefield.text,
+                            familystatusfield.text,
+                            id == 1 ? 'Nuclear' : 'joint',
+                            Familyvaluesfield.text,
+                            ancestralcontroller.text,
+                            aboutmyselfcontroller.text);
+                      }
+                    }
+                    // };
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(builder: (context) => otppage()),
+                    // );
+                    // Future.delayed(const Duration(seconds: 15));
+                  },
                 ),
               ),
               // TextButton(
@@ -1030,6 +1024,7 @@ class _registration2State extends State<registration2> {
     // if (decodeValue['status']) {
     //   SharedPreferences pref = await SharedPreferences.getInstance();
     //   pref.setString('temp_id', decodeValue['data']['user_temp_id'].toString());
+    _clicked = false;
     Get.to(() => otppage(
           otp: decodeValue['data']['OTP'].toString(),
         ));

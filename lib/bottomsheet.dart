@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sujithamatrimony/languagecontroler.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:flutter_windowmanager/flutter_windowmanager.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:sujithamatrimony/homescreen.dart';

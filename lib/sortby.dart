@@ -1,5 +1,5 @@
 import 'dart:math';
-import 'package:flutter_windowmanager/flutter_windowmanager.dart';
+
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {

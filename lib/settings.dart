@@ -4,7 +4,7 @@ import 'package:flutter_switch/flutter_switch.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sujithamatrimony/changepass.dart';
-import 'package:flutter_windowmanager/flutter_windowmanager.dart';
+
 import 'package:sujithamatrimony/colors.dart';
 import 'package:sujithamatrimony/loginpage.dart';
 import 'package:sujithamatrimony/oldtonew_pass.dart';
@@ -253,7 +253,7 @@ class _settingsState extends State<settings> {
                                               ),
                                               child: GestureDetector(
                                                 onTap: () async {
-                                                  var pref =
+                                                  SharedPreferences pref =
                                                       await SharedPreferences
                                                           .getInstance();
                                                   await pref.clear();

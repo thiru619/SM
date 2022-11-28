@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_advanced_segment/flutter_advanced_segment.dart';
+// import 'package:flutter_advanced_segment/flutter_advanced_segment.dart';
 import 'package:get/get.dart';
 import 'package:sujithamatrimony/chat.dart';
 import 'package:sujithamatrimony/colors.dart';

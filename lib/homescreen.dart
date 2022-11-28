@@ -23,7 +23,7 @@ import 'otppage.dart';
 import 'prime.dart';
 import 'registration2.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter_windowmanager/flutter_windowmanager.dart';
+
 import 'package:sizer/sizer.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
