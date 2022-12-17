@@ -5,6 +5,8 @@ import 'dart:convert';
 
 import 'package:sujithamatrimony/loginpage.dart';
 
+import 'main.dart';
+
 class matchingprogile_see_all extends StatefulWidget {
   const matchingprogile_see_all({Key? key}) : super(key: key);
 
@@ -87,7 +89,7 @@ class _matchingprogile_see_allState extends State<matchingprogile_see_all> {
 
   Future<void> getmatchingseeall() async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/getHomePage";
+         baselink +"getHomePage";
 
     var finalurl = Uri.parse(url);
     var pref = await SharedPreferences.getInstance();

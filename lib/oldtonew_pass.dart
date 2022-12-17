@@ -148,7 +148,7 @@ class _oldtonew_passState extends State<oldtonew_pass> {
 
   Future<void> change_password(old_password, confirm_password) async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/change_password";
+        "change_password";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();

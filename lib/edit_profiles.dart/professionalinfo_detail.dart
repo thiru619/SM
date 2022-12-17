@@ -22,6 +22,7 @@ import 'package:easy_autocomplete/easy_autocomplete.dart';
 
 import '../bottomsheet.dart';
 import '../language_btn.dart';
+import '../main.dart';
 import 'edit_profile.dart';
 
 var baseurl =
@@ -335,19 +336,19 @@ class _professionalinfo_detailState extends State<professionalinfo_detail>
                   //     context,
                   //     MaterialPageRoute(builder: (context) => bottomsheet()),
                   //   );
-                  if (educationcategory.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'select Education Category');
-                  } else if (college.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter College');
-                  } else if (occupation.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Occupation');
-                  } else if (organization.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Organization');
-                  } else if (employedin.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Employed in');
-                  } else if (annualincome.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Annual Income');
-                  } else {
+                  // if (educationcategory.text.isEmpty) {
+                  //   Fluttertoast.showToast(msg: 'select Education Category');
+                  // } else if (college.text.isEmpty) {
+                  //   Fluttertoast.showToast(msg: 'Enter College');
+                  // } else if (occupation.text.isEmpty) {
+                  //   Fluttertoast.showToast(msg: 'Enter Occupation');
+                  // } else if (organization.text.isEmpty) {
+                  //   Fluttertoast.showToast(msg: 'Enter Organization');
+                  // } else if (employedin.text.isEmpty) {
+                  //   Fluttertoast.showToast(msg: 'Enter Employed in');
+                  // } else if (annualincome.text.isEmpty) {
+                  //   Fluttertoast.showToast(msg: 'Enter Annual Income');
+                  // } else {
                     saveProfessionalDetails(
                       educationcategory.text,
                       occupation.text,
@@ -356,7 +357,7 @@ class _professionalinfo_detailState extends State<professionalinfo_detail>
                       college.text,
                       organization.text,
                     );
-                  }
+                  // }
                 },
               ),
             ),
@@ -371,7 +372,7 @@ class _professionalinfo_detailState extends State<professionalinfo_detail>
 
   Future<void> getData() async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/editprofessional";
+         baselink +"editprofessional";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     var pref = await SharedPreferences.getInstance();
@@ -433,7 +434,7 @@ class _professionalinfo_detailState extends State<professionalinfo_detail>
     organization,
   ) async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/saveProfessionalDetails";
+         baselink +"saveProfessionalDetails";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();

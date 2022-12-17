@@ -22,6 +22,7 @@ import 'package:easy_autocomplete/easy_autocomplete.dart';
 
 import '../bottomsheet.dart';
 import '../language_btn.dart';
+import '../main.dart';
 import 'edit_profile.dart';
 
 var baseurl =
@@ -345,7 +346,7 @@ class _location_detailState extends State<location_detail>
 
   Future<void> getData() async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/editLocationProfile";
+         baselink +"editLocationProfile";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     var pref = await SharedPreferences.getInstance();
@@ -421,7 +422,7 @@ class _location_detailState extends State<location_detail>
 
   Future<void> getData1() async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/getRegister";
+         baselink +"getRegister";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();
@@ -455,7 +456,7 @@ class _location_detailState extends State<location_detail>
     citizenship,
   ) async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/saveLocationDetails";
+         baselink +"saveLocationDetails";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();

@@ -5,6 +5,7 @@ import 'package:http/http.dart' as http;
 import 'package:like_button/like_button.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../main.dart';
 import '../view_profile.dart';
 
 // void main(List<String> args) {
@@ -190,7 +191,7 @@ class _listview_matchesState extends State<listview_matches> {
 
   Future<void> listview() async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/getHomePage";
+         baselink +"getHomePage";
 
     var finalurl = Uri.parse(url);
     var pref = await SharedPreferences.getInstance();

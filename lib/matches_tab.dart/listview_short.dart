@@ -6,6 +6,8 @@ import 'package:like_button/like_button.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sujithamatrimony/view_profile.dart';
 
+import '../main.dart';
+
 // void main(List<String> args) {
 //   runApp(MaterialApp(
 //     debugShowCheckedModeBanner: false,
@@ -244,7 +246,7 @@ class _listview_shortState extends State<listview_short> {
 
   Future<void> listview() async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/getHomePage";
+         baselink +"getHomePage";
 
     var finalurl = Uri.parse(url);
     var pref = await SharedPreferences.getInstance();

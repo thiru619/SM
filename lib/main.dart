@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:convert';
-
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -11,19 +10,12 @@ import 'package:sujithamatrimony/bottomsheet.dart';
 import 'package:sujithamatrimony/translation.dart';
 import 'languagecontroler.dart';
 import 'loginpage.dart';
-
 import 'package:sizer/sizer.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'register.dart';
 import 'package:http/http.dart' as http;
 import 'package:google_fonts/google_fonts.dart';
 import 'package:internet_popup/internet_popup.dart';
-
-// import 'package:flutter_offline/flutter_offline.dart';
-// import 'package:internet_popup/internet_popup.dart';
-
-// import 'package:custom_splash/custom_splash.dart';
-// @dart=2.9
 
 TextEditingController Referalcode = TextEditingController();
 
@@ -351,7 +343,7 @@ class _bodypartState extends State<bodypart> {
                                     children: [
                                       ElevatedButton(
                                           child: Text(
-                                            "Back".tr,
+                                            "Cancel".tr,
                                             style: TextStyle(fontSize: 20),
                                           ),
                                           style: ButtonStyle(
@@ -525,3 +517,6 @@ class ThemeController extends GetxController {
     }
   }
 }
+
+var baselink =
+    'https://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/';

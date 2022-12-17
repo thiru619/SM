@@ -19,6 +19,7 @@ import 'package:flutter_share/flutter_share.dart';
 import 'package:http/http.dart' as http;
 import 'edit_profiles.dart/edit_profile.dart';
 import 'feedback.dart';
+import 'main.dart';
 
 class profilescreen extends StatefulWidget {
   const profilescreen({Key? key}) : super(key: key);
@@ -572,7 +573,7 @@ class _profilescreenState extends State<profilescreen> {
     // name = pref.getString('username');
     profilephoto = pref.getString('profilephoto');
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/getHomeProfilePic";
+         baselink +"getHomeProfilePic";
 
     final MyController con = Get.find();
     var finalurl = Uri.parse(url);

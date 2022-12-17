@@ -114,8 +114,10 @@ class _notificationState extends State<notification> {
                       ],
                     )
                   : Container(
-                      height: 500,
+                      // height: 500,
                       child: ListView.builder(
+                        shrinkWrap: true,
+                        physics: ScrollPhysics(),
                         itemCount: notifications.length,
                         itemBuilder: (BuildContext context, int index) {
                           return GestureDetector(
@@ -205,7 +207,6 @@ class _notificationState extends State<notification> {
                                             SizedBox(
                                               height: 10,
                                             ),
-
                                             Row(
                                               children: [
                                                 Text(
@@ -240,54 +241,42 @@ class _notificationState extends State<notification> {
                                                 ),
                                               ],
                                             ),
-                                            // Row(
-                                            //   children: [
-                                            //     Text(
-                                            //       notifications[index]['city']
-                                            //           .toString(),
-                                            //       style: TextStyle(
-                                            //           fontWeight:
-                                            //               FontWeight.bold),
-                                            //     ),
-                                            //     Text(
-                                            //       ', ',
-                                            //       style: TextStyle(
-                                            //           fontWeight:
-                                            //               FontWeight.bold),
-                                            //     ),
-                                            //     Text(
-                                            //       notifications[index]['state']
-                                            //           .toString(),
-                                            //       style: TextStyle(
-                                            //           fontWeight:
-                                            //               FontWeight.bold),
-                                            //     ),
-                                            //   ],
-                                            // ),
                                           ],
-                                        )
+                                        ),
                                       ],
                                     ),
                                     // margin: EdgeInsets.all(20),
                                     height: 100,
                                     decoration: BoxDecoration(
                                         color: Colors.white,
-                                        // borderRadius: BorderRadius.all(),
-                                        // boxShadow: [
-                                        //   BoxShadow(
-                                        //     color: Colors.grey,
-                                        //     offset: const Offset(
-                                        //       5,
-                                        //       5,
-                                        //     ),
-                                        //     blurRadius: 6,
-                                        //     spreadRadius: 1,
-                                        //   ),
-                                        // ],
                                         border: Border.all(width: 0.1)),
                                   ),
                                   SizedBox(
                                     height: 10,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        right: 20, left: 20),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                            primary: Colors.orange,
+                                          ),
+                                          onPressed: () {},
+                                          child: const Text('Accept'),
+                                        ),
+                                        ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                            primary: Colors.green,
+                                          ),
+                                          onPressed: () {},
+                                          child: const Text('Cancel'),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ],
                               ),

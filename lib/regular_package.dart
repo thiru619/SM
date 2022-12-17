@@ -8,6 +8,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sujithamatrimony/loginpage.dart';
 // import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:cc_avenue/cc_avenue.dart';
+
+import 'main.dart';
 // 3 months
 
 class regular3m_package extends StatefulWidget {
@@ -222,7 +224,7 @@ class _regular3m_packageState extends State<regular3m_package> {
 
   Future<void> imgdata3() async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/get_subscription";
+         baselink +"get_subscription";
 
     var finalurl = Uri.parse(url);
 
@@ -459,7 +461,7 @@ class _regular6m_packageState extends State<regular6m_package> {
 
   Future<void> imgdata6() async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/get_subscription";
+         baselink +"get_subscription";
 
     var finalurl = Uri.parse(url);
 
@@ -696,7 +698,7 @@ class _regular12m_packageState extends State<regular12m_package> {
 
   Future<void> imgdata12() async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/get_subscription";
+         baselink +"get_subscription";
 
     var finalurl = Uri.parse(url);
 

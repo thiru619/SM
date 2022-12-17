@@ -7,6 +7,8 @@ import 'package:sujithamatrimony/sortby.dart';
 import 'package:http/http.dart' as http;
 import 'package:sujithamatrimony/view_profile.dart';
 
+import '../main.dart';
+
 class photo_intrest extends StatefulWidget {
   const photo_intrest({Key? key}) : super(key: key);
 
@@ -290,7 +292,7 @@ class _photo_intrestState extends State<photo_intrest> {
 
   Future<void> listview() async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/getHomePage";
+         baselink +"getHomePage";
 
     var finalurl = Uri.parse(url);
     var pref = await SharedPreferences.getInstance();

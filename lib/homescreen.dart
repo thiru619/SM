@@ -13,13 +13,16 @@ import 'package:sujithamatrimony/newmatches_see_all.dart';
 import 'package:sujithamatrimony/profilescreen.dart';
 import 'package:sujithamatrimony/homescreen.dart';
 import 'package:sujithamatrimony/view_profile.dart';
+import 'package:sujithamatrimony/weddingservices.dart';
 import 'chat.dart';
 import 'package:get/get.dart';
 import 'package:sujithamatrimony/languagecontroler.dart';
 import 'edit_profiles.dart/edit_profile.dart';
 import 'language_btn.dart';
+import 'main.dart';
 import 'matchingprofile_see_all.dart';
 import 'otppage.dart';
+import 'packages.dart';
 import 'prime.dart';
 import 'registration2.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -31,6 +34,7 @@ import 'dart:ui';
 import 'package:image_cropper/image_cropper.dart';
 
 var viewdetails;
+var imageSS;
 
 class homescreens extends StatefulWidget {
   const homescreens({Key? key}) : super(key: key);
@@ -406,58 +410,103 @@ class _homescreensState extends State<homescreens>
                                   SizedBox(
                                     height: 20,
                                   ),
-                                  // Container(
-                                  //   width: 300,
-                                  //   constraints: BoxConstraints(
-                                  //       maxHeight: double.infinity,
-                                  //       maxWidth: double.infinity),
-                                  //   decoration: BoxDecoration(
-                                  //       borderRadius: BorderRadius.circular(10),
-                                  //       border: Border.all(
-                                  //           width: 1, color: Colors.grey)),
-                                  //   child: Column(
-                                  //     children: [
-                                  //       Row(
-                                  //         mainAxisAlignment:
-                                  //             MainAxisAlignment.spaceEvenly,
-                                  //         children: [
-                                  //           IconButton(
-                                  //             onPressed: () {
-                                  //               print("object");
-                                  //             },
-                                  //             icon: Image(
-                                  //               image: AssetImage(
-                                  //                   "assets/mic.png"),
-                                  //             ),
-                                  //           ),
-                                  //           // SizedBox(
-                                  //           //   width: 10,
-                                  //           // ),
-                                  //           Column(
-                                  //             children: [
-                                  //               Text(
-                                  //                 "Sujitha Matrimony is the most"
-                                  //                     .tr,
-                                  //                 softWrap: true,
-                                  //               ),
-                                  //               Text(
-                                  //                 "Trusted and Largest".tr,
-                                  //                 softWrap: true,
-                                  //               ),
-                                  //               Text(
-                                  //                 "Matrimony Services".tr,
-                                  //                 softWrap: true,
-                                  //               )
-                                  //             ],
-                                  //           ),
-                                  //           IconButton(
-                                  //               onPressed: () {},
-                                  //               icon: Icon(Icons.arrow_right))
-                                  //         ],
-                                  //       ),
-                                  //     ],
-                                  //   ),
-                                  // ),
+                                  Container(
+                                    width: 320,
+                                    constraints: BoxConstraints(
+                                        maxHeight: double.infinity,
+                                        maxWidth: double.infinity),
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10),
+                                        border: Border.all(
+                                            width: 1, color: Colors.grey)),
+                                    child: Column(
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          children: [
+                                            IconButton(
+                                              onPressed: () {
+                                                print("object");
+                                              },
+                                              icon: Image(
+                                                image: AssetImage(
+                                                    "assets/mic.png"),
+                                              ),
+                                            ),
+                                            // SizedBox(
+                                            //   width: 10,
+                                            // ),
+                                            Column(
+                                              children: [
+                                                Text(
+                                                  "Sujitha Matrimony has".tr,
+                                                  softWrap: true,
+                                                ),
+                                                Row(
+                                                  children: [
+                                                    InkWell(
+                                                      onTap: () {
+                                                        Navigator.push(
+                                                          context,
+                                                          MaterialPageRoute(
+                                                              builder:
+                                                                  (context) =>
+                                                                      Packages()),
+                                                        );
+                                                      },
+                                                      child: Text(
+                                                        "Free Trail".tr,
+                                                        style: TextStyle(
+                                                            color:
+                                                                Colors.orange,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold),
+                                                        softWrap: true,
+                                                      ),
+                                                    ),
+                                                    Text(
+                                                      " and ".tr,
+                                                      softWrap: true,
+                                                    ),
+                                                    InkWell(
+                                                      onFocusChange: null,
+                                                      onTap: () {
+                                                        Navigator.push(
+                                                          context,
+                                                          MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                  weddingservices()),
+                                                        );
+                                                      },
+                                                      child: Text(
+                                                        "Wedding services".tr,
+                                                        style: TextStyle(
+                                                            color:
+                                                                Colors.orange,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold),
+                                                        softWrap: true,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                                Text(
+                                                  "Matrimony Services".tr,
+                                                  softWrap: true,
+                                                )
+                                              ],
+                                            ),
+                                            IconButton(
+                                                onPressed: () {},
+                                                icon: Icon(Icons.arrow_right))
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                   SizedBox(
                                     height: 20,
                                   ),
@@ -1568,28 +1617,28 @@ class _homescreensState extends State<homescreens>
                                   SizedBox(
                                     height: 20,
                                   ),
-                                  Container(
-                                    margin: EdgeInsets.only(right: 20),
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      children: [
-                                        IconButton(
-                                          onPressed: () {
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      const Chats()),
-                                            );
-                                          },
-                                          icon: Image(
-                                            image: AssetImage(
-                                                "assets/message.png"),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
+                                  // Container(
+                                  //   margin: EdgeInsets.only(right: 20),
+                                  //   child: Row(
+                                  //     mainAxisAlignment: MainAxisAlignment.end,
+                                  //     children: [
+                                  //       IconButton(
+                                  //         onPressed: () {
+                                  //           Navigator.push(
+                                  //             context,
+                                  //             MaterialPageRoute(
+                                  //                 builder: (context) =>
+                                  //                     const Chats()),
+                                  //           );
+                                  //         },
+                                  //         icon: Image(
+                                  //           image: AssetImage(
+                                  //               "assets/message.png"),
+                                  //         ),
+                                  //       ),
+                                  //     ],
+                                  //   ),
+                                  // ),
                                   SizedBox(
                                     height: 20,
                                   ),
@@ -1613,7 +1662,7 @@ class _homescreensState extends State<homescreens>
     name = pref.getString('username');
     profilephoto = pref.getString('profilephoto');
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/getHomePage";
+         baselink +"getHomePage";
 
     final MyController con = Get.find();
     var finalurl = Uri.parse(url);
@@ -1652,7 +1701,7 @@ class _homescreensState extends State<homescreens>
 
     profilephoto = pref.getString('profilephoto');
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/getHomeProfilePic";
+         baselink +"getHomeProfilePic";
 
     final MyController con = Get.find();
     var finalurl = Uri.parse(url);
@@ -1683,7 +1732,7 @@ class _homescreensState extends State<homescreens>
       // loading = true;
     });
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/get_view_profile";
+         baselink +"get_view_profile";
     // checker(context) async {
     var pref = await SharedPreferences.getInstance();
     var regid = pref.getString('regsId');
@@ -1705,6 +1754,8 @@ class _homescreensState extends State<homescreens>
     setState(() {});
     if (decodeValue['status'] == true) {
       viewdetails = decodeValue['data'];
+      imageSS = decodeValue['data']['profile_image_details'];
+
       print(viewdetails);
       // SharedPreferences pref = await SharedPreferences.getInstance();
       // pref.setString('temp_id', decodeValue['data']['user_temp_id'].toString());

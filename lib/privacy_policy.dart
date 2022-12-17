@@ -9,6 +9,7 @@ import 'package:sujithamatrimony/colors.dart';
 import 'package:sujithamatrimony/languagecontroler.dart';
 import 'package:http/http.dart' as http;
 import 'language_btn.dart';
+import 'main.dart';
 
 // void main(List<String> args) {
 //   runApp(MaterialApp(
@@ -102,7 +103,7 @@ class _Privacy_policyState extends State<Privacy_policy> {
 
   Future<void> get_privacy_policy() async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/get_privacy_policy";
+         baselink +"get_privacy_policy";
 
     var finalurl = Uri.parse(url);
 
@@ -119,7 +120,7 @@ class _Privacy_policyState extends State<Privacy_policy> {
 
   Future<void> get_terms_condition() async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/get_terms_condition";
+        baselink +"get_terms_condition";
 
     var finalurl = Uri.parse(url);
 

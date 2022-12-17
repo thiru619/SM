@@ -13,6 +13,7 @@ import 'package:sujithamatrimony/languagecontroler.dart';
 import 'package:sujithamatrimony/photo_upload.dart';
 import 'package:sujithamatrimony/preferencelist.dart';
 import 'language_btn.dart';
+import 'main.dart';
 import 'otppage.dart';
 import 'registration2.dart';
 import 'dart:async';
@@ -792,7 +793,7 @@ class _registration2State extends State<registration2> {
 
   Future<void> getData() async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/getRegister";
+         baselink +"getRegister";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();
@@ -984,7 +985,7 @@ class _registration2State extends State<registration2> {
     about_me,
   ) async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/saveEducationDetails";
+         baselink +"saveEducationDetails";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();

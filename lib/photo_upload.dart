@@ -37,14 +37,12 @@ class _photo_uploadState extends State<photo_upload> {
   CroppedFile? _croppedFile;
 
   File? _image;
-  Future getImage(ImageSource source) async {
-    final image = await ImagePicker().pickImage(
-      source: source,
-      imageQuality: 200,
-    );
-    if (image == null) return;
-    // final imageTemporary = File(image.path);
-    await _cropImage(image.path);
+  final ImagePicker picker = ImagePicker();
+  void imageSelected(ImageSource source) async {
+    final XFile? selectedImage = await picker.pickImage(source: source);
+    if (selectedImage != null) {
+      await _cropImage(selectedImage.path);
+    }
   }
 
   Future<Null> _cropImage(String? imagespath) async {
@@ -60,7 +58,7 @@ class _photo_uploadState extends State<photo_upload> {
       uiSettings: [
         AndroidUiSettings(
             toolbarTitle: 'Cropper',
-            toolbarColor: Colors.deepOrange,
+            toolbarColor: Colors.green,
             toolbarWidgetColor: Colors.white,
             initAspectRatio: CropAspectRatioPreset.original,
             lockAspectRatio: false),
@@ -78,10 +76,14 @@ class _photo_uploadState extends State<photo_upload> {
       // ImagePickerController.text = croppedFile.path;
       print(_image!.path);
     });
+    if (_image != null) {
+      // imageList.add(_image);
+
+      profile_pic();
+    }
   }
 
-  var new_pic = [];
-
+  // var imageList = [].obs;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -185,7 +187,7 @@ class _photo_uploadState extends State<photo_upload> {
                                         primary: Colors.deepOrangeAccent,
                                       ),
                                       onPressed: () =>
-                                          getImage(ImageSource.gallery),
+                                          imageSelected(ImageSource.gallery),
                                       // color: Color.fromARGB(255, 255, 115, 0),
                                       child: Row(
                                         children: [
@@ -194,7 +196,7 @@ class _photo_uploadState extends State<photo_upload> {
                                             color: Colors.white,
                                           ),
                                           SizedBox(width: 15),
-                                          Text('Gallery',
+                                          Text('Gallery'.tr,
                                               style: TextStyle(
                                                   color: Colors.white)),
                                         ],
@@ -206,7 +208,7 @@ class _photo_uploadState extends State<photo_upload> {
                                         primary: Colors.deepOrangeAccent,
                                       ),
                                       onPressed: () =>
-                                          getImage(ImageSource.camera),
+                                          imageSelected(ImageSource.camera),
                                       // color: Color.fromARGB(255, 255, 115, 0),
                                       child: Row(
                                         children: [
@@ -219,8 +221,55 @@ class _photo_uploadState extends State<photo_upload> {
                                         ],
                                       ),
                                     ),
+                                    ElevatedButton(
+                                      style: ElevatedButton.styleFrom(
+                                        primary: Colors.deepOrangeAccent,
+                                      ),
+                                      onPressed: () {
+                                        setState(() {
+                                          _image = null;
+                                        });
+                                      },
+                                      // color: Color.fromARGB(255, 255, 115, 0),
+                                      child: Row(
+                                        children: [
+                                          Icon(Icons.camera_alt_outlined,
+                                              color: Colors.white),
+                                          SizedBox(width: 15),
+                                          Text('clear'.tr,
+                                              style: TextStyle(
+                                                  color: Colors.white)),
+                                        ],
+                                      ),
+                                    ),
                                   ],
                                 ),
+                                // Obx(
+                                //   () => Row(
+                                //     mainAxisAlignment:
+                                //         MainAxisAlignment.spaceEvenly,
+                                //     children: [
+                                //       for (File ii in imageList)
+                                //         Container(
+                                //           height: 50,
+                                //           width: 50,
+                                //           decoration: BoxDecoration(
+                                //               image: ii.path.contains("http")
+                                //                   ? DecorationImage(
+                                //                       fit: BoxFit.fill,
+                                //                       image: NetworkImage(viewdetails[
+                                //                                   'basic_details']
+                                //                               ['profile_image']
+                                //                           .toString()))
+                                //                   : DecorationImage(
+                                //                       fit: BoxFit.fill,
+                                //                       image: FileImage(ii))
+                                //               // color: Colors.grey,
+                                //               ),
+                                //         ),
+                                //     ],
+                                //   ),
+                                // ),
                               ],
                             ),
                           ),
@@ -285,6 +334,7 @@ class _photo_uploadState extends State<photo_upload> {
     var pref = await SharedPreferences.getInstance();
     var regId = pref.getString('regsId');
     request.fields['reg_id'] = regId.toString();
+    request.fields['index'] = '0';
 
     print(regId);
     var firstimage;

@@ -12,6 +12,7 @@ import 'package:sujithamatrimony/loginpage.dart';
 import 'package:sujithamatrimony/profilescreen.dart';
 import 'package:sujithamatrimony/homescreen.dart';
 import 'language_btn.dart';
+import 'main.dart';
 import 'otppage.dart';
 import 'registration2.dart';
 
@@ -412,7 +413,7 @@ class _idverificationState extends State<idverification>
     var pref = await SharedPreferences.getInstance();
 
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/getDocumentType";
+         baselink +"getDocumentType";
 
     final MyController con = Get.find();
     var finalurl = Uri.parse(url);
@@ -439,7 +440,7 @@ class _idverificationState extends State<idverification>
     var pref = await SharedPreferences.getInstance();
 
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/saveDocuments";
+         baselink +"saveDocuments";
 
     final MyController con = Get.find();
     var finalurl = Uri.parse(url);

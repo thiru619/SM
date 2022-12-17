@@ -377,7 +377,7 @@ class _registerlistState extends State<registerlist> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "    DATE OF BRITH".tr,
+                "    DATE OF BIRTH".tr,
               ),
               Container(
                 padding: EdgeInsets.only(left: 8),
@@ -739,7 +739,7 @@ class _registerlistState extends State<registerlist> {
 
   Future<void> getData() async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/getRegister";
+         baselink +"getRegister";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();
@@ -789,7 +789,7 @@ class _registerlistState extends State<registerlist> {
       mother_tongue, mobile_no, email_id, password) async {
     print('hi');
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/basicDetails";
+         baselink +"basicDetails";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();

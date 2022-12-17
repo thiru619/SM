@@ -74,17 +74,15 @@ class _registrationState extends State<registration> {
   var Dosham = [];
   var caste = [];
   var religions = [];
-  var zodiac = [];
+  var raasi = [];
   var star = [];
-
   var maritialstatusList = [];
   var casteList = [];
   var religionslist = [];
   var raasiList = [];
   var starList = [];
-  var zodiacList = [];
-
   var DoshamList = [];
+
   List<String> strs1 = [];
   List<String> strs3 = [];
   List<String> strs4 = [];
@@ -340,7 +338,7 @@ class _registrationState extends State<registration> {
                       Row(
                         children: [
                           Text(
-                            "    Zodiac".tr,
+                            "    Raasi".tr,
                           )
                         ],
                       ),
@@ -632,18 +630,18 @@ class _registrationState extends State<registration> {
                         //   Fluttertoast.showToast(msg: 'select Gender');
                       } else {
                         postcastedetail(
-                            religionfor.text,
-                            castefield.text,
-                            subcastefield.text,
-                            maritialstuts.text,
-                            id == 1 ? 'NO' : 'Yes',
-                            Doshamfield.text,
-                            countryfield.text,
-                            statefield.text,
-                            cityfield.text,
-                            zodiacfield.text,
-                            starfield.text,
-                            '');
+                          religionfor.text,
+                          castefield.text,
+                          subcastefield.text,
+                          maritialstuts.text,
+                          id == 1 ? 'NO' : 'Yes',
+                          Doshamfield.text,
+                          countryfield.text,
+                          statefield.text,
+                          cityfield.text,
+                          zodiacfield.text,
+                          starfield.text,
+                        );
                       }
                       // Navigator.push(
                       //   context,
@@ -756,7 +754,7 @@ class _registrationState extends State<registration> {
       religions = decodeValue['data']['religions'];
 
       star = decodeValue['data']['star'];
-      zodiac = decodeValue['data']['zodiac'];
+      raasi = decodeValue['data']['raasi'];
       // caste = decodeValue['data'];
       Dosham = decodeValue['data']['dosham'];
       country = decodeValue['data']['country'];
@@ -786,8 +784,8 @@ class _registrationState extends State<registration> {
         // religionslist.add(religions[i]['name']);
 
       }
-      for (var i = 0; i < zodiac.length; i++) {
-        zodiacList.add(zodiac[i]['name']);
+      for (var i = 0; i < raasi.length; i++) {
+        raasiList.add(raasi[i]['name']);
         // religionslist.add(religions[i]['name']);
 
       }
@@ -801,26 +799,15 @@ class _registrationState extends State<registration> {
       strs21 = countryList.map((e) => e.toString()).toList();
       // strs4 = raasiList.map((e) => e.toString()).toList();
       strs6 = starList.map((e) => e.toString()).toList();
-      strs7 = zodiacList.map((e) => e.toString()).toList();
+      strs7 = raasiList.map((e) => e.toString()).toList();
       print(strs3.runtimeType);
       print(strs4.runtimeType);
       print(maritialstatusList);
     });
   }
 
-  Future<void> postcastedetail(
-      religion,
-      caste,
-      sub_caste,
-      maritial_status,
-      marry_other_community,
-      dosham,
-      country,
-      state,
-      city,
-      zodiac,
-      star,
-      raasi) async {
+  Future<void> postcastedetail(religion, caste, sub_caste, maritial_status,
+      marry_other_community, dosham, country, state, city, star, raasi) async {
     var url =
         "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/saveCasteDetails";
     // checker(context) async {
@@ -842,7 +829,6 @@ class _registrationState extends State<registration> {
       'state': state,
       'city': city,
       'language': con.lancode.value == 'en' ? 'en' : 'tu',
-      'zodiac': zodiac,
       'star': star,
       'raasi': raasi,
     };

@@ -37,19 +37,22 @@ class _prime3m_packageState extends State<prime3m_package> {
   Future<void> initPlatformState() async {
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
-      await CcAvenue.cCAvenueInit(
-          transUrl: 'https://test.ccavenue.com/transaction/initTrans',
-          accessCode: 'AVQO05CF40BJ62OQJB',
+      CcAvenue.cCAvenueInit(
+          transUrl: 'https://secure.ccavenue.com/transaction/initTrans',
+          accessCode: 'AVDE04JK49CJ84EDJC',
           amount: '10',
-          cancelUrl: '',
+          cancelUrl:
+              'https://defeatedyouth.com/rsa/PHP/ccavResponseHandler.php',
           currencyType: 'INR',
           merchantId: '68141',
           orderId: '519',
-          redirectUrl: 'http://www.sujithamatrimony.com',
-          rsaKeyUrl: 'https://secure.ccavenue.com/transaction/jsp/GetRSA.jsp');
-    } catch (ex) {
-      print('PlatformException${ex.toString()}');
+          redirectUrl:
+              'https://defeatedyouth.com/rsa/PHP/ccavResponseHandler.php',
+          rsaKeyUrl: 'https://defeatedyouth.com/rsa/PHP/GetRSA.php');
+    } on PlatformException {
+      print('PlatformException');
     }
+    print("object");
   }
 
   @override
@@ -204,7 +207,7 @@ class _prime3m_packageState extends State<prime3m_package> {
                                           //     main_banner3[index]
                                           //         ['price'],
                                           //     main_banner3[index]['id']),
-                                          child: const Text('Pay Now'),
+                                          child: const Text('Activate'),
                                         ),
                                       ],
                                     ),
@@ -440,7 +443,7 @@ class _prime6m_packageState extends State<prime6m_package> {
                                           //     main_banner3[index]
                                           //         ['price'],
                                           //     main_banner3[index]['id']),
-                                          child: const Text('Pay Now'),
+                                          child: const Text('Activate'),
                                         ),
                                       ],
                                     ),
@@ -545,12 +548,12 @@ class _prime12m_packageState extends State<prime12m_package> {
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
       await CcAvenue.cCAvenueInit(
-          transUrl: 'https://secure.ccavenue.com/transaction/initTrans',
-          accessCode: '4YRUXLSRO20O8NIH',
+          transUrl: 'https://sujithamatrimony.teckzy.co.in',
+          accessCode: 'AVDE04JK49CJ84EDJC',
           amount: '10',
           cancelUrl: 'http://122.182.6.216/merchant/ccavResponseHandler.jsp',
           currencyType: 'INR',
-          merchantId: '2',
+          merchantId: '68141',
           orderId: '519',
           redirectUrl: 'http://122.182.6.216/merchant/ccavResponseHandler.jsp',
           rsaKeyUrl: 'https://secure.ccavenue.com/transaction/jsp/GetRSA.jsp');
@@ -711,7 +714,7 @@ class _prime12m_packageState extends State<prime12m_package> {
                                           //     main_banner3[index]
                                           //         ['price'],
                                           //     main_banner3[index]['id']),
-                                          child: const Text('Pay Now'),
+                                          child: const Text('Activate'),
                                         ),
                                       ],
                                     ),
@@ -739,16 +742,17 @@ class _prime12m_packageState extends State<prime12m_package> {
 
     var finalurl = Uri.parse(url);
 
-    var res = await http.post(finalurl, headers: <String, String>{
-      'X-API-KEY': '50f58d4facbdfe506d51ad6b079deaae'
-    });
-    print(res.body);
     //  var decodeValue = json.decode(res.body);
     SharedPreferences pref = await SharedPreferences.getInstance();
     var regId = pref.getString('regsId');
     var body = {
       'reg_id': regId,
     };
+    var res = await http.post(finalurl,
+        headers: <String, String>{
+          'X-API-KEY': '50f58d4facbdfe506d51ad6b079deaae'
+        },
+        body: body);
     var decodeValue = json.decode(res.body);
     setState(() {
       print(decodeValue['status']);

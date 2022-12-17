@@ -9,6 +9,7 @@ import 'package:sujithamatrimony/loginpage.dart';
 import 'package:http/http.dart' as http;
 
 import 'languagecontroler.dart';
+import 'main.dart';
 
 TextEditingController commentreview = new TextEditingController();
 
@@ -259,7 +260,7 @@ class _Feedback1State extends State<Feedback1> {
     rating,
   ) async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/saveReviewRating";
+         baselink +"saveReviewRating";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();
@@ -297,7 +298,7 @@ class _Feedback1State extends State<Feedback1> {
 
   Future<void> getReviewRating() async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/getReviewRating";
+         baselink +"getReviewRating";
 
     var finalurl = Uri.parse(url);
 

@@ -22,6 +22,7 @@ import 'package:easy_autocomplete/easy_autocomplete.dart';
 
 import '../bottomsheet.dart';
 import '../language_btn.dart';
+import '../main.dart';
 import 'edit_profile.dart';
 
 var baseurl =
@@ -633,7 +634,7 @@ class _basic_detailState extends State<basic_detail>
 
   Future<void> getData() async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/editBasicProfile";
+         baselink +"editBasicProfile";
     // checker(context) async {
     var pref = await SharedPreferences.getInstance();
     var regid = pref.getString('regsId');
@@ -740,7 +741,7 @@ class _basic_detailState extends State<basic_detail>
     smoking_habits,
   ) async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/saveBasicDetails";
+         baselink +"basicDetails";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();

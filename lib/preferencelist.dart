@@ -85,10 +85,6 @@ class _preferencelistState extends State<preferencelist>
     with SingleTickerProviderStateMixin {
   var usernameController;
 
-  // secureScreen() async {
-  //   await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
-  // }
-
   var age = [];
   var ageList = [];
   var height = [];
@@ -139,10 +135,14 @@ class _preferencelistState extends State<preferencelist>
     tabController = TabController(length: 2, vsync: this);
     super.initState();
     // secureScreen();
-    educationcategory();
-    getData();
-    getoccupation_category();
+    initFunction();
     // confirmragistration();
+  }
+
+  initFunction() async {
+    await educationcategory();
+    await getData();
+    await getoccupation_category();
   }
 
   @override
@@ -265,9 +265,10 @@ class _preferencelistState extends State<preferencelist>
                 decoration: InputDecoration(
                     hintText: 'Min age'.tr,
                     suffixIcon: Icon(Icons.arrow_drop_down)),
-                asyncSuggestions: ((searchValue) async {
-                  return strs24;
-                }),
+                // asyncSuggestions: ((searchValue) async {
+                //   return strs24;
+                // }),
+                suggestions: strs24,
                 // onChanged: (value) => print('onChanged value: $value'.tr),
                 onSubmitted: (value) => print('onSubmitted value: $value'.tr),
               ),
@@ -297,9 +298,10 @@ class _preferencelistState extends State<preferencelist>
                 decoration: InputDecoration(
                     hintText: 'Max age'.tr,
                     suffixIcon: Icon(Icons.arrow_drop_down)),
-                asyncSuggestions: ((searchValue) async {
-                  return strs24;
-                }),
+                // asyncSuggestions: ((searchValue) async {
+                //   return strs24;
+                // }),
+                suggestions: strs24,
                 // onChanged: (value) => print('onChanged value: $value'.tr),
                 onSubmitted: (value) => print('onSubmitted value: $value'.tr),
               ),
@@ -333,9 +335,10 @@ class _preferencelistState extends State<preferencelist>
                 decoration: InputDecoration(
                     hintText: 'Min Height'.tr,
                     suffixIcon: Icon(Icons.arrow_drop_down)),
-                asyncSuggestions: ((searchValue) async {
-                  return strs25;
-                }),
+                // asyncSuggestions: ((searchValue) async {
+                //   return strs25;
+                // }),\
+                suggestions: strs25,
                 // onChanged: (value) => print('onChanged value: $value'.tr),
                 onSubmitted: (value) => print('onSubmitted value: $value'.tr),
               ),
@@ -365,9 +368,10 @@ class _preferencelistState extends State<preferencelist>
                 decoration: InputDecoration(
                     hintText: 'Max Height'.tr,
                     suffixIcon: Icon(Icons.arrow_drop_down)),
-                asyncSuggestions: ((searchValue) async {
-                  return strs25;
-                }),
+                // asyncSuggestions: ((searchValue) async {
+                //   return strs25;
+                // }),
+                suggestions: strs25,
                 // onChanged: (value) => print('onChanged value: $value'.tr),
                 onSubmitted: (value) => print('onSubmitted value: $value'.tr),
               ),
@@ -401,9 +405,10 @@ class _preferencelistState extends State<preferencelist>
                 decoration: InputDecoration(
                     hintText: 'Maritial Status'.tr,
                     suffixIcon: Icon(Icons.arrow_drop_down)),
-                asyncSuggestions: ((searchValue) async {
-                  return strs26;
-                }),
+                // asyncSuggestions: ((searchValue) async {
+                //   return strs26;
+                // }),
+                suggestions: strs26,
                 // onChanged: (value) => print('onChanged value: $value'.tr),
                 onSubmitted: (value) => print('onSubmitted value: $value'.tr),
               ),
@@ -435,9 +440,10 @@ class _preferencelistState extends State<preferencelist>
                 decoration: InputDecoration(
                     hintText: 'Mother Tongue'.tr,
                     suffixIcon: Icon(Icons.arrow_drop_down)),
-                asyncSuggestions: ((searchValue) async {
-                  return strs27;
-                }),
+                // asyncSuggestions: ((searchValue) async {
+                //   return strs27;
+                // }),
+                suggestions: strs27,
                 // onChanged: (value) => print('onChanged value: $value'.tr),
                 onSubmitted: (value) => print('onSubmitted value: $value'.tr),
               ),
@@ -469,9 +475,10 @@ class _preferencelistState extends State<preferencelist>
                 decoration: InputDecoration(
                     hintText: 'Physical Status'.tr,
                     suffixIcon: Icon(Icons.arrow_drop_down)),
-                asyncSuggestions: ((searchValue) async {
-                  return strs28;
-                }),
+                // asyncSuggestions: ((searchValue) async {
+                //   return strs28;
+                // }),
+                suggestions: strs28,
                 // onChanged: (value) => print('onChanged value: $value'.tr),
                 onSubmitted: (value) => print('onSubmitted value: $value'.tr),
               ),
@@ -503,9 +510,10 @@ class _preferencelistState extends State<preferencelist>
                 decoration: InputDecoration(
                     hintText: 'Eating Habits',
                     suffixIcon: Icon(Icons.arrow_drop_down)),
-                asyncSuggestions: ((searchValue) async {
-                  return strs29;
-                }),
+                // asyncSuggestions: ((searchValue) async {
+                //   return strs29;
+                // }),
+                suggestions: strs29,
                 // onChanged: (value) => print('onChanged value: $value'.tr),
                 onSubmitted: (value) => print('onSubmitted value: $value'.tr),
               ),
@@ -537,9 +545,10 @@ class _preferencelistState extends State<preferencelist>
                 decoration: InputDecoration(
                     hintText: 'Drinking Habits'.tr,
                     suffixIcon: Icon(Icons.arrow_drop_down)),
-                asyncSuggestions: ((searchValue) async {
-                  return strs30;
-                }),
+                // asyncSuggestions: ((searchValue) async {
+                //   return strs30;
+                // }),
+                suggestions: strs30,
                 // onChanged: (value) => print('onChanged value: $value'.tr),
                 onSubmitted: (value) => print('onSubmitted value: $value'.tr),
               ),
@@ -571,9 +580,10 @@ class _preferencelistState extends State<preferencelist>
                 decoration: InputDecoration(
                     hintText: 'Smoking Habit'.tr,
                     suffixIcon: Icon(Icons.arrow_drop_down)),
-                asyncSuggestions: ((searchValue) async {
-                  return strs31;
-                }),
+                // asyncSuggestions: ((searchValue) async {
+                //   return strs31;
+                // }),
+                suggestions: strs31,
                 // onChanged: (value) => print('onChanged value: $value'.tr),
                 onSubmitted: (value) => print('onSubmitted value: $value'.tr),
               ),
@@ -618,9 +628,10 @@ class _preferencelistState extends State<preferencelist>
                   decoration: InputDecoration(
                       hintText: 'Religion'.tr,
                       suffixIcon: Icon(Icons.arrow_drop_down)),
-                  asyncSuggestions: ((searchValue) async {
-                    return strs32;
-                  }),
+                  // asyncSuggestions: ((searchValue) async {
+                  //   return strs32;
+                  // }),
+                  suggestions: strs32,
                   // onChanged: (value) {
                   //   print('onSubmitted value: $value');
                   //   getcaste(value);
@@ -656,9 +667,10 @@ class _preferencelistState extends State<preferencelist>
                   decoration: InputDecoration(
                       hintText: 'Caste'.tr,
                       suffixIcon: Icon(Icons.arrow_drop_down)),
-                  asyncSuggestions: ((searchValue) async {
-                    return strs41;
-                  }),
+                  // asyncSuggestions: ((searchValue) async {
+                  //   return strs41;
+                  // }),
+                  suggestions: strs41,
                   onChanged: (value) => print('onChanged value: $value'.tr),
                   // onChanged: (value) => {getcaste(value.toString())},
                   // onChanged: (value) =>
@@ -716,9 +728,10 @@ class _preferencelistState extends State<preferencelist>
                 decoration: InputDecoration(
                     hintText: 'Star'.tr,
                     suffixIcon: Icon(Icons.arrow_drop_down)),
-                asyncSuggestions: ((searchValue) async {
-                  return strs37;
-                }),
+                // asyncSuggestions: ((searchValue) async {
+                //   return strs37;
+                // }),
+                suggestions: strs37,
                 // onChanged: (value) => print('onChanged value: $value'.tr),
                 onSubmitted: (value) => print('onSubmitted value: $value'.tr),
               ),
@@ -750,9 +763,10 @@ class _preferencelistState extends State<preferencelist>
                 decoration: InputDecoration(
                     hintText: 'Dosham'.tr,
                     suffixIcon: Icon(Icons.arrow_drop_down)),
-                asyncSuggestions: ((searchValue) async {
-                  return strs36;
-                }),
+                // asyncSuggestions: ((searchValue) async {
+                //   return strs36;
+                // }),
+                suggestions: strs36,
                 // onChanged: (value) => print('onChanged value: $value'.tr),
                 onSubmitted: (value) => print('onSubmitted value: $value'.tr),
               ),
@@ -783,9 +797,10 @@ class _preferencelistState extends State<preferencelist>
                   controller: Educationfields,
                   decoration:
                       InputDecoration(suffixIcon: Icon(Icons.arrow_drop_down)),
-                  asyncSuggestions: ((searchValue) async {
-                    return strs8;
-                  }),
+                  // asyncSuggestions: ((searchValue) async {
+                  //   return strs8;
+                  // }),
+                  suggestions: strs8,
                   // onChanged: (value) => print('onChanged value: $value'.tr),
                   onSubmitted: (value) {
                     print('onSubmitted value: $value');
@@ -817,9 +832,10 @@ class _preferencelistState extends State<preferencelist>
                 controller: Educationcategoryfields,
                 decoration:
                     InputDecoration(suffixIcon: Icon(Icons.arrow_drop_down)),
-                asyncSuggestions: ((searchValue) async {
-                  return strs15;
-                }),
+                // asyncSuggestions: ((searchValue) async {
+                //   return strs15;
+                // }),
+                suggestions: strs15,
                 // onChanged: (value) => print('onChanged value: $value'.tr),
                 onSubmitted: (value) => print('onSubmitted value: $value'.tr),
               ),
@@ -865,9 +881,10 @@ class _preferencelistState extends State<preferencelist>
                 decoration: InputDecoration(
                     hintText: 'Employed in'.tr,
                     suffixIcon: Icon(Icons.arrow_drop_down)),
-                asyncSuggestions: ((searchValue) async {
-                  return strs33;
-                }),
+                // asyncSuggestions: ((searchValue) async {
+                //   return strs33;
+                // }),
+                suggestions: strs33,
                 // onChanged: (value) => print('onChanged value: $value'.tr),
                 onSubmitted: (value) => print('onSubmitted value: $value'.tr),
               ),
@@ -898,9 +915,10 @@ class _preferencelistState extends State<preferencelist>
                   controller: occupation,
                   decoration:
                       InputDecoration(suffixIcon: Icon(Icons.arrow_drop_down)),
-                  asyncSuggestions: ((searchValue) async {
-                    return strs16;
-                  }),
+                  // asyncSuggestions: ((searchValue) async {
+                  //   return strs16;
+                  // }),
+                  suggestions: strs16,
                   // onChanged: (value) => print('onChanged value: $value'.tr),
                   onSubmitted: (value) {
                     print('onSubmitted value: $value');
@@ -937,9 +955,10 @@ class _preferencelistState extends State<preferencelist>
                 controller: occupationfield1,
                 decoration:
                     InputDecoration(suffixIcon: Icon(Icons.arrow_drop_down)),
-                asyncSuggestions: ((searchValue) async {
-                  return strs17;
-                }),
+                // asyncSuggestions: ((searchValue) async {
+                //   return strs17;
+                // }),
+                suggestions: strs17,
                 // onChanged: (value) => print('onChanged value: $value'.tr),
                 onSubmitted: (value) => print('onSubmitted value: $value'.tr),
               ),
@@ -970,9 +989,10 @@ class _preferencelistState extends State<preferencelist>
                 decoration: InputDecoration(
                     hintText: 'Annual Income'.tr,
                     suffixIcon: Icon(Icons.arrow_drop_down)),
-                asyncSuggestions: ((searchValue) async {
-                  return strs35;
-                }),
+                // asyncSuggestions: ((searchValue) async {
+                //   return strs35;
+                // }),
+                suggestions: strs35,
                 onChanged: (value) => print('onChanged value: $value'.tr),
                 onSubmitted: (value) => print('onSubmitted value: $value'.tr),
               ),
@@ -1021,9 +1041,10 @@ class _preferencelistState extends State<preferencelist>
                   decoration: InputDecoration(
                       hintText: 'Country'.tr,
                       suffixIcon: Icon(Icons.arrow_drop_down)),
-                  asyncSuggestions: ((searchValue) async {
-                    return strs38;
-                  }),
+                  // asyncSuggestions: ((searchValue) async {
+                  //   return strs38;
+                  // }),
+                  suggestions: strs38,
                   // onChanged: (value) {
                   //   print('onSubmitted value: $value');
                   //   getstate(value);
@@ -1060,9 +1081,10 @@ class _preferencelistState extends State<preferencelist>
                   decoration: InputDecoration(
                       hintText: 'Residing State'.tr,
                       suffixIcon: Icon(Icons.arrow_drop_down)),
-                  asyncSuggestions: ((searchValue) async {
-                    return strs39;
-                  }),
+                  // asyncSuggestions: ((searchValue) async {
+                  //   return strs39;
+                  // }),
+                  suggestions: strs39,
                   // onChanged: (value) {
                   //   print('onSubmitted value: $value');
                   //   getcity(value);
@@ -1098,9 +1120,10 @@ class _preferencelistState extends State<preferencelist>
                 decoration: InputDecoration(
                     hintText: 'Residing City'.tr,
                     suffixIcon: Icon(Icons.arrow_drop_down)),
-                asyncSuggestions: ((searchValue) async {
-                  return strs40;
-                }),
+                // asyncSuggestions: ((searchValue) async {
+                //   return strs40;
+                // }),
+                suggestions: strs40,
                 // onChanged: (value) => print('onChanged value: $value'.tr),
                 onSubmitted: (value) => print('onSubmitted value: $value'.tr),
               ),
@@ -1150,74 +1173,74 @@ class _preferencelistState extends State<preferencelist>
             ),
             Container(
               child: ElevatedButton(
-                child: Text(
-                  "Submit".tr,
-                  style: TextStyle(fontSize: 20),
-                ),
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color>(
-                      Color.fromARGB(255, 255, 111, 0)),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      side: BorderSide(
-                        color: Color.fromARGB(255, 255, 111, 0),
+                  child: Text(
+                    "Submit".tr,
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        Color.fromARGB(255, 255, 111, 0)),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        side: BorderSide(
+                          color: Color.fromARGB(255, 255, 111, 0),
+                        ),
                       ),
                     ),
                   ),
-                ),
-                onPressed: () {
-                  // Get.offAll(bottomsheet(
-                  //   currentIndex: 0,
-                  // ));
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => bottomsheet()),
-                  // );
-                  if (minage.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'select Min Age');
-                  } else if (maxage.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Max Age');
-                  } else if (minheight.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Min Height');
-                  } else if (maxheight.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Max Height');
-                  } else if (maritialstatus.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Maritial Status');
-                  } else if (mothertongue.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Mother Tongue');
-                  } else if (physicalstatus.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Physicalstatus');
-                  } else if (eatinghabits.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Eating Habits');
-                  } else if (drinkinghabits.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Drinking  Habits');
-                  } else if (smokinghabit.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Smoking Habits');
-                  } else if (religion.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Religion');
-                  } else if (caste.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Caste');
-                  } else if (starcontrol.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Star');
-                  } else if (Dosham.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Dosham');
-                  } else if (Educationfields.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Educationfields');
-                  } else if (employedin.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Employed In');
-                  } else if (occupation.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Occupation');
-                  } else if (annualincome.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Annual Income');
-                  } else if (Country.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter Country');
-                  } else if (residingState.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter State');
-                  } else if (residingCity.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Enter City');
-                  } else {
-                    print(whatareyoulooking);
+                  onPressed: () {
+                    // Get.offAll(bottomsheet(
+                    //   currentIndex: 0,
+                    // ));
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(builder: (context) => bottomsheet()),
+                    // );
+                    // if (minage.text.isEmpty) {
+                    //   Fluttertoast.showToast(msg: 'select Min Age');
+                    // } else if (maxage.text.isEmpty) {
+                    //   Fluttertoast.showToast(msg: 'Enter Max Age');
+                    // } else if (minheight.text.isEmpty) {
+                    //   Fluttertoast.showToast(msg: 'Enter Min Height');
+                    // } else if (maxheight.text.isEmpty) {
+                    //   Fluttertoast.showToast(msg: 'Enter Max Height');
+                    // } else if (maritialstatus.text.isEmpty) {
+                    //   Fluttertoast.showToast(msg: 'Enter Maritial Status');
+                    // } else if (mothertongue.text.isEmpty) {
+                    //   Fluttertoast.showToast(msg: 'Enter Mother Tongue');
+                    // } else if (physicalstatus.text.isEmpty) {
+                    //   Fluttertoast.showToast(msg: 'Enter Physicalstatus');
+                    // } else if (eatinghabits.text.isEmpty) {
+                    //   Fluttertoast.showToast(msg: 'Enter Eating Habits');
+                    // } else if (drinkinghabits.text.isEmpty) {
+                    //   Fluttertoast.showToast(msg: 'Enter Drinking  Habits');
+                    // } else if (smokinghabit.text.isEmpty) {
+                    //   Fluttertoast.showToast(msg: 'Enter Smoking Habits');
+                    // } else if (religion.text.isEmpty) {
+                    //   Fluttertoast.showToast(msg: 'Enter Religion');
+                    // } else if (caste.text.isEmpty) {
+                    //   Fluttertoast.showToast(msg: 'Enter Caste');
+                    // } else if (starcontrol.text.isEmpty) {
+                    //   Fluttertoast.showToast(msg: 'Enter Star');
+                    // } else if (Dosham.text.isEmpty) {
+                    //   Fluttertoast.showToast(msg: 'Enter Dosham');
+                    // } else if (Educationfields.text.isEmpty) {
+                    //   Fluttertoast.showToast(msg: 'Enter Educationfields');
+                    // } else if (employedin.text.isEmpty) {
+                    //   Fluttertoast.showToast(msg: 'Enter Employed In');
+                    // } else if (occupation.text.isEmpty) {
+                    //   Fluttertoast.showToast(msg: 'Enter Occupation');
+                    // } else if (annualincome.text.isEmpty) {
+                    //   Fluttertoast.showToast(msg: 'Enter Annual Income');
+                    // } else if (Country.text.isEmpty) {
+                    //   Fluttertoast.showToast(msg: 'Enter Country');
+                    // } else if (residingState.text.isEmpty) {
+                    //   Fluttertoast.showToast(msg: 'Enter State');
+                    // } else if (residingCity.text.isEmpty) {
+                    //   Fluttertoast.showToast(msg: 'Enter City');
+                    // } else {
+                    //   print(whatareyoulooking);
 
                     savepartnerpreference(
                       minage.text,
@@ -1245,8 +1268,8 @@ class _preferencelistState extends State<preferencelist>
                       whatareyoulooking,
                     );
                   }
-                },
-              ),
+                  // },
+                  ),
             ),
             SizedBox(
               height: 20,
@@ -1440,7 +1463,7 @@ class _preferencelistState extends State<preferencelist>
     });
   }
 
-  void educationcategory() async {
+  educationcategory() async {
     var url = Uri.parse('$baseurl/getRegister');
     final MyController con = Get.find();
     final response = await http.post(url, headers: <String, String>{
@@ -1487,7 +1510,7 @@ class _preferencelistState extends State<preferencelist>
     strs15 = educationlistss.map((e) => e.toString()).toList();
   }
 
-  void getoccupation_category() async {
+  getoccupation_category() async {
     var url = Uri.parse('$baseurl/getRegister');
     final MyController con = Get.find();
     final response = await http.post(url, headers: <String, String>{

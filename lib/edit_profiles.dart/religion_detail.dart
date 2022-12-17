@@ -22,6 +22,7 @@ import 'package:easy_autocomplete/easy_autocomplete.dart';
 
 import '../bottomsheet.dart';
 import '../language_btn.dart';
+import '../main.dart';
 import 'edit_profile.dart';
 
 var baseurl =
@@ -235,34 +236,6 @@ class _religion_detailState extends State<religion_detail>
                 child: Row(
                   children: [
                     Text(
-                      "Zodiac".tr,
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.only(left: 8),
-                // height: 40,
-                margin: EdgeInsets.only(right: 15, left: 15),
-                decoration: BoxDecoration(
-                  // borderRadius: BorderRadius.circular(12),
-                  border: Border.all(width: 1, color: Colors.grey),
-                ),
-                child: EasyAutocomplete(
-                  controller: zodiac,
-                  decoration: InputDecoration(
-                      hintText: 'Zodiac',
-                      suffixIcon: Icon(Icons.arrow_drop_down)),
-                  suggestions: strs5,
-                  onChanged: (value) => print('onChanged value: $value'.tr),
-                  onSubmitted: (value) => print('onSubmitted value: $value'.tr),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.only(left: 10, top: 20),
-                child: Row(
-                  children: [
-                    Text(
                       "Star".tr,
                     ),
                   ],
@@ -291,7 +264,7 @@ class _religion_detailState extends State<religion_detail>
                 child: Row(
                   children: [
                     Text(
-                      "Rassi".tr,
+                      "Zodiac".tr,
                     ),
                   ],
                 ),
@@ -307,7 +280,7 @@ class _religion_detailState extends State<religion_detail>
                 child: EasyAutocomplete(
                   controller: rassi,
                   decoration: InputDecoration(
-                      hintText: 'Rassi',
+                      hintText: 'Zodiac',
                       suffixIcon: Icon(Icons.arrow_drop_down)),
                   suggestions: strs4,
                   onChanged: (value) => print('onChanged value: $value'.tr),
@@ -347,47 +320,47 @@ class _religion_detailState extends State<religion_detail>
               ),
               Container(
                 child: ElevatedButton(
-                  child: Text(
-                    "Submit".tr,
-                    style: TextStyle(fontSize: 20),
-                  ),
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
-                        Color.fromARGB(255, 255, 111, 0)),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                        side: BorderSide(
-                          color: Color.fromARGB(255, 255, 111, 0),
+                    child: Text(
+                      "Submit".tr,
+                      style: TextStyle(fontSize: 20),
+                    ),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          Color.fromARGB(255, 255, 111, 0)),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          side: BorderSide(
+                            color: Color.fromARGB(255, 255, 111, 0),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  onPressed: () {
-                    // Get.offAll(bottomsheet(
-                    //   currentIndex: 0,
-                    // ));
-                    //   Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(builder: (context) => bottomsheet()),
-                    //   );
-                    print(dosham.text);
-                    print(subcaste.text);
-                    print(caste.text);
+                    onPressed: () {
+                      // Get.offAll(bottomsheet(
+                      //   currentIndex: 0,
+                      // ));
+                      //   Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(builder: (context) => bottomsheet()),
+                      //   );
+                      // print(dosham.text);
+                      // print(subcaste.text);
+                      // print(caste.text);
 
-                    if (Religion.text.isEmpty) {
-                      Fluttertoast.showToast(msg: 'Enter Religion');
-                    } else if (caste.text.isEmpty) {
-                      Fluttertoast.showToast(msg: 'Enter Caste');
-                    } else if (Star.text.isEmpty) {
-                      Fluttertoast.showToast(msg: 'Enter Star');
-                    } else if (rassi.text.isEmpty) {
-                      Fluttertoast.showToast(msg: 'Enter Rassi');
-                    } else if (zodiac.text.isEmpty) {
-                      Fluttertoast.showToast(msg: 'Enter Zodiac');
-                    } else if (dosham.text.isEmpty) {
-                      Fluttertoast.showToast(msg: 'Enter dosham');
-                    } else {
+                      // if (Religion.text.isEmpty) {
+                      //   Fluttertoast.showToast(msg: 'Enter Religion');
+                      // } else if (caste.text.isEmpty) {
+                      //   Fluttertoast.showToast(msg: 'Enter Caste');
+                      // } else if (Star.text.isEmpty) {
+                      //   Fluttertoast.showToast(msg: 'Enter Star');
+                      // } else if (rassi.text.isEmpty) {
+                      //   Fluttertoast.showToast(msg: 'Enter Rassi');
+                      // } else if (zodiac.text.isEmpty) {
+                      //   Fluttertoast.showToast(msg: 'Enter Zodiac');
+                      // } else if (dosham.text.isEmpty) {
+                      //   Fluttertoast.showToast(msg: 'Enter dosham');
+                      // } else {
                       saveReligionDetails(
                           Religion.text,
                           caste.text,
@@ -397,8 +370,8 @@ class _religion_detailState extends State<religion_detail>
                           zodiac.text,
                           dosham.text);
                     }
-                  },
-                ),
+                    // },
+                    ),
               ),
               SizedBox(
                 height: 20,
@@ -412,7 +385,7 @@ class _religion_detailState extends State<religion_detail>
 
   Future<void> getData() async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/editReligiousProfile";
+         baselink +"editReligiousProfile";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     var pref = await SharedPreferences.getInstance();
@@ -477,7 +450,7 @@ class _religion_detailState extends State<religion_detail>
 
   Future<void> getData1() async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/getRegister";
+         baselink +"getRegister";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     // var pref = await SharedPreferences.getInstance();
@@ -538,7 +511,7 @@ class _religion_detailState extends State<religion_detail>
     dosham,
   ) async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/saveReligionDetails";
+         baselink +"saveReligionDetails";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();

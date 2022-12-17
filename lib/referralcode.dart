@@ -13,6 +13,8 @@ import 'package:flutter_share/flutter_share.dart';
 import 'language_btn.dart';
 import 'package:http/http.dart' as http;
 
+import 'main.dart';
+
 // void main(List<String> args) {
 //   runApp(MaterialApp(
 //     home: referralcode(),
@@ -47,7 +49,7 @@ class _referralcodeState extends State<referralcode> {
   Future<void> share() async {
     await FlutterShare.share(
         title: 'Example share',
-        text: 'Sujitha Matrimony Referal Code is =>  ' + copied.text,
+        text: 'Sujitha Matrimony Referral Code is =>  ' + copied.text,
         linkUrl: 'https://flutter.dev/',
         chooserTitle: 'Sujitha Matrimony');
   }
@@ -133,7 +135,7 @@ class _referralcodeState extends State<referralcode> {
                     Clipboard.setData(ClipboardData(text: copied.text))
                         .then((_) {
                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                          content: Text("Referal Code copied to clipboard")));
+                          content: Text("Referral Code copied to clipboard")));
                     });
                   },
                   icon: Icon(Icons.copy_rounded),
@@ -227,7 +229,7 @@ class _referralcodeState extends State<referralcode> {
 
   Future<void> referal_code() async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/referal_code";
+         baselink +"referal_code";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();

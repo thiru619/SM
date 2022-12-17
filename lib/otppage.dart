@@ -21,6 +21,7 @@ import 'package:sujithamatrimony/photo_upload.dart';
 import 'package:sujithamatrimony/register.dart';
 
 import 'language_btn.dart';
+import 'main.dart';
 
 var name;
 var id;
@@ -291,7 +292,7 @@ class _otppageState extends State<otppage> {
 
   Future<void> confirmRegister() async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/confirmRegister";
+         baselink +"confirmRegister";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();

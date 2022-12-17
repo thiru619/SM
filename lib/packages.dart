@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:cc_avenue/cc_avenue.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_share/flutter_share.dart';
 import 'package:flutter_switch/flutter_switch.dart';
@@ -16,6 +17,7 @@ import 'package:sujithamatrimony/regular_package.dart';
 import 'language_btn.dart';
 import 'package:http/http.dart' as http;
 
+import 'main.dart';
 import 'referralcode.dart';
 
 // void main(List<String> args) {
@@ -246,35 +248,35 @@ class _PackagesState extends State<Packages> {
                                                 ],
                                               ),
                                             ),
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.all(8.0),
-                                              child: Row(
-                                                children: [
-                                                  SizedBox(
-                                                    width: 10,
-                                                  ),
-                                                  Icon(Icons.mobile_friendly),
-                                                  SizedBox(
-                                                    width: 20,
-                                                  ),
-                                                  Column(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    children: [
-                                                      SizedBox(
-                                                        width: 200,
-                                                        child: Text(
-                                                            trailpremium[index]
-                                                                ['video']),
-                                                      ),
-                                                      // Text('numbers')
-                                                    ],
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
+                                            // Padding(
+                                            //   padding:
+                                            //       const EdgeInsets.all(8.0),
+                                            //   child: Row(
+                                            //     children: [
+                                            //       SizedBox(
+                                            //         width: 10,
+                                            //       ),
+                                            //       Icon(Icons.mobile_friendly),
+                                            //       SizedBox(
+                                            //         width: 20,
+                                            //       ),
+                                            //       Column(
+                                            //         crossAxisAlignment:
+                                            //             CrossAxisAlignment
+                                            //                 .start,
+                                            //         children: [
+                                            //           SizedBox(
+                                            //             width: 200,
+                                            //             child: Text(
+                                            //                 trailpremium[index]
+                                            //                     ['video']),
+                                            //           ),
+                                            //           // Text('numbers')
+                                            //         ],
+                                            //       ),
+                                            //     ],
+                                            //   ),
+                                            // ),
                                             Padding(
                                               padding:
                                                   const EdgeInsets.all(8.0),
@@ -337,6 +339,28 @@ class _PackagesState extends State<Packages> {
                                                                     FontWeight
                                                                         .bold)),
                                                     onPressed: () {
+                                                      initPlatformState();
+                                                    },
+                                                    // onPressed: () => payintegration(
+                                                    //     main_banner3[index]
+                                                    //         ['price'],
+                                                    //     main_banner3[index]['id']),
+                                                    child:
+                                                        const Text('Activate'),
+                                                  ),
+                                                  SizedBox(
+                                                    width: 20,
+                                                  ),
+                                                  ElevatedButton(
+                                                    style: ElevatedButton.styleFrom(
+                                                        primary: Colors.orange,
+                                                        textStyle:
+                                                            const TextStyle(
+                                                                fontSize: 15,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold)),
+                                                    onPressed: () {
                                                       activate_free_trial(
                                                           trail[index]['id']);
                                                     },
@@ -345,7 +369,7 @@ class _PackagesState extends State<Packages> {
                                                     //         ['price'],
                                                     //     main_banner3[index]['id']),
                                                     child:
-                                                        const Text('Activate'),
+                                                        const Text('Share Now'),
                                                   ),
                                                 ],
                                               ),
@@ -504,35 +528,35 @@ class _PackagesState extends State<Packages> {
                                                   ],
                                                 ),
                                               ),
-                                              Padding(
-                                                padding:
-                                                    const EdgeInsets.all(8.0),
-                                                child: Row(
-                                                  children: [
-                                                    SizedBox(
-                                                      width: 10,
-                                                    ),
-                                                    Icon(Icons.mobile_friendly),
-                                                    SizedBox(
-                                                      width: 20,
-                                                    ),
-                                                    Column(
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      children: [
-                                                        SizedBox(
-                                                          width: 200,
-                                                          child: Text(
-                                                              trail[index]
-                                                                  ['video']),
-                                                        ),
-                                                        // Text('numbers')
-                                                      ],
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
+                                              // Padding(
+                                              //   padding:
+                                              //       const EdgeInsets.all(8.0),
+                                              //   child: Row(
+                                              //     children: [
+                                              //       SizedBox(
+                                              //         width: 10,
+                                              //       ),
+                                              //       Icon(Icons.mobile_friendly),
+                                              //       SizedBox(
+                                              //         width: 20,
+                                              //       ),
+                                              //       Column(
+                                              //         crossAxisAlignment:
+                                              //             CrossAxisAlignment
+                                              //                 .start,
+                                              //         children: [
+                                              //           SizedBox(
+                                              //             width: 200,
+                                              //             child: Text(
+                                              //                 trail[index]
+                                              //                     ['video']),
+                                              //           ),
+                                              //           // Text('numbers')
+                                              //         ],
+                                              //       ),
+                                              //     ],
+                                              //   ),
+                                              // ),
                                               Padding(
                                                 padding:
                                                     const EdgeInsets.all(8.0),
@@ -583,8 +607,32 @@ class _PackagesState extends State<Packages> {
                                               Container(
                                                 child: Row(
                                                   mainAxisAlignment:
-                                                      MainAxisAlignment.center,
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
                                                   children: [
+                                                    ElevatedButton(
+                                                      style: ElevatedButton.styleFrom(
+                                                          primary:
+                                                              Colors.orange,
+                                                          textStyle:
+                                                              const TextStyle(
+                                                                  fontSize: 15,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold)),
+                                                      onPressed: () {
+                                                        initPlatformState();
+                                                      },
+                                                      // onPressed: () => payintegration(
+                                                      //     main_banner3[index]
+                                                      //         ['price'],
+                                                      //     main_banner3[index]['id']),
+                                                      child: const Text(
+                                                          'Activate'),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 20,
+                                                    ),
                                                     ElevatedButton(
                                                       style: ElevatedButton.styleFrom(
                                                           primary:
@@ -605,7 +653,7 @@ class _PackagesState extends State<Packages> {
                                                       //         ['price'],
                                                       //     main_banner3[index]['id']),
                                                       child: const Text(
-                                                          'Activate'),
+                                                          'Share Now'),
                                                     ),
                                                   ],
                                                 ),
@@ -628,7 +676,7 @@ class _PackagesState extends State<Packages> {
 
   Future<void> imgdata3() async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/get_subscription";
+         baselink +"get_subscription";
 
     var finalurl = Uri.parse(url);
 
@@ -655,7 +703,7 @@ class _PackagesState extends State<Packages> {
 
   Future<void> activate_free_trial(subscription_id) async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/activate_free_trial";
+         baselink +"activate_free_trial";
 
     var finalurl = Uri.parse(url);
 
@@ -671,11 +719,29 @@ class _PackagesState extends State<Packages> {
     setState(() {
       print(decodeValue['status']);
       Get.to(() => referralcode());
-      Fluttertoast.showToast(
-        msg: decodeValue['message'].toString(),
-      );
+      // Fluttertoast.showToast(
+      // msg: decodeValue['message'].toString(),
+      // );
 
       print(trail.toString());
     });
+  }
+
+  Future<void> initPlatformState() async {
+    // Platform messages may fail, so we use a try/catch PlatformException.
+    try {
+      await CcAvenue.cCAvenueInit(
+          transUrl: 'https://secure.ccavenue.com/transaction/initTrans',
+          accessCode: '4YRUXLSRO20O8NIH',
+          amount: '10',
+          cancelUrl: 'http://122.182.6.216/merchant/ccavResponseHandler.jsp',
+          currencyType: 'INR',
+          merchantId: '2',
+          orderId: '519',
+          redirectUrl: 'http://122.182.6.216/merchant/ccavResponseHandler.jsp',
+          rsaKeyUrl: 'https://secure.ccavenue.com/transaction/jsp/GetRSA.jsp');
+    } catch (ex) {
+      print('PlatformException${ex.toString()}');
+    }
   }
 }

@@ -56,14 +56,14 @@ dependencies:
   percent_indicator: ^4.2.1
   file_picker: ^3.0.0
   image_cropper: ^3.0.0
-  cc_avenue: ^1.0.2
+  cc_avenue: ^1.0.3
   badges: ^2.0.3
   marquee: ^2.2.3
   flutter_rating_bar: ^4.0.1
   url_launcher: ^6.1.6
   google_fonts: ^3.0.1
   timer_button: ^2.0.0
-  flutter_carousel_slider: ^1.0.9
+  flutter_image_slideshow: ^0.1.4
   banner_carousel: ^1.2.1
   # internet_popup: ^1.0.3
   connectivity: ^3.0.6

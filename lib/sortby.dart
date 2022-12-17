@@ -2,12 +2,12 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-void main(List<String> args) {
-  runApp(MaterialApp(
-    home: sortby(),
-    debugShowCheckedModeBanner: false,
-  ));
-}
+// void main(List<String> args) {
+//   runApp(MaterialApp(
+//     home: sortby(),
+//     debugShowCheckedModeBanner: false,
+//   ));
+// }
 
 class sortby extends StatefulWidget {
   const sortby({Key? key}) : super(key: key);

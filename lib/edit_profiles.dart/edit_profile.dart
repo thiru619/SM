@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
@@ -21,6 +22,7 @@ import 'package:easy_autocomplete/easy_autocomplete.dart';
 import 'package:http/http.dart' as http;
 import '../homescreen.dart';
 import '../languagecontroler.dart';
+import '../main.dart';
 import 'Professionalinfo_detail.dart';
 import 'basic_detail.dart';
 import 'package:image_cropper/image_cropper.dart';
@@ -113,6 +115,20 @@ class _Edit_profileState extends State<Edit_profile> {
   void initState() {
     // getData();
     // getData1();
+    Timer.periodic(Duration(seconds: 5), (Timer timer) {
+      if (slidPage < 4) {
+        slidPage++;
+      } else {
+        slidPage = 0;
+      }
+      if (_pageController.hasClients) {
+        _pageController.animateToPage(
+          slidPage,
+          duration: Duration(milliseconds: 300),
+          curve: Curves.easeIn,
+        );
+      }
+    });
 
     super.initState();
   }
@@ -133,14 +149,14 @@ class _Edit_profileState extends State<Edit_profile> {
   // }
 
   final ImagePicker picker = ImagePicker();
-  void imageSelected(ImageSource source) async {
+  void imageSelected(ImageSource source, idd) async {
     final XFile? selectedImage = await picker.pickImage(source: source);
     if (selectedImage != null) {
-      await _cropImage(selectedImage.path);
+      await _cropImage(selectedImage.path, idd);
     }
   }
 
-  Future<Null> _cropImage(String? imagespath) async {
+  Future<Null> _cropImage(String? imagespath, idd) async {
     CroppedFile? croppedFile = await ImageCropper().cropImage(
       sourcePath: imagespath.toString(),
       aspectRatioPresets: [
@@ -166,19 +182,43 @@ class _Edit_profileState extends State<Edit_profile> {
       ],
     );
     setState(() {
-      // Get.back();
+      Get.back();
       _image = File(croppedFile!.path);
       // ImagePickerController.text = croppedFile.path;
       print(_image!.path);
     });
     if (_image != null) {
-      imageList.add(_image);
-
-      profile_pic();
+      profile_pic(idd);
     }
   }
 
-  var imageList = [].obs;
+  int slidPage = 0;
+  final PageController _pageController = PageController(initialPage: 0);
+
+  @override
+  void dispose() {
+    super.dispose();
+    _pageController.dispose();
+  }
+
+  _onPageChanged(int index) {
+    setState(() {
+      slidPage = index;
+    });
+  }
+
+  Widget SlideDots(bool isActive) {
+    return AnimatedContainer(
+      duration: Duration(milliseconds: 150),
+      margin: const EdgeInsets.symmetric(horizontal: 10),
+      height: isActive ? 12 : 8,
+      width: isActive ? 12 : 8,
+      decoration: BoxDecoration(
+        color: isActive ? Theme.of(context).primaryColor : Colors.grey,
+        borderRadius: BorderRadius.all(Radius.circular(12)),
+      ),
+    );
+  }
 
   GlobalKey<CarouselSliderState> _sliderKey = GlobalKey();
   @override
@@ -198,6 +238,7 @@ class _Edit_profileState extends State<Edit_profile> {
                       children: [
                         GestureDetector(
                           onTap: () {
+                            int idd = slidPage;
                             Get.bottomSheet(
                               Container(
                                 // width: MediaQuery.of(context).size.width,
@@ -235,7 +276,7 @@ class _Edit_profileState extends State<Edit_profile> {
                                             primary: Colors.deepOrangeAccent,
                                           ),
                                           onPressed: () => imageSelected(
-                                              ImageSource.gallery),
+                                              ImageSource.gallery, idd),
                                           // color: Color.fromARGB(255, 255, 115, 0),
                                           child: Row(
                                             children: [
@@ -255,8 +296,8 @@ class _Edit_profileState extends State<Edit_profile> {
                                           style: ElevatedButton.styleFrom(
                                             primary: Colors.deepOrangeAccent,
                                           ),
-                                          onPressed: () =>
-                                              imageSelected(ImageSource.camera),
+                                          onPressed: () => imageSelected(
+                                              ImageSource.camera, idd),
                                           // color: Color.fromARGB(255, 255, 115, 0),
                                           child: Row(
                                             children: [
@@ -292,103 +333,135 @@ class _Edit_profileState extends State<Edit_profile> {
                                         ),
                                       ],
                                     ),
-                                    Obx(
-                                      () => Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          for (File ii in imageList)
-                                            Container(
-                                              height: 50,
-                                              width: 50,
-                                              decoration: BoxDecoration(
-                                                  image: ii.path
-                                                          .contains("http")
-                                                      ? DecorationImage(
-                                                          fit: BoxFit.fill,
-                                                          image: NetworkImage(
-                                                              viewdetails['basic_details']
-                                                                      [
-                                                                      'profile_image']
-                                                                  .toString()))
-                                                      : DecorationImage(
-                                                          fit: BoxFit.fill,
-                                                          image: FileImage(ii))
-                                                  // color: Colors.grey,
-                                                  ),
-                                            ),
-                                        ],
-                                      ),
-                                    ),
+                                    // Obx(
+                                    //   () => Row(
+                                    //     mainAxisAlignment:
+                                    //         MainAxisAlignment.spaceEvenly,
+                                    //     children: [
+                                    //       for (File ii in imageList)
+                                    //         Container(
+                                    //           height: 50,
+                                    //           width: 50,
+                                    //           decoration: BoxDecoration(
+                                    //               image: ii.path
+                                    //                       .contains("http")
+                                    //                   ? DecorationImage(
+                                    //                       fit: BoxFit.fill,
+                                    //                       image: NetworkImage(
+                                    //                           viewdetails['basic_details']
+                                    //                                   [
+                                    //                                   'profile_image']
+                                    //                               .toString()))
+                                    //                   : DecorationImage(
+                                    //                       fit: BoxFit.fill,
+                                    //                       image: FileImage(ii))
+                                    //               // color: Colors.grey,
+                                    //               ),
+                                    //         ),
+                                    //     ],
+                                    //   ),
+                                    // ),
                                   ],
                                 ),
                               ),
                             );
                           },
-                          child: Container(
-                            height: 350,
-                            width: MediaQuery.of(context).size.width / 1,
-                            decoration: BoxDecoration(
-                                image: _image?.path == null
-                                    ? DecorationImage(
-                                        fit: BoxFit.fill,
+                          child: Stack(
+                            alignment: Alignment.bottomCenter,
+                            children: [
+                              SizedBox(
+                                height: 360,
+                                child: PageView.builder(
+                                  scrollDirection: Axis.horizontal,
+                                  controller: _pageController,
+                                  onPageChanged: _onPageChanged,
+                                  itemCount:
+                                      imageSS != null ? imageSS.length : 0,
+                                  itemBuilder: (ctx, i) => Container(
+                                    width: 200,
+                                    height: 100,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.rectangle,
+                                      image: DecorationImage(
                                         image: NetworkImage(
-                                            viewdetails['basic_details']
-                                                    ['profile_image']
-                                                .toString()))
-                                    : DecorationImage(
-                                        fit: BoxFit.fill,
-                                        image: FileImage(_image!))
-                                // color: Colors.grey,
+                                          imageSS[i].toString(),
+                                        ),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
                                 ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(10),
-                                  child: Column(
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Text(
-                                            'PROFILE COMPLETENESS'.tr,
-                                            style: TextStyle(
+                              ),
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(10),
+                                    child: Column(
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Text(
+                                              'PROFILE COMPLETENESS'.tr,
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.greenAccent),
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          height: 10,
+                                        ),
+                                        Container(
+                                          height: 30,
+                                          child: LiquidLinearProgressIndicator(
+                                            value: double.parse(
+                                                "0.${int.parse(viewdetails['basic_details']['profile_percentage'].toString())}"), // Defaults to 0.5.
+                                            valueColor: AlwaysStoppedAnimation(
+                                                Colors
+                                                    .blue), // Defaults to the current Theme's accentColor.
+                                            backgroundColor: Colors
+                                                .white, // Defaults to the current Theme's backgroundColor.
+                                            borderColor: Colors.transparent,
+                                            borderWidth: 5.0,
+                                            borderRadius: 12.0,
+                                            direction: Axis
+                                                .vertical, // The direction the liquid moves (Axis.vertical = bottom to top, Axis.horizontal = left to right). Defaults to Axis.horizontal.
+                                            center: Text(
+                                              "${viewdetails['basic_details']['profile_percentage'].toString()}%",
+                                              style: TextStyle(
                                                 fontWeight: FontWeight.bold,
-                                                color: Colors.greenAccent),
-                                          ),
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-                                      Container(
-                                        height: 30,
-                                        child: LiquidLinearProgressIndicator(
-                                          value: double.parse(
-                                              "0.${int.parse(viewdetails['basic_details']['profile_percentage'].toString())}"), // Defaults to 0.5.
-                                          valueColor: AlwaysStoppedAnimation(Colors
-                                              .blue), // Defaults to the current Theme's accentColor.
-                                          backgroundColor: Colors
-                                              .white, // Defaults to the current Theme's backgroundColor.
-                                          borderColor: Colors.transparent,
-                                          borderWidth: 5.0,
-                                          borderRadius: 12.0,
-                                          direction: Axis
-                                              .vertical, // The direction the liquid moves (Axis.vertical = bottom to top, Axis.horizontal = left to right). Defaults to Axis.horizontal.
-                                          center: Text(
-                                            "${viewdetails['basic_details']['profile_percentage'].toString()}%",
-                                            style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 15,
+                                                fontSize: 15,
+                                              ),
                                             ),
                                           ),
                                         ),
-                                      ),
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                              SizedBox(
+                                height: 50,
+                              ),
+                              Positioned(
+                                bottom: -15,
+                                child: Container(
+                                  margin: const EdgeInsets.only(bottom: 10),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: <Widget>[
+                                      for (int i = 0; i < imageSS.length; i++)
+                                        if (i == slidPage)
+                                          SlideDots(true)
+                                        else
+                                          SlideDots(false)
                                     ],
                                   ),
-                                )
-                              ],
-                            ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                         SizedBox(
@@ -427,34 +500,34 @@ class _Edit_profileState extends State<Edit_profile> {
                             ],
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 30, left: 30),
-                          child: TextFormField(
-                            // autofocus: false,
-                            controller: comments,
-                            // onChanged: (newValue) {
-                            //   initialvalue == ''
-                            //       ? 'Not Specified'.tr
-                            //       : comments.text;
-                            //   // setState(() {});
-                            // },
-                            keyboardType: TextInputType.multiline,
-                            maxLines: null, minLines: 5,
-                            // initialValue: 'Not Specified'.tr,
-                            // maxLength: 20,
-                            decoration: InputDecoration(
-                              // labelText: 'jo',
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                    color: Color.fromARGB(255, 114, 113, 113)),
-                              ),
-                              // icon: Icon(Icons.favorite),
-                              // labelText: "Comments".tr,
-                              labelStyle:
-                                  TextStyle(color: Colors.grey, fontSize: 16),
-                            ),
-                          ),
-                        ),
+                        // Padding(
+                        //   padding: const EdgeInsets.only(right: 30, left: 30),
+                        //   child: TextFormField(
+                        //     // autofocus: false,
+                        //     controller: comments,
+                        //     // onChanged: (newValue) {
+                        //     //   initialvalue == ''
+                        //     //       ? 'Not Specified'.tr
+                        //     //       : comments.text;
+                        //     //   // setState(() {});
+                        //     // },
+                        //     keyboardType: TextInputType.multiline,
+                        //     maxLines: null, minLines: 5,
+                        //     // initialValue: 'Not Specified'.tr,
+                        //     // maxLength: 20,
+                        //     decoration: InputDecoration(
+                        //       // labelText: 'jo',
+                        //       focusedBorder: UnderlineInputBorder(
+                        //         borderSide: BorderSide(
+                        //             color: Color.fromARGB(255, 114, 113, 113)),
+                        //       ),
+                        //       // icon: Icon(Icons.favorite),
+                        //       // labelText: "Comments".tr,
+                        //       labelStyle:
+                        //           TextStyle(color: Colors.grey, fontSize: 16),
+                        //     ),
+                        //   ),
+                        // ),
                         SizedBox(
                           height: 10,
                         ),
@@ -956,7 +1029,8 @@ class _Edit_profileState extends State<Edit_profile> {
                                         )
                                       : Text(
                                           viewdetails['religious_details']
-                                              ['zodiac'],
+                                                  ['zodiac']
+                                              .toString(),
                                         ),
                                   SizedBox(
                                     height: 10,
@@ -1691,9 +1765,9 @@ class _Edit_profileState extends State<Edit_profile> {
           );
   }
 
-  Future<void> profile_pic() async {
+  Future<void> profile_pic(int ind) async {
     var baseurl =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/update_profile_pic";
+         baselink +"update_profile_pic";
     final uri = Uri.parse(baseurl);
     var request = http.MultipartRequest('POST', uri);
 
@@ -1706,6 +1780,7 @@ class _Edit_profileState extends State<Edit_profile> {
     var pref = await SharedPreferences.getInstance();
     var regId = pref.getString('regsId');
     request.fields['reg_id'] = regId.toString();
+    request.fields['index'] = ind.toString();
 
     print(regId);
 
@@ -1723,15 +1798,49 @@ class _Edit_profileState extends State<Edit_profile> {
     final respStr = await response.stream.bytesToString();
     var data = json.decode(respStr);
     setState(() {});
+    viewprofile();
   }
 
-  final List<Color> kMixedColors = [
-    Color(0xff71A5D7),
-    Color(0xff72CCD4),
-    Color(0xffFBAB57),
-    Color(0xffF8B993),
-    Color(0xff962D17),
-    Color(0xffc657fb),
-    Color(0xfffb8457),
-  ];
+  Future<void> viewprofile() async {
+    setState(() {
+      // loading = true;
+    });
+    var url =
+         baselink +"get_view_profile";
+    // checker(context) async {
+    var pref = await SharedPreferences.getInstance();
+    var regid = pref.getString('regsId');
+
+    //  pref.setString('customer_id', data['data']['customer_id'].toString())
+    // final MyController con = Get.find();
+
+    //  print(id);
+    var finalurl = Uri.parse(url);
+    var res = await http.post(finalurl, headers: <String, String>{
+      'X-API-KEY': '50f58d4facbdfe506d51ad6b079deaae'
+    }, body: {
+      'reg_id': regid,
+    });
+
+    print('hi' + res.body);
+    // var decodeValue = json.decode(res.body);
+    var decodeValue = json.decode(res.body);
+    setState(() {});
+    if (decodeValue['status'] == true) {
+      viewdetails = decodeValue['data'];
+      imageSS = decodeValue['data']['profile_image_details'];
+
+      print(viewdetails);
+      // SharedPreferences pref = await SharedPreferences.getInstance();
+      // pref.setString('temp_id', decodeValue['data']['user_temp_id'].toString());
+      // Get.to(() => registration());
+
+      // Fluttertoast.showToast(msg: decodeValue['message']);
+    } else {
+      Fluttertoast.showToast(msg: decodeValue['message']);
+    }
+    setState(() {
+      // loading = false;
+    });
+  }
 }

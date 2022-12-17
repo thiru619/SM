@@ -9,6 +9,7 @@ import 'package:get/get.dart';
 import 'package:sujithamatrimony/changepass.dart';
 
 import 'languagecontroler.dart';
+import 'main.dart';
 import 'otp_forgot.dart';
 
 
@@ -126,7 +127,7 @@ class _forgetpassState extends State<forgetpass> {
 
   Future<void> forgot_password(mobile_no) async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/forgot_password";
+         baselink +"forgot_password";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();

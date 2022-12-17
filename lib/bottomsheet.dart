@@ -13,6 +13,7 @@ import 'package:sujithamatrimony/mail.dart';
 import 'package:sujithamatrimony/notification.dart';
 import 'package:sujithamatrimony/profilefor.dart';
 import 'package:sujithamatrimony/search.dart';
+import 'main.dart';
 import 'matches.dart';
 import 'package:badges/badges.dart';
 
@@ -198,7 +199,7 @@ class _bottomsheetState extends State<bottomsheet> {
 
   Future<void> get_notification() async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/get_notification";
+         baselink +"get_notification";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();

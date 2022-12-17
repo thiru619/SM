@@ -9,6 +9,7 @@ import 'package:http/http.dart' as http;
 import 'package:sujithamatrimony/colors.dart';
 import 'package:sujithamatrimony/loginpage.dart';
 import 'package:marquee/marquee.dart';
+import 'package:sujithamatrimony/main.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'packages.dart';
@@ -1516,8 +1517,7 @@ class _view_profileState extends State<view_profile> {
     setState(() {
       loading = true;
     });
-    var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/get_profile_details";
+    var url = baselink + "get_profile_details";
     // checker(context) async {
     var pref = await SharedPreferences.getInstance();
     var regid = widget.profile;
@@ -1563,7 +1563,7 @@ class _view_profileState extends State<view_profile> {
     //   loading = true;
     // });
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/saveShortlistProfile";
+         baselink +"saveShortlistProfile";
     // checker(context) async {
     var pref = await SharedPreferences.getInstance();
     var regid = pref.getString('regsId');
@@ -1605,7 +1605,7 @@ class _view_profileState extends State<view_profile> {
     //   loading = true;
     // });
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/saveInterestedProfile";
+         baselink +"saveInterestedProfile";
     // checker(context) async {
     var pref = await SharedPreferences.getInstance();
     var regid = pref.getString('regsId');

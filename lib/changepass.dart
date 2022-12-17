@@ -9,6 +9,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sujithamatrimony/languagecontroler.dart';
 import 'package:sujithamatrimony/loginpage.dart';
 
+import 'main.dart';
+
 class changepass extends StatefulWidget {
   final String otp;
   final String mobile_no;
@@ -149,7 +151,7 @@ class _changepassState extends State<changepass> {
 
   Future<void> update_password(mobile_no, password) async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/update_password";
+         baselink +"update_password";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();

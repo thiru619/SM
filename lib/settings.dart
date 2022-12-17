@@ -1,14 +1,18 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sujithamatrimony/changepass.dart';
-
+import 'package:http/http.dart' as http;
 import 'package:sujithamatrimony/colors.dart';
 import 'package:sujithamatrimony/loginpage.dart';
 import 'package:sujithamatrimony/oldtonew_pass.dart';
 import 'language_btn.dart';
+import 'main.dart';
 import 'privacysetting.dart';
 
 class settings extends StatefulWidget {
@@ -27,7 +31,7 @@ class _settingsState extends State<settings> {
   void initState() {
     super.initState();
     log();
-    // secureScreen();
+    // delete_account();
   }
 
   var temp_id;
@@ -38,6 +42,7 @@ class _settingsState extends State<settings> {
     print(temp_id);
   }
 
+  var deleteaccount;
   int _value = 0;
   bool isSwitchOn = false;
   bool status = false;
@@ -330,7 +335,7 @@ class _settingsState extends State<settings> {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        // print("j");
+                        delete_account();
                       },
                       child: Container(
                         padding: const EdgeInsets.all(8),
@@ -354,39 +359,77 @@ class _settingsState extends State<settings> {
                   ],
                 ),
               ),
-              Container(
-                child: Row(
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        // print("j");
-                      },
-                      child: Container(
-                        padding: const EdgeInsets.all(8),
-                        child: Row(
-                          children: [
-                            Image(
-                              height: 25,
-                              image: AssetImage('assets/deactivate.png'),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              'Deactivate Account'.tr,
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              // Container(
+              //   child: Row(
+              //     children: [
+              //       GestureDetector(
+              //         onTap: () {
+              //           // print("j");
+              //         },
+              //         child: Container(
+              //           padding: const EdgeInsets.all(8),
+              //           child: Row(
+              //             children: [
+              //               Image(
+              //                 height: 25,
+              //                 image: AssetImage('assets/deactivate.png'),
+              //               ),
+              //               SizedBox(
+              //                 width: 10,
+              //               ),
+              //               Text(
+              //                 'Deactivate Account'.tr,
+              //                 style: TextStyle(fontWeight: FontWeight.bold),
+              //               ),
+              //             ],
+              //           ),
+              //         ),
+              //       ),
+              //     ],
+              //   ),
+              // ),
             ],
           ),
         ),
       ),
     );
+  }
+
+  Future<void> delete_account() async {
+    var url =
+         baselink +"delete_account";
+
+    var finalurl = Uri.parse(url);
+
+    //  var decodeValue = json.decode(res.body);
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    var regId = pref.getString('regsId');
+    var body = {
+      'reg_id': regId,
+    };
+    var res = await http.post(finalurl,
+        headers: <String, String>{
+          'X-API-KEY': '50f58d4facbdfe506d51ad6b079deaae'
+        },
+        body: body);
+    print(res.body);
+    var decodeValue = json.decode(res.body);
+    setState(() async {
+      print(decodeValue['status']);
+
+      print(deleteaccount.toString());
+      Fluttertoast.showToast(
+        msg: decodeValue['message'].toString(),
+      );
+      SharedPreferences pref = await SharedPreferences.getInstance();
+      await pref.clear();
+      Navigator.pushAndRemoveUntil<dynamic>(
+        context,
+        MaterialPageRoute<dynamic>(
+          builder: (BuildContext context) => loginpage(),
+        ),
+        (route) => false, //if you want to disable back feature set to false
+      );
+    });
   }
 }

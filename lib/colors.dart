@@ -139,3 +139,4 @@ mediaSize(BuildContext context) {
   height_ = size.height;
   width_ = size.width;
 }
+

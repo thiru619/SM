@@ -22,6 +22,7 @@ import 'package:easy_autocomplete/easy_autocomplete.dart';
 
 import '../bottomsheet.dart';
 import '../language_btn.dart';
+import '../main.dart';
 
 var baseurl =
     'http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/';
@@ -67,6 +68,7 @@ class _family_detailState extends State<family_detail>
   var family_status_arrList = [];
   var father_occupation_arrList = [];
   var mother_occupation_arrList = [];
+  var jd = {"amount": 125, "fff": "hh"};
 
   final _formKey = GlobalKey<FormState>();
   TabController? tabController;
@@ -75,6 +77,7 @@ class _family_detailState extends State<family_detail>
   void initState() {
     tabController = TabController(length: 2, vsync: this);
     super.initState();
+    // var convo = jsonEncode(jd);
 
     getData();
     // confirmragistration();
@@ -465,7 +468,7 @@ class _family_detailState extends State<family_detail>
 
   Future<void> getData() async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/editfamily";
+         baselink +"/editfamily";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();
@@ -539,7 +542,7 @@ class _family_detailState extends State<family_detail>
     sisters_married,
   ) async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/saveFamilyDetails";
+         baselink +"saveFamilyDetails";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();

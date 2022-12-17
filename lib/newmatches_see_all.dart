@@ -3,6 +3,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+import 'main.dart';
+
 class newmatches_see_all extends StatefulWidget {
   const newmatches_see_all({Key? key}) : super(key: key);
 
@@ -76,7 +78,7 @@ class _newmatches_see_allState extends State<newmatches_see_all> {
 
   Future<void> getnewmatchesseeall() async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/getHomePage";
+         baselink +"UserApi/getHomePage";
 
     var finalurl = Uri.parse(url);
     var pref = await SharedPreferences.getInstance();

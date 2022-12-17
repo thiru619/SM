@@ -22,6 +22,7 @@ import 'package:sujithamatrimony/photo_upload.dart';
 
 import 'forgetpass.dart';
 import 'language_btn.dart';
+import 'main.dart';
 
 var startTimer;
 var btnEnabled = false;
@@ -294,7 +295,7 @@ class _otp_forgotState extends State<otp_forgot> {
 
   Future<void> update_password(mobile_no, password) async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/update_password";
+         baselink +"update_password";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();

@@ -360,7 +360,7 @@ class _textState extends State<text> {
 
   Future<void> login(username, password) async {
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/login";
+         baselink +"UserApi/login";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();
@@ -400,7 +400,7 @@ class _textState extends State<text> {
       mother_tongue, mobile_no, email_id, password, referal_code) async {
     print('hi');
     var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/basicDetails";
+         baselink +"UserApi/basicDetails";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();
