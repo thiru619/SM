@@ -91,8 +91,7 @@ class _Feedback1State extends State<Feedback1> {
                               ),
                             ],
                           ),
-                        ) ??
-                        false; //if showDialouge had returned null, then return false
+                        ); //if showDialouge had returned null, then return false
                   },
                   style: ElevatedButton.styleFrom(
                       primary: Colors.green,

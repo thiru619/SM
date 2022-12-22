@@ -22,6 +22,8 @@ import 'package:http/http.dart' as http;
 
 import 'package:image_cropper/image_cropper.dart';
 
+import 'main.dart';
+
 class photo_upload extends StatefulWidget {
   const photo_upload({Key? key}) : super(key: key);
 
@@ -321,7 +323,7 @@ class _photo_uploadState extends State<photo_upload> {
 
   Future<void> profile_pic() async {
     var baseurl =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/update_profile_pic";
+     baselink  + "update_profile_pic";
     final uri = Uri.parse(baseurl);
     var request = http.MultipartRequest('POST', uri);
 

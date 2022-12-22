@@ -132,7 +132,7 @@ class _listview_allmatchState extends State<listview_allmatch> {
                         ],
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.only(bottom: 10),
                         child: Row(
                           children: [
                             Text(
@@ -151,7 +151,7 @@ class _listview_allmatchState extends State<listview_allmatch> {
                         ),
                       ),
                     ],
-                  )
+                  ),
                 ],
               ),
               height: 120,
@@ -164,8 +164,7 @@ class _listview_allmatchState extends State<listview_allmatch> {
   }
 
   Future<void> listview() async {
-    var url =
-         baselink +"getHomePage";
+    var url = baselink + "getHomePage";
 
     var finalurl = Uri.parse(url);
     var pref = await SharedPreferences.getInstance();

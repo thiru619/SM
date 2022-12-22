@@ -12,6 +12,7 @@ import 'package:sujithamatrimony/preferencelist.dart';
 import 'package:sujithamatrimony/profilefor.dart';
 import 'bottomsheet.dart';
 import 'language_btn.dart';
+import 'main.dart';
 import 'registration2.dart';
 import 'dart:async';
 import 'dart:convert';
@@ -20,7 +21,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:easy_autocomplete/easy_autocomplete.dart';
 
 var baseurl =
-    'http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/';
+    'https://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/';
 
 class registration extends StatefulWidget {
   const registration({Key? key}) : super(key: key);
@@ -733,8 +734,7 @@ class _registrationState extends State<registration> {
   }
 
   Future<void> getData() async {
-    var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/getRegister";
+    var url = baselink + "getRegister";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();
@@ -808,8 +808,7 @@ class _registrationState extends State<registration> {
 
   Future<void> postcastedetail(religion, caste, sub_caste, maritial_status,
       marry_other_community, dosham, country, state, city, star, raasi) async {
-    var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/saveCasteDetails";
+    var url = baselink + "saveCasteDetails";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();

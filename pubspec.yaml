@@ -67,6 +67,7 @@ dependencies:
   banner_carousel: ^1.2.1
   # internet_popup: ^1.0.3
   connectivity: ^3.0.6
+  bubble: ^1.2.1
 
   
   

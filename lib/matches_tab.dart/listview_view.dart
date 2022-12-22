@@ -137,21 +137,27 @@ class _listview_viewState extends State<listview_view> {
                                 ),
                               ],
                             ),
-                            Row(
-                              children: [
-                                Text(
-                                  listprofile[index]['city'].toString(),
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                Text(
-                                  ', ',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                Text(
-                                  listprofile[index]['state'].toString(),
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                              ],
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 10),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    listprofile[index]['city'].toString(),
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                    ', ',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                    listprofile[index]['state'].toString(),
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
                             ),
                           ],
                         )
@@ -211,8 +217,7 @@ class _listview_viewState extends State<listview_view> {
   }
 
   Future<void> listview() async {
-    var url =
-         baselink +"getHomePage";
+    var url = baselink + "getHomePage";
 
     var finalurl = Uri.parse(url);
     var pref = await SharedPreferences.getInstance();

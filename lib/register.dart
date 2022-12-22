@@ -29,6 +29,14 @@ TextEditingController mobilenumberfield = new TextEditingController();
 
 int _value = 0;
 
+extension EmailValidator on String {
+  bool isValidEmail() {
+    return RegExp(
+            r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
+        .hasMatch(this);
+  }
+}
+
 class register extends StatefulWidget {
   register({Key? key}) : super(key: key);
 
@@ -535,7 +543,16 @@ class _registerlistState extends State<registerlist> {
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: TextField(
+                    child: TextFormField(
+                      // validator: (value) {
+                      //   if (value!.isEmpty ||
+                      //       !RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$')
+                      //           .hasMatch(value)) {
+                      //     return "Enter Correct Email Address";
+                      //   } else {
+                      //     return null;
+                      //   }
+                      // },
                       controller: emailfield,
                       decoration: InputDecoration(
                         border: InputBorder.none,
@@ -738,8 +755,7 @@ class _registerlistState extends State<registerlist> {
   }
 
   Future<void> getData() async {
-    var url =
-         baselink +"getRegister";
+    var url = baselink + "getRegister";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();
@@ -788,8 +804,7 @@ class _registerlistState extends State<registerlist> {
   Future<void> postbasicdetail(profile_created_for, name, gender, dob,
       mother_tongue, mobile_no, email_id, password) async {
     print('hi');
-    var url =
-         baselink +"basicDetails";
+    var url = baselink + "basicDetails";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();

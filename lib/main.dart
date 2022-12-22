@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Sizer',
           theme: ThemeData(
-            fontFamily: 'google_sans',
+            fontFamily: 'BeVietnamPro',
             textTheme: GoogleFonts.latoTextTheme(
               Theme.of(context).textTheme,
             ),
@@ -431,8 +431,7 @@ class _bodypartState extends State<bodypart> {
   Future<void> postbasicdetail(context, profile_created_for, name, gender, dob,
       mother_tongue, mobile_no, email_id, password, referal_code) async {
     print('hi');
-    var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/basicDetails";
+    var url = baselink + "basicDetails";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();

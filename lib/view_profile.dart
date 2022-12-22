@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:draggable_home/draggable_home.dart';
 import 'package:flutter/material.dart';
@@ -34,6 +35,39 @@ class _view_profileState extends State<view_profile> {
     super.initState();
   }
 
+  //whatsapp
+  void openWhatsapp(
+      {required BuildContext context,
+      required String text,
+      required String number}) async {
+    var whatsapp =
+        '+91${viewprofiles['basics_details']['mobile_no']['phone'].toString()}';
+
+    var whatsappURlAndroid =
+        "whatsapp://send?phone=" + whatsapp + "&text=$text";
+    var whatsappURLIos = "https://wa.me/$whatsapp?text=${Uri.tryParse(text)}";
+    if (Platform.isIOS) {
+      // for iOS phone only
+      if (await canLaunchUrl(Uri.parse(whatsappURLIos))) {
+        await launchUrl(Uri.parse(
+          whatsappURLIos,
+        ));
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text("Whatsapp not installed")));
+      }
+    } else {
+      // android , web
+      if (await canLaunchUrl(Uri.parse(whatsappURlAndroid))) {
+        await launchUrl(Uri.parse(whatsappURlAndroid));
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text("Whatsapp not installed")));
+      }
+    }
+  }
+
+//
   bool _hasBeenPressed1 = false;
   bool _hasBeenPressed = false;
   bool loading = false;
@@ -253,6 +287,114 @@ class _view_profileState extends State<view_profile> {
                                         },
                                       ),
                                     ]),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  children: [
+                                    GestureDetector(
+                                      onTap: () async {
+                                        if (viewprofiles['basics_details']
+                                                ['mobile_no']['bphone'] ==
+                                            true) {
+                                          FocusManager.instance.primaryFocus
+                                              ?.unfocus();
+                                          var whatsapp =
+                                              "+91${viewprofiles['basics_details']['mobile_no']['phone'].toString()}";
+                                          var whatsappAndroid = Uri.parse(
+                                              "whatsapp://send?phone=$whatsapp&text=hello");
+                                          if (await canLaunchUrl(
+                                              whatsappAndroid)) {
+                                            await launchUrl(whatsappAndroid);
+                                          } else {
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(
+                                              const SnackBar(
+                                                content: Text(
+                                                    "WhatsApp is not installed on the device"),
+                                              ),
+                                            );
+                                          }
+                                        } else {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    Packages()),
+                                          );
+                                        }
+                                      },
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                            border: Border.all(
+                                                width: 1, color: Colors.grey)),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Row(
+                                            children: [
+                                              Image.asset(
+                                                'assets/whatsapp.jpg',
+                                                height: 20,
+                                              ),
+                                              SizedBox(
+                                                width: 5,
+                                              ),
+                                              Text('whats app'),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 15,
+                                    ),
+                                    GestureDetector(
+                                      onTap: () async {
+                                        if (viewprofiles['basics_details']
+                                                ['mobile_no']['bphone'] ==
+                                            true) {
+                                          final Uri launchUri = Uri(
+                                            scheme: 'tel',
+                                            path:
+                                                '${viewprofiles['basics_details']['mobile_no']['phone'].toString()}',
+                                          );
+                                          await launchUrl(launchUri);
+                                        } else {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    Packages()),
+                                          );
+                                        }
+                                      },
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                            border: Border.all(
+                                                width: 1, color: Colors.grey)),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Row(
+                                            children: [
+                                              Image.asset(
+                                                'assets/call.png',
+                                                height: 15,
+                                              ),
+                                              SizedBox(
+                                                width: 5,
+                                              ),
+                                              Text('Call'),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                                 SizedBox(
                                   height: 20,
                                 ),
@@ -1464,6 +1606,133 @@ class _view_profileState extends State<view_profile> {
                                     ),
                                   ),
                                 ),
+                                Text(
+                                  'Preferences',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 25),
+                                ),
+                                SizedBox(
+                                  height: 25,
+                                ),
+                                Container(
+                                  child: Row(
+                                    children: [
+                                      GestureDetector(
+                                        onTap: () {
+                                          // print("j");Edit_profile
+                                          // Navigator.push(
+                                          //   context,
+                                          //   MaterialPageRoute(
+                                          //       builder: (context) =>
+                                          //           Edit_profile()),
+                                          // );
+                                        },
+                                        child: Container(
+                                          padding: const EdgeInsets.all(8),
+                                          child: Row(
+                                            children: [
+                                              Icon(
+                                                Icons
+                                                    .signal_wifi_statusbar_null_rounded,
+                                                color: Colors.green,
+                                              ),
+                                              SizedBox(
+                                                width: 10,
+                                              ),
+                                              viewprofiles['family']
+                                                          ['family_status'] !=
+                                                      ''
+                                                  ? Text(viewprofiles['family']
+                                                          ['family_status']
+                                                      .toString())
+                                                  : Text(
+                                                      'Request family status',
+                                                      style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                      ),
+                                                    ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    // print("j");Edit_profile
+                                    // Navigator.push(
+                                    //   context,
+                                    //   MaterialPageRoute(
+                                    //       builder: (context) =>
+                                    //           Edit_profile()),
+                                    // );
+                                  },
+                                  child: Container(
+                                    padding: const EdgeInsets.all(8),
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.merge_type,
+                                          color: Colors.green,
+                                        ),
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        viewprofiles['family']['family_type'] !=
+                                                ''
+                                            ? Text(viewprofiles['family']
+                                                    ['family_type']
+                                                .toString())
+                                            : Text(
+                                                'Request family Type',
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    // print("j");Edit_profile
+                                    // Navigator.push(
+                                    //   context,
+                                    //   MaterialPageRoute(
+                                    //       builder: (context) =>
+                                    //           Edit_profile()),
+                                    // );
+                                  },
+                                  child: Container(
+                                    padding: const EdgeInsets.all(8),
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.vertical_align_top_rounded,
+                                          color: Colors.green,
+                                        ),
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        viewprofiles['family']
+                                                    ['family_values'] !=
+                                                ''
+                                            ? Text(viewprofiles['family']
+                                                    ['family_values']
+                                                .toString())
+                                            : Text(
+                                                'Request to family value',
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                      ],
+                                    ),
+                                  ),
+                                )
                               ],
                             ),
                           ],
@@ -1562,8 +1831,7 @@ class _view_profileState extends State<view_profile> {
     // setState(() {
     //   loading = true;
     // });
-    var url =
-         baselink +"saveShortlistProfile";
+    var url = baselink + "saveShortlistProfile";
     // checker(context) async {
     var pref = await SharedPreferences.getInstance();
     var regid = pref.getString('regsId');
@@ -1604,8 +1872,7 @@ class _view_profileState extends State<view_profile> {
     // setState(() {
     //   loading = true;
     // });
-    var url =
-         baselink +"saveInterestedProfile";
+    var url = baselink + "saveInterestedProfile";
     // checker(context) async {
     var pref = await SharedPreferences.getInstance();
     var regid = pref.getString('regsId');

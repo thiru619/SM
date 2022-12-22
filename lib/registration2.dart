@@ -23,7 +23,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:easy_autocomplete/easy_autocomplete.dart';
 
 var baseurl =
-    "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/";
+    "https://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/";
 var otpvalue = '';
 var resendval = true;
 
@@ -792,8 +792,7 @@ class _registration2State extends State<registration2> {
   }
 
   Future<void> getData() async {
-    var url =
-         baselink +"getRegister";
+    var url = baselink + "getRegister";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();
@@ -984,8 +983,7 @@ class _registration2State extends State<registration2> {
     ancestral_orgin,
     about_me,
   ) async {
-    var url =
-         baselink +"saveEducationDetails";
+    var url = baselink + "saveEducationDetails";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();

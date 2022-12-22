@@ -15,6 +15,7 @@ import 'package:sujithamatrimony/search_screen.dart';
 import 'package:sujithamatrimony/whatwelookingfor.dart';
 import 'bottomsheet.dart';
 import 'language_btn.dart';
+import 'main.dart';
 import 'otppage.dart';
 import 'registration2.dart';
 
@@ -23,7 +24,7 @@ import 'package:http/http.dart' as http;
 import 'package:easy_autocomplete/easy_autocomplete.dart';
 
 var baseurl =
-    'http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/';
+    'https://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/';
 
 var searchprofile = [];
 
@@ -1202,8 +1203,7 @@ class _searchState extends State<search> with SingleTickerProviderStateMixin {
   }
 
   Future<void> getData() async {
-    var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/getPartnerPrefrence";
+    var url = baselink + "getPartnerPrefrence";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();

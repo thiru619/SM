@@ -4,7 +4,9 @@ import 'package:flutter_switch/flutter_switch.dart';
 import 'package:get/get.dart';
 import 'package:sujithamatrimony/colors.dart';
 import 'package:sujithamatrimony/languagecontroler.dart';
-
+import 'package:bubble/bubble.dart';
+import 'package:bubble/issue_clipper.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'language_btn.dart';
 
 // void main(List<String> args) {
@@ -31,6 +33,26 @@ class _ChatsState extends State<Chats> {
     super.initState();
     // secureScreen();
   }
+
+  static const styleSomebody = BubbleStyle(
+    nip: BubbleNip.leftCenter,
+    color: Colors.white,
+    borderColor: Colors.blue,
+    borderWidth: 1,
+    elevation: 4,
+    margin: BubbleEdges.only(top: 8, right: 50),
+    alignment: Alignment.topLeft,
+  );
+
+  static const styleMe = BubbleStyle(
+    nip: BubbleNip.rightCenter,
+    color: Color.fromARGB(255, 225, 255, 199),
+    borderColor: Colors.blue,
+    borderWidth: 1,
+    elevation: 4,
+    margin: BubbleEdges.only(top: 8, left: 50),
+    alignment: Alignment.topRight,
+  );
 
   int _value = 0;
   bool isSwitchOn = false;
@@ -75,194 +97,32 @@ class _ChatsState extends State<Chats> {
           decoration: crl.Decoration(),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
+      body: Container(
+        color: Colors.yellow.withAlpha(64),
+        child: ListView(
+          padding: const EdgeInsets.all(8),
           children: [
-            Container(
-              padding: EdgeInsets.only(top: 100, left: 110),
-              child: Row(
-                children: [
-                  Container(
-                    height: 40,
-                    width: 200,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(width: 1)),
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: 150,
-                        ),
-                        Text("Hi")
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  CircleAvatar(
-                    backgroundColor: Colors.green,
-                  )
-                ],
+            for (var i = 0; i <= 15; i += 3)
+              Bubble(
+                margin: BubbleEdges.only(top: 10),
+                nipOffset: i.toDouble(),
+                alignment: Alignment.topRight,
+                nipWidth: 30,
+                nipHeight: 10,
+                nip: BubbleNip.rightTop,
+                color: Color.fromRGBO(225, 255, 199, 1.0),
+                child: Text('Hello, World!', textAlign: TextAlign.right),
               ),
-            ),
-            Container(
-              padding: EdgeInsets.only(top: 20, left: 30),
-              child: Row(
-                children: [
-                  Container(
-                    height: 40,
-                    width: 200,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(width: 1)),
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: 150,
-                        ),
-                        Text("Hello")
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  CircleAvatar(
-                    backgroundColor: Colors.orange,
-                  )
-                ],
+            for (var i = 0; i <= 15; i += 3)
+              Bubble(
+                margin: BubbleEdges.only(top: 10),
+                nipOffset: i.toDouble(),
+                alignment: Alignment.topLeft,
+                nipWidth: 30,
+                nipHeight: 10,
+                nip: BubbleNip.leftTop,
+                child: Text('Hi, developer!'),
               ),
-            ),
-            Container(
-              padding: EdgeInsets.only(top: 20, left: 110),
-              child: Row(
-                children: [
-                  Container(
-                    height: 40,
-                    width: 200,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(width: 1)),
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: 100,
-                        ),
-                        Text("How are you")
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  CircleAvatar(
-                    backgroundColor: Colors.green,
-                  )
-                ],
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.only(top: 20, left: 30),
-              child: Row(
-                children: [
-                  Container(
-                    height: 40,
-                    width: 200,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(width: 1)),
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: 150,
-                        ),
-                        Text("Fine")
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  CircleAvatar(
-                    backgroundColor: Colors.orange,
-                  )
-                ],
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.only(top: 20, left: 110),
-              child: Row(
-                children: [
-                  Container(
-                    height: 40,
-                    width: 200,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(width: 1)),
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: 150,
-                        ),
-                        Text("Hi")
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  CircleAvatar(
-                    backgroundColor: Colors.green,
-                  )
-                ],
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.only(top: 20, left: 30),
-              child: Row(
-                children: [
-                  Container(
-                    height: 40,
-                    width: 200,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(width: 1)),
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: 150,
-                        ),
-                        Text("Hi")
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  CircleAvatar(
-                    backgroundColor: Colors.orange,
-                  )
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  CircleAvatar(
-                    backgroundColor: Colors.white,
-                    backgroundImage: AssetImage("assets/message.png"),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 30,
-            ),
           ],
         ),
       ),

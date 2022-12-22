@@ -10,6 +10,8 @@ import 'package:sujithamatrimony/loginpage.dart';
 // import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:cc_avenue/cc_avenue.dart';
 
+import 'main.dart';
+
 // 3 months
 
 class prime3m_package extends StatefulWidget {
@@ -42,13 +44,13 @@ class _prime3m_packageState extends State<prime3m_package> {
           accessCode: 'AVDE04JK49CJ84EDJC',
           amount: '10',
           cancelUrl:
-              'https://defeatedyouth.com/rsa/PHP/ccavResponseHandler.php',
+              'https://sujithamatrimony.com/ccavenue/PHP/ccavResponseHandler.php',
           currencyType: 'INR',
           merchantId: '68141',
           orderId: '519',
           redirectUrl:
-              'https://defeatedyouth.com/rsa/PHP/ccavResponseHandler.php',
-          rsaKeyUrl: 'https://defeatedyouth.com/rsa/PHP/GetRSA.php');
+              'https://sujithamatrimony.com/ccavenue/PHP/ccavResponseHandler.php',
+          rsaKeyUrl: 'https://secure.ccavenue.com/transaction/php/GetRSA.php');
     } on PlatformException {
       print('PlatformException');
     }
@@ -230,8 +232,7 @@ class _prime3m_packageState extends State<prime3m_package> {
   }
 
   Future<void> imgdata3() async {
-    var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/get_subscription";
+    var url = baselink + "get_subscription";
 
     var finalurl = Uri.parse(url);
 

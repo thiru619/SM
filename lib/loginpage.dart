@@ -359,9 +359,8 @@ class _textState extends State<text> {
   }
 
   Future<void> login(username, password) async {
-    var url =
-         baselink +"UserApi/login";
-    // checker(context) async {
+    var url = baselink + "login";
+    // checker(context) a   sync {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();
 
@@ -399,8 +398,7 @@ class _textState extends State<text> {
   Future<void> postbasicdetail(context, profile_created_for, name, gender, dob,
       mother_tongue, mobile_no, email_id, password, referal_code) async {
     print('hi');
-    var url =
-         baselink +"UserApi/basicDetails";
+    var url = baselink + "UserApi/basicDetails";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();
