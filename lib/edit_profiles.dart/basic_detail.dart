@@ -25,8 +25,7 @@ import '../language_btn.dart';
 import '../main.dart';
 import 'edit_profile.dart';
 
-var baseurl =
-    'http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/';
+
 
 TextEditingController name = TextEditingController();
 TextEditingController age = TextEditingController();

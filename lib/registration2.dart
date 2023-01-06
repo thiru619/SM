@@ -22,8 +22,7 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:easy_autocomplete/easy_autocomplete.dart';
 
-var baseurl =
-    "https://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/";
+
 var otpvalue = '';
 var resendval = true;
 
@@ -876,7 +875,7 @@ class _registration2State extends State<registration2> {
   }
 
   void geteducation() async {
-    var url = Uri.parse('$baseurl/getRegister');
+    var url = Uri.parse(baselink + 'getRegister');
     final MyController con = Get.find();
     final response = await http.post(url, headers: <String, String>{
       // 'content-type':'application/x-www-form-urlencoded',
@@ -899,7 +898,7 @@ class _registration2State extends State<registration2> {
   }
 
   void geteducationlists(name) async {
-    var url = Uri.parse('$baseurl/getEducation');
+    var url = Uri.parse(baselink + 'getEducation');
     final MyController con = Get.find();
     final response = await http.post(url, headers: <String, String>{
       // 'content-type':'application/x-www-form-urlencoded',
@@ -923,7 +922,7 @@ class _registration2State extends State<registration2> {
   }
 
   void getoccupation_category() async {
-    var url = Uri.parse('$baseurl/getRegister');
+    var url = Uri.parse(baselink + 'getRegister');
     final MyController con = Get.find();
     final response = await http.post(url, headers: <String, String>{
       // 'content-type':'application/x-www-form-urlencoded',
@@ -947,7 +946,7 @@ class _registration2State extends State<registration2> {
   }
 
   void getOccupations(name) async {
-    var url = Uri.parse('$baseurl/getOccupations');
+    var url = Uri.parse(baselink + 'getOccupations');
     final MyController con = Get.find();
     final response = await http.post(url, headers: <String, String>{
       // 'content-type':'application/x-www-form-urlencoded',

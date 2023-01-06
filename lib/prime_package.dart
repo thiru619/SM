@@ -467,8 +467,7 @@ class _prime6m_packageState extends State<prime6m_package> {
   }
 
   Future<void> imgdata6() async {
-    var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/get_subscription";
+    var url = baselink + "get_subscription";
 
     var finalurl = Uri.parse(url);
 
@@ -738,8 +737,7 @@ class _prime12m_packageState extends State<prime12m_package> {
   }
 
   Future<void> imgdata12() async {
-    var url =
-        "http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/get_subscription";
+    var url = baselink + "get_subscription";
 
     var finalurl = Uri.parse(url);
 

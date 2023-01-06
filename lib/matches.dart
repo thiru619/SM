@@ -614,7 +614,7 @@ class _matchesState extends State<matches> with TickerProviderStateMixin {
                         common_matches(),
                         id == 1 ? listview_view() : photo_view(),
                         id == 1 ? listview_short() : photo_short(),
-                        id == 1 ? listview_intrest() : photo_intrest(),
+                        id == 1 ? listview_short() : photo_intrest(),
                         common_matches(),
                         common_matches(),
                         common_matches(),

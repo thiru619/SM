@@ -30,8 +30,7 @@ import 'package:banner_carousel/banner_carousel.dart';
 
 var firstimage;
 
-var baseurl =
-    'http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/';
+
 
 var initialvalue = '';
 final TextEditingController _namefields = TextEditingController();

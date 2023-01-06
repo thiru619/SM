@@ -258,12 +258,12 @@ class _view_profileState extends State<view_profile> {
                                             ),
                                             _hasBeenPressed1
                                                 ? Text(
-                                                    "Interest",
+                                                    "Interested",
                                                     style: TextStyle(
                                                         color: Colors.white),
                                                   )
                                                 : Text(
-                                                    'Interested',
+                                                    'Interest',
                                                     style: TextStyle(
                                                         color: Colors.white),
                                                   )

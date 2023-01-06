@@ -160,26 +160,11 @@ class _listview_shortState extends State<listview_short> {
                               ),
                             ),
                           ],
-                        )
+                        ),
                       ],
                     ),
+                    height: 120,
                     // margin: EdgeInsets.all(20),
-                    height: 100,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        // borderRadius: BorderRadius.all(),
-                        // boxShadow: [
-                        //   BoxShadow(
-                        //     color: Colors.grey,
-                        //     offset: const Offset(
-                        //       5,
-                        //       5,
-                        //     ),
-                        //     blurRadius: 6,
-                        //     spreadRadius: 1,
-                        //   ),
-                        // ],
-                        border: Border.all(width: 0.1)),
                   ),
                   SizedBox(
                     height: 10,
@@ -223,17 +208,17 @@ class _listview_shortState extends State<listview_short> {
                           SizedBox(
                             width: 90,
                           ),
-                          LikeButton(
-                            isLiked: true,
-                            size: 30,
-                            circleColor: CircleColor(
-                                start: Color(0xff00ddff),
-                                end: Color(0xff0099cc)),
-                            bubblesColor: BubblesColor(
-                              dotPrimaryColor: Color(0xff33b5e5),
-                              dotSecondaryColor: Color(0xff0099cc),
-                            ),
-                          ),
+                          // LikeButton(
+                          //   isLiked: true,
+                          //   size: 30,
+                          //   circleColor: CircleColor(
+                          //       start: Color(0xff00ddff),
+                          //       end: Color(0xff0099cc)),
+                          //   bubblesColor: BubblesColor(
+                          //     dotPrimaryColor: Color(0xff33b5e5),
+                          //     dotSecondaryColor: Color(0xff0099cc),
+                          //   ),
+                          // ),
                         ],
                       ),
                     ),

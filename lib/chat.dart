@@ -126,6 +126,36 @@ class _ChatsState extends State<Chats> {
           ],
         ),
       ),
+      bottomSheet: Container(
+        margin: EdgeInsets.all(10),
+        child: TextField(
+          decoration: InputDecoration(
+            prefixIcon: IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.emoji_emotions,
+                color: Colors.yellow,
+              ),
+            ),
+            suffixIcon: IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.send,
+                  color: Colors.blue,
+                )),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(20),
+              borderSide:
+                  BorderSide(width: 1, color: Colors.grey), //<-- SEE HERE
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(20),
+              borderSide:
+                  BorderSide(width: 1, color: Colors.grey), //<-- SEE HERE
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

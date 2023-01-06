@@ -307,7 +307,13 @@ class _homescreensState extends State<homescreens>
                                     child: Row(
                                       children: [
                                         IconButton(
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        Packages()));
+                                          },
                                           icon: Icon(
                                             Icons.message_outlined,
                                             color: Colors.white,
@@ -683,164 +689,77 @@ class _homescreensState extends State<homescreens>
                                       // viewdetails['basic_details']
                                       //             ['profile_percentage'] !=
                                       //         100
-                                          // ? 
-                                          Container(
-                                              width: 500.h,
-                                              // padding: EdgeInsets.all(5),
-                                              decoration: BoxDecoration(
-                                                  gradient: LinearGradient(
-                                                begin: Alignment.topLeft,
-                                                end: Alignment.bottomRight,
-                                                colors: <Color>[
-                                                  Color.fromARGB(
-                                                      255, 85, 194, 94),
-                                                  Color.fromARGB(
-                                                      255, 10, 92, 16),
-                                                  Color.fromARGB(
-                                                      255, 10, 100, 25),
-                                                ],
-                                              )),
-                                              child: Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  if (viewdetails != null)
-                                                    Text(
-                                                      "  Your Profile is only " +
-                                                          viewdetails['basic_details']
-                                                                  [
-                                                                  'profile_percentage']
-                                                              .toString() +
-                                                          " Complete".tr +
-                                                          "           ".tr,
-                                                      style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                      ),
-                                                    ),
-                                                  Text(
-                                                    '  ' +
-                                                        "Add below details to complete you profile"
-                                                            .tr,
-                                                    style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  ),
-                                                  Container(
-                                                    margin: EdgeInsets.all(10),
-                                                    child:
-                                                        SingleChildScrollView(
-                                                      scrollDirection:
-                                                          Axis.horizontal,
-                                                      child: Row(
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceEvenly,
-                                                          children: [
-                                                            firstimage == null
-                                                                ? Container(
-                                                                    padding:
-                                                                        EdgeInsets
-                                                                            .all(5),
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: Colors
-                                                                          .white,
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              10),
-                                                                    ),
-                                                                    child:
-                                                                        Column(
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .start,
-                                                                      children: [
-                                                                        Text(
-                                                                          "Please add you contact"
-                                                                              .tr,
-                                                                          style: TextStyle(
-                                                                              fontSize: 12,
-                                                                              fontWeight: FontWeight.bold),
-                                                                        ),
-                                                                        Text(
-                                                                          "profile with photos".tr +
-                                                                              "        ".tr,
-                                                                          style: TextStyle(
-                                                                              fontSize: 12,
-                                                                              fontWeight: FontWeight.bold),
-                                                                        ),
-                                                                        SizedBox(
-                                                                          height:
-                                                                              15,
-                                                                        ),
-                                                                        Column(
-                                                                          crossAxisAlignment:
-                                                                              CrossAxisAlignment.start,
-                                                                          children: [
-                                                                            Row(
-                                                                              children: [
-                                                                                SizedBox(
-                                                                                  width: 85,
-                                                                                  height: 20,
-                                                                                  child: ElevatedButton(
-                                                                                    child: Text(
-                                                                                      "Add photo".tr,
-                                                                                      style: TextStyle(fontSize: 11),
-                                                                                    ),
-                                                                                    style: ButtonStyle(
-                                                                                      backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 255, 111, 0)),
-                                                                                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                                                                        RoundedRectangleBorder(
-                                                                                          borderRadius: BorderRadius.circular(20),
-                                                                                          side: BorderSide(
-                                                                                            color: Color.fromARGB(255, 255, 111, 0),
-                                                                                          ),
-                                                                                        ),
-                                                                                      ),
-                                                                                    ),
-                                                                                    onPressed: () {},
-                                                                                  ),
-                                                                                ),
-                                                                                SizedBox(
-                                                                                  width: 10,
-                                                                                ),
-                                                                                IconButton(onPressed: () {}, icon: Image(image: AssetImage("assets/preview.png")))
-                                                                              ],
-                                                                            ),
-                                                                            Text(
-                                                                              "+25% in profile completeness".tr,
-                                                                              style: TextStyle(fontSize: 10),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  )
-                                                                : Container(),
-                                                            SizedBox(
-                                                              width: 30,
-                                                            ),
-                                                            Container(
+                                      // ?
+                                      Container(
+                                        width: 500.h,
+                                        // padding: EdgeInsets.all(5),
+                                        decoration: BoxDecoration(
+                                            gradient: LinearGradient(
+                                          begin: Alignment.topLeft,
+                                          end: Alignment.bottomRight,
+                                          colors: <Color>[
+                                            Color.fromARGB(255, 85, 194, 94),
+                                            Color.fromARGB(255, 10, 92, 16),
+                                            Color.fromARGB(255, 10, 100, 25),
+                                          ],
+                                        )),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            if (viewdetails != null)
+                                              Text(
+                                                "  Your Profile is only " +
+                                                    viewdetails['basic_details']
+                                                            [
+                                                            'profile_percentage']
+                                                        .toString() +
+                                                    " Complete".tr +
+                                                    "           ".tr,
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            Text(
+                                              '  ' +
+                                                  "Add below details to complete you profile"
+                                                      .tr,
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            Container(
+                                              margin: EdgeInsets.all(10),
+                                              child: SingleChildScrollView(
+                                                scrollDirection:
+                                                    Axis.horizontal,
+                                                child: Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: [
+                                                      firstimage == null
+                                                          ? Container(
                                                               padding:
                                                                   EdgeInsets
                                                                       .all(5),
-                                                              decoration: BoxDecoration(
-                                                                  color: Colors
-                                                                      .white,
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              10)),
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: Colors
+                                                                    .white,
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            10),
+                                                              ),
                                                               child: Column(
-                                                                crossAxisAlignment:
-                                                                    CrossAxisAlignment
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
                                                                         .start,
                                                                 children: [
                                                                   Text(
-                                                                    "Get 10x more responses by "
+                                                                    "Please add you contact"
                                                                         .tr,
                                                                     style: TextStyle(
                                                                         fontSize:
@@ -849,7 +768,7 @@ class _homescreensState extends State<homescreens>
                                                                             FontWeight.bold),
                                                                   ),
                                                                   Text(
-                                                                    "verifying your profile"
+                                                                    "profile with photos"
                                                                             .tr +
                                                                         "        "
                                                                             .tr,
@@ -859,75 +778,178 @@ class _homescreensState extends State<homescreens>
                                                                         fontWeight:
                                                                             FontWeight.bold),
                                                                   ),
-                                                                  Text(
-                                                                    "id proof"
-                                                                        .tr,
-                                                                    style: TextStyle(
-                                                                        fontSize:
-                                                                            12,
-                                                                        fontWeight:
-                                                                            FontWeight.bold),
-                                                                  ),
                                                                   SizedBox(
-                                                                    height: 12,
+                                                                    height: 15,
                                                                   ),
-                                                                  Row(
+                                                                  Column(
+                                                                    crossAxisAlignment:
+                                                                        CrossAxisAlignment
+                                                                            .start,
                                                                     children: [
-                                                                      SizedBox(
-                                                                        // width: 110,
-                                                                        height:
-                                                                            25,
-                                                                        child:
-                                                                            ElevatedButton(
-                                                                          child:
-                                                                              Text(
-                                                                            "Get Your Profile Verified".tr,
-                                                                            style:
-                                                                                TextStyle(fontSize: 11),
-                                                                          ),
-                                                                          style:
-                                                                              ButtonStyle(
-                                                                            backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(
-                                                                                255,
-                                                                                255,
-                                                                                111,
-                                                                                0)),
-                                                                            shape:
-                                                                                MaterialStateProperty.all<RoundedRectangleBorder>(
-                                                                              RoundedRectangleBorder(
-                                                                                borderRadius: BorderRadius.circular(20),
-                                                                                side: BorderSide(
-                                                                                  color: Color.fromARGB(255, 255, 111, 0),
+                                                                      Row(
+                                                                        children: [
+                                                                          SizedBox(
+                                                                            width:
+                                                                                85,
+                                                                            height:
+                                                                                20,
+                                                                            child:
+                                                                                ElevatedButton(
+                                                                              child: Text(
+                                                                                "Add photo".tr,
+                                                                                style: TextStyle(fontSize: 11),
+                                                                              ),
+                                                                              style: ButtonStyle(
+                                                                                backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 255, 111, 0)),
+                                                                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                                                                  RoundedRectangleBorder(
+                                                                                    borderRadius: BorderRadius.circular(20),
+                                                                                    side: BorderSide(
+                                                                                      color: Color.fromARGB(255, 255, 111, 0),
+                                                                                    ),
+                                                                                  ),
                                                                                 ),
                                                                               ),
+                                                                              onPressed: () {},
                                                                             ),
                                                                           ),
-                                                                          onPressed:
-                                                                              () {
-                                                                            Navigator.push(
-                                                                              context,
-                                                                              MaterialPageRoute(builder: (context) => Edit_profile()),
-                                                                            );
-                                                                          },
-                                                                        ),
+                                                                          SizedBox(
+                                                                            width:
+                                                                                10,
+                                                                          ),
+                                                                          IconButton(
+                                                                              onPressed: () {},
+                                                                              icon: Image(image: AssetImage("assets/preview.png")))
+                                                                        ],
                                                                       ),
-                                                                      IconButton(
-                                                                          onPressed:
-                                                                              () {},
-                                                                          icon:
-                                                                              Image(image: AssetImage("assets/shield.png")))
+                                                                      Text(
+                                                                        "+25% in profile completeness"
+                                                                            .tr,
+                                                                        style: TextStyle(
+                                                                            fontSize:
+                                                                                10),
+                                                                      ),
                                                                     ],
                                                                   ),
                                                                 ],
                                                               ),
+                                                            )
+                                                          : Container(),
+                                                      SizedBox(
+                                                        width: 30,
+                                                      ),
+                                                      Container(
+                                                        padding:
+                                                            EdgeInsets.all(5),
+                                                        decoration: BoxDecoration(
+                                                            color: Colors.white,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10)),
+                                                        child: Column(
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              "Get 10x more responses by "
+                                                                  .tr,
+                                                              style: TextStyle(
+                                                                  fontSize: 12,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold),
                                                             ),
-                                                          ]),
-                                                    ),
-                                                  ),
-                                                ],
+                                                            Text(
+                                                              "verifying your profile"
+                                                                      .tr +
+                                                                  "        ".tr,
+                                                              style: TextStyle(
+                                                                  fontSize: 12,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold),
+                                                            ),
+                                                            Text(
+                                                              "id proof".tr,
+                                                              style: TextStyle(
+                                                                  fontSize: 12,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold),
+                                                            ),
+                                                            SizedBox(
+                                                              height: 12,
+                                                            ),
+                                                            Row(
+                                                              children: [
+                                                                SizedBox(
+                                                                  // width: 110,
+                                                                  height: 25,
+                                                                  child:
+                                                                      ElevatedButton(
+                                                                    child: Text(
+                                                                      "Get Your Profile Verified"
+                                                                          .tr,
+                                                                      style: TextStyle(
+                                                                          fontSize:
+                                                                              11),
+                                                                    ),
+                                                                    style:
+                                                                        ButtonStyle(
+                                                                      backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(
+                                                                          255,
+                                                                          255,
+                                                                          111,
+                                                                          0)),
+                                                                      shape: MaterialStateProperty
+                                                                          .all<
+                                                                              RoundedRectangleBorder>(
+                                                                        RoundedRectangleBorder(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(20),
+                                                                          side:
+                                                                              BorderSide(
+                                                                            color: Color.fromARGB(
+                                                                                255,
+                                                                                255,
+                                                                                111,
+                                                                                0),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                    onPressed:
+                                                                        () {
+                                                                      Navigator
+                                                                          .push(
+                                                                        context,
+                                                                        MaterialPageRoute(
+                                                                            builder: (context) =>
+                                                                                Edit_profile()),
+                                                                      );
+                                                                    },
+                                                                  ),
+                                                                ),
+                                                                IconButton(
+                                                                    onPressed:
+                                                                        () {},
+                                                                    icon: Image(
+                                                                        image: AssetImage(
+                                                                            "assets/shield.png")))
+                                                              ],
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ]),
                                               ),
                                             ),
-                                          // : Container(),
+                                          ],
+                                        ),
+                                      ),
+                                      // : Container(),
 
                                       SizedBox(
                                         height: 40,
@@ -1716,44 +1738,50 @@ class _homescreensState extends State<homescreens>
   }
 
   Future<void> viewprofile() async {
-    setState(() {
-      // loading = true;
-    });
-    var url = baselink + "get_view_profile";
-    // checker(context) async {
-    var pref = await SharedPreferences.getInstance();
-    var regid = pref.getString('regsId');
+    if (this.mounted) {
+      setState(() {
+        // loading = true;
+      });
+      var url = baselink + "get_view_profile";
+      // checker(context) async {
+      var pref = await SharedPreferences.getInstance();
+      var regid = pref.getString('regsId');
 
-    //  pref.setString('customer_id', data['data']['customer_id'].toString())
-    // final MyController con = Get.find();
+      //  pref.setString('customer_id', data['data']['customer_id'].toString())
+      // final MyController con = Get.find();
 
-    //  print(id);
-    var finalurl = Uri.parse(url);
-    var res = await http.post(finalurl, headers: <String, String>{
-      'X-API-KEY': '50f58d4facbdfe506d51ad6b079deaae'
-    }, body: {
-      'reg_id': regid,
-    });
+      //  print(id);
+      var finalurl = Uri.parse(url);
+      var res = await http.post(finalurl, headers: <String, String>{
+        'X-API-KEY': '50f58d4facbdfe506d51ad6b079deaae'
+      }, body: {
+        'reg_id': regid,
+      });
 
-    print('hi' + res.body);
-    // var decodeValue = json.decode(res.body);
-    var decodeValue = json.decode(res.body);
-    setState(() {});
-    if (decodeValue['status'] == true) {
-      viewdetails = decodeValue['data'];
-      imageSS = decodeValue['data']['profile_image_details'];
+      print('hi' + res.body);
+      // var decodeValue = json.decode(res.body);
+      var decodeValue = json.decode(res.body);
+      if (this.mounted) {
+        setState(() {});
+        if (decodeValue['status'] == true) {
+          viewdetails = decodeValue['data'];
+          imageSS = decodeValue['data']['profile_image_details'];
 
-      print(viewdetails);
-      // SharedPreferences pref = await SharedPreferences.getInstance();
-      // pref.setString('temp_id', decodeValue['data']['user_temp_id'].toString());
-      // Get.to(() => registration());
+          print(viewdetails);
+          // SharedPreferences pref = await SharedPreferences.getInstance();
+          // pref.setString('temp_id', decodeValue['data']['user_temp_id'].toString());
+          // Get.to(() => registration());
 
-      // Fluttertoast.showToast(msg: decodeValue['message']);
-    } else {
-      Fluttertoast.showToast(msg: decodeValue['message']);
+          // Fluttertoast.showToast(msg: decodeValue['message']);
+        } else {
+          Fluttertoast.showToast(msg: decodeValue['message']);
+        }
+        if (this.mounted) {
+          setState(() {
+            // loading = false;
+          });
+        }
+      }
     }
-    setState(() {
-      // loading = false;
-    });
   }
 }

@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:convert';
-import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
@@ -474,48 +473,48 @@ class _bodypartState extends State<bodypart> {
   }
 }
 
-class ThemeController extends GetxController {
-  var isminimize = false.obs;
-  var isDarkMode = false.obs;
-  var isplaying = false.obs;
-  // var selectedItems = false.obs;
-  var name = '';
+// class ThemeController extends GetxController {
+//   var isminimize = false.obs;
+//   var isDarkMode = false.obs;
+//   var isplaying = false.obs;
+//   // var selectedItems = false.obs;
+//   var name = '';
 
-  //connectivity
+//   //connectivity
 
-  var connetstatus = 0.obs;
-  final Connectivity _connectivity = Connectivity();
-  late StreamSubscription<ConnectivityResult> _connectivitySubscription;
-  @override
-  void onInit() {
-    _connectivitySubscription =
-        _connectivity.onConnectivityChanged.listen(updateConnectionStatus);
-    super.onInit();
-  }
+//   var connetstatus = 0.obs;
+//   final Connectivity _connectivity = Connectivity();
+//   late StreamSubscription<ConnectivityResult> _connectivitySubscription;
+//   @override
+//   void onInit() {
+//     _connectivitySubscription =
+//         _connectivity.onConnectivityChanged.listen(updateConnectionStatus);
+//     super.onInit();
+//   }
 
-  Future<void> updateConnectionStatus(ConnectivityResult result) async {
-    switch (result) {
-      case ConnectivityResult.wifi:
-        connetstatus.value = 5;
-        break;
-      case ConnectivityResult.mobile:
-        connetstatus.value = 1;
-        break;
-      case ConnectivityResult.none:
-        connetstatus.value = 3;
-        // Fluttertoast.showToast(msg: "You Are Offline");
+//   Future<void> updateConnectionStatus(ConnectivityResult result) async {
+//     switch (result) {
+//       case ConnectivityResult.wifi:
+//         connetstatus.value = 5;
+//         break;
+//       case ConnectivityResult.mobile:
+//         connetstatus.value = 1;
+//         break;
+//       case ConnectivityResult.none:
+//         connetstatus.value = 3;
+//         // Fluttertoast.showToast(msg: "You Are Offline");
 
-        Get.defaultDialog(
-            // actions: [Lottie.asset("images/lost.json")],
-            title: "You Are Offline",
-            middleText: 'Turn On Network Connection');
-        break;
-      default:
-        connetstatus.value = 3;
-        break;
-    }
-  }
-}
+//         Get.defaultDialog(
+//             // actions: [Lottie.asset("images/lost.json")],
+//             title: "You Are Offline",
+//             middleText: 'Turn On Network Connection');
+//         break;
+//       default:
+//         connetstatus.value = 3;
+//         break;
+//     }
+//   }
+// }
 
 var baselink =
-    'https://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/';
+    'https://sujithamatrimony.com/sujitha_matrimony_api/restapi/UserApi/';

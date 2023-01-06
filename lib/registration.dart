@@ -20,8 +20,7 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:easy_autocomplete/easy_autocomplete.dart';
 
-var baseurl =
-    'https://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/';
+
 
 class registration extends StatefulWidget {
   const registration({Key? key}) : super(key: key);
@@ -662,7 +661,7 @@ class _registrationState extends State<registration> {
   }
 
   void getcaste(name) async {
-    var url = Uri.parse('$baseurl/getCaste');
+    var url = Uri.parse(baselink + 'getCaste');
     final MyController con = Get.find();
     final response = await http.post(url, headers: <String, String>{
       // 'content-type':'application/x-www-form-urlencoded',
@@ -686,7 +685,7 @@ class _registrationState extends State<registration> {
   }
 
   void getstate(name) async {
-    var url = Uri.parse('$baseurl/getState');
+    var url = Uri.parse(baselink + 'getState');
     final MyController con = Get.find();
     final response = await http.post(url, headers: <String, String>{
       // 'content-type':'application/x-www-form-urlencoded',
@@ -710,7 +709,7 @@ class _registrationState extends State<registration> {
   }
 
   void getcity(name) async {
-    var url = Uri.parse('$baseurl/getCity');
+    var url = Uri.parse(baselink + 'getCity');
     final MyController con = Get.find();
     final response = await http.post(url, headers: <String, String>{
       // 'content-type':'application/x-www-form-urlencoded',

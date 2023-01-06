@@ -25,9 +25,6 @@ import '../language_btn.dart';
 import '../main.dart';
 import 'edit_profile.dart';
 
-var baseurl =
-    'http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/';
-
 // TextEditingController dhosam = TextEditingController();
 TextEditingController rassi = TextEditingController();
 TextEditingController Star = TextEditingController();
@@ -384,8 +381,7 @@ class _religion_detailState extends State<religion_detail>
   }
 
   Future<void> getData() async {
-    var url =
-         baselink +"editReligiousProfile";
+    var url = baselink + "editReligiousProfile";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     var pref = await SharedPreferences.getInstance();
@@ -449,8 +445,7 @@ class _religion_detailState extends State<religion_detail>
   }
 
   Future<void> getData1() async {
-    var url =
-         baselink +"getRegister";
+    var url = baselink + "getRegister";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     // var pref = await SharedPreferences.getInstance();
@@ -478,7 +473,7 @@ class _religion_detailState extends State<religion_detail>
   }
 
   void getcaste(name) async {
-    var url = Uri.parse('$baseurl/getCaste');
+    var url = Uri.parse(baselink + 'getCaste');
     final MyController con = Get.find();
     final response = await http.post(url, headers: <String, String>{
       // 'content-type':'application/x-www-form-urlencoded',
@@ -510,8 +505,7 @@ class _religion_detailState extends State<religion_detail>
     zodiac,
     dosham,
   ) async {
-    var url =
-         baselink +"saveReligionDetails";
+    var url = baselink + "saveReligionDetails";
     // checker(context) async {
     // var pref=await SharedPreferences.getInstance();
     final MyController con = Get.find();

@@ -25,8 +25,7 @@ import '../language_btn.dart';
 import '../main.dart';
 import 'edit_profile.dart';
 
-var baseurl =
-    'http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/';
+
 
 TextEditingController ancestralorgin = TextEditingController();
 TextEditingController citizenship = TextEditingController();
@@ -374,7 +373,7 @@ class _location_detailState extends State<location_detail>
   }
 
   void getstate(name) async {
-    var url = Uri.parse('$baseurl/getState');
+    var url = Uri.parse(baselink+'getState');
     final MyController con = Get.find();
     final response = await http.post(url, headers: <String, String>{
       // 'content-type':'application/x-www-form-urlencoded',
@@ -397,7 +396,7 @@ class _location_detailState extends State<location_detail>
   }
 
   void getcity(name) async {
-    var url = Uri.parse('$baseurl/getCity');
+    var url = Uri.parse(baselink+'getCity');
     final MyController con = Get.find();
     final response = await http.post(url, headers: <String, String>{
       // 'content-type':'application/x-www-form-urlencoded',

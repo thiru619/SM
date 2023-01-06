@@ -24,8 +24,7 @@ import '../bottomsheet.dart';
 import '../language_btn.dart';
 import '../main.dart';
 
-var baseurl =
-    'http://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/';
+
 
 TextEditingController family_values = TextEditingController();
 TextEditingController family_type = TextEditingController();

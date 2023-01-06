@@ -22,8 +22,6 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:easy_autocomplete/easy_autocomplete.dart';
 
-var baseurl =
-    'https://sujithamatrimony.teckzy.co.in/sujitha_matrimony_api/restapi/UserApi/';
 
 TextEditingController minage = TextEditingController();
 TextEditingController maxage = TextEditingController();
@@ -1282,7 +1280,7 @@ class _preferencelistState extends State<preferencelist>
   }
 
   void getcaste(name) async {
-    var url = Uri.parse('$baseurl/getCaste');
+    var url = Uri.parse(baselink+'getCaste');
     final MyController con = Get.find();
     final response = await http.post(url, headers: <String, String>{
       // 'content-type':'application/x-www-form-urlencoded',
@@ -1307,7 +1305,7 @@ class _preferencelistState extends State<preferencelist>
   }
 
   void getstate(name) async {
-    var url = Uri.parse('$baseurl/getState');
+    var url = Uri.parse(baselink+'getState');
     final MyController con = Get.find();
     final response = await http.post(url, headers: <String, String>{
       // 'content-type':'application/x-www-form-urlencoded',
@@ -1337,7 +1335,7 @@ class _preferencelistState extends State<preferencelist>
   }
 
   void getcity(name) async {
-    var url = Uri.parse('$baseurl/getCity');
+    var url = Uri.parse(baselink +'getCity');
     final MyController con = Get.find();
     final response = await http.post(url, headers: <String, String>{
       // 'content-type':'application/x-www-form-urlencoded',
@@ -1464,7 +1462,7 @@ class _preferencelistState extends State<preferencelist>
   }
 
   educationcategory() async {
-    var url = Uri.parse('$baseurl/getRegister');
+    var url = Uri.parse(baselink+'getRegister');
     final MyController con = Get.find();
     final response = await http.post(url, headers: <String, String>{
       // 'content-type':'application/x-www-form-urlencoded',
@@ -1487,7 +1485,7 @@ class _preferencelistState extends State<preferencelist>
   }
 
   void geteducationlists(name) async {
-    var url = Uri.parse('$baseurl/getEducation');
+    var url = Uri.parse(baselink+'getEducation');
     final MyController con = Get.find();
     final response = await http.post(url, headers: <String, String>{
       // 'content-type':'application/x-www-form-urlencoded',
@@ -1511,7 +1509,7 @@ class _preferencelistState extends State<preferencelist>
   }
 
   getoccupation_category() async {
-    var url = Uri.parse('$baseurl/getRegister');
+    var url = Uri.parse(baselink+'getRegister');
     final MyController con = Get.find();
     final response = await http.post(url, headers: <String, String>{
       // 'content-type':'application/x-www-form-urlencoded',
@@ -1535,7 +1533,7 @@ class _preferencelistState extends State<preferencelist>
   }
 
   void getOccupations(name) async {
-    var url = Uri.parse('$baseurl/getOccupations');
+    var url = Uri.parse(baselink+'getOccupations');
     final MyController con = Get.find();
     final response = await http.post(url, headers: <String, String>{
       // 'content-type':'application/x-www-form-urlencoded',
